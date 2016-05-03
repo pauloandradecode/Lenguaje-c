@@ -10,7 +10,7 @@ int main()
 {
     int num1, num2, mayor, menor;
 
-    puts("Ingrese dos numeros enteros: ");
+    puts("Ingrese dos numeros enteros (separados por una coma): ");
     scanf("%i , %i", &num1, &num2);
 
     mayor = (num1 > num2) ? num1 : num2;

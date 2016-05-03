@@ -13,6 +13,7 @@ int main()
     puts("Ingres dos variables enteras X, Y: ");
     scanf("%i , %i", &x, &y);
 
+    // Intercambiamos los valores
     aux = x;
     x = y;
     y = aux;
