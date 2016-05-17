@@ -26,10 +26,12 @@ int main()
 }
 
 // Implementacion de la funcion
-int round(float x)
+int round(float num)
 {
-    int y = x;
-    // int y = () ? x : x + 1;
+    int entero = num;
+    float decimal = num - entero;
 
-    return y;
+    entero = (decimal <= 0.5) ? num : num + 1;
+
+    return entero;
 }
