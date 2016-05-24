@@ -2,6 +2,7 @@
 * Fecha: 17/05/2016
 *
 * Funciones
+* Redondear numeros reales a enteros
 * round: R -> E
 */
 
