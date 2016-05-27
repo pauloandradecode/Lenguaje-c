@@ -5,13 +5,17 @@
 **********************************************/
 
 #include <iostream>
-#include <iomanip>
 
 using namespace std;
 
 int main()
 {
     float precio, descuento, total;
+
+    // Configuracion de los decimales
+    cout.setf(ios::fixed);
+    cout.setf(ios::showpoint);
+    cout.precision(2);
 
     cout << "Ingrese el precio del producto: ";
     cin >> precio;
@@ -20,7 +24,7 @@ int main()
 
     total = precio - (precio * descuento / 100);
 
-    cout << "Total a pagar: " << fixed << setprecision(2) << total << "\n";
+    cout << "Total a pagar: " total << "\n";
 
     return 0;
 }
