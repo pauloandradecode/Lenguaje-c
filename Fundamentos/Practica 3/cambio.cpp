@@ -20,18 +20,27 @@ int main()
     printf("Ingrese el monto del pago: ");
     scanf("%d", &pago);
 
-    cambio = pago - compra;
+    if(pago >= compra){
+        cambio = pago - compra;
 
-    printf("\nMonto de la compra: $%d\n", compra);
-    printf("Pago: $%d\n", pago);
-    printf("Cambio: $%d\n\n", cambio);
-    printf("Conformacion del cambio:\n\n");
-    printf(" Denom    n\n");
+        printf("\nMonto de la compra: $%d\n", compra);
+        printf("Pago: $%d\n", pago);
+        printf("Cambio: $%d\n\n", cambio);
+        printf("Conformacion del cambio:\n\n");
+        printf(" Denom    n\n");
 
-    if(cambio >= 500) denom(500, cambio);
-    if(cambio >= 50) denom(50, cambio);
-    if(cambio >= 20) denom(20, cambio);
-    if(cambio >= 2) denom(2, cambio);
+        if(cambio >= 500) denom(500, cambio);
+        if(cambio >= 200) denom(200, cambio);
+        if(cambio >= 100) denom(100, cambio);
+        if(cambio >= 50) denom(50, cambio);
+        if(cambio >= 20) denom(20, cambio);
+        if(cambio >= 10) denom(10, cambio);
+        if(cambio >= 5) denom(5, cambio);
+        if(cambio >= 2) denom(2, cambio);
+        if(cambio >= 1) denom(1, cambio);
+    } else {
+        printf("\nSu pago es insuficiente\n");
+    }
 
     return 0;
 }

@@ -16,9 +16,9 @@ int main()
     scanf("%d", &annio);
 
     if((annio % 4 == 0) && (annio % 100 != 0) || (annio % 400 == 0)){
-        printf("\n%d es a\244o bisiseto\n", annio);
+        printf("\n%d es a\244o bisiesto\n", annio);
     } else {
-        printf("\n%d no es a\244o bisiseto\n", annio);
+        printf("\n%d no es a\244o bisiesto\n", annio);
     }
 
     return 0;

@@ -13,7 +13,7 @@ typedef struct{
 } racional;
 
 // Prototipos de las funciones
-racional construir(int, int);
+racional construir(int, int = 1);
 void imprime(racional);
 
 int main()
@@ -29,7 +29,7 @@ int main()
 }
 
 // Implementacion de las funciones
-racional construir(int a, int b = 1)
+racional construir(int a, int b)
 {
     racional r;
     r.num = a;

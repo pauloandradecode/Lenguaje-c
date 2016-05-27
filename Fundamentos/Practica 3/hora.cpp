@@ -10,17 +10,19 @@
 
 int main()
 {
-    int hora, minuto;
+    int hora, minuto, comprobacion;
 
     printf("Ingrese la hora en formato 24 horas (HH:mm): ");
-    scanf("%i:%i", &hora, &minuto);
+    comprobacion = scanf("%i:%i", &hora, &minuto);
 
-    if((hora >= 0 && hora < 24) && (minuto >= 0 && minuto < 60)){
-        if(hora > 12){
-            hora -= 12;
+    if((hora >= 0 && hora < 24) && (minuto >= 0 && minuto < 60) && comprobacion == 2){
+        if(hora >= 12){
+            hora = (hora == 12) ? 12 : hora - 12;
 
             printf("\n%02i:%02i PM\n", hora, minuto);
         } else {
+            hora = (hora == 0) ? 12 : hora;
+
             printf("\n%02i:%02i AM\n", hora, minuto);
         }
     } else {
