@@ -29,6 +29,7 @@ int main()
         printf("Conformacion del cambio:\n\n");
         printf(" Denom    n\n");
 
+        if(cambio >= 1000) denom(1000, cambio);
         if(cambio >= 500) denom(500, cambio);
         if(cambio >= 200) denom(200, cambio);
         if(cambio >= 100) denom(100, cambio);

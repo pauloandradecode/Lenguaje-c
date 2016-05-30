@@ -30,3 +30,7 @@ Escribir un programa en el que tomemos un numero (un argumento por consola) y mo
 
 * F(n) = F(n - 1) + F(n - 2)
 * F(0) = 0, F(1) = 1
+
+## Programa 4. [AtributosMetodos]
+
+Programa donde se declaran atributos y metodos estaticos de una clase, se declara un atributo para almacenar el numero de instancias de la clase, asi como un metodo para incrementarlo y otro para obtener el numero de instancias.
