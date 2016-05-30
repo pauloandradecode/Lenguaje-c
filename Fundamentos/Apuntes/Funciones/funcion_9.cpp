@@ -1,7 +1,8 @@
 /*
-* Fecha: 24/05/2016
+* Fecha: 30/05/2016
 *
-* Ejemplo de parametros con inicializacion por defecto
+* Ejemplo de parametros con inicializacion por defecto con sobrecarga de funciones
+* (es mejor utilizar la inicializacion por defecto)
 */
 
 #include <cstdio>
@@ -13,7 +14,9 @@ typedef struct{
 } racional;
 
 // Prototipos de las funciones
-racional construir(int, int = 1);
+racional construir();
+racional construir(int);
+racional construir(int, int);
 void imprime(racional);
 
 int main()
@@ -30,6 +33,30 @@ int main()
 }
 
 // Implementacion de las funciones
+racional construir()
+{
+    // Declaramos un tipo de dato racional
+    racional r;
+
+    // Asignamos valores
+    r.num = 0;
+    r.den = 1;
+
+    return r;
+}
+
+racional construir(int a)
+{
+    // Declaramos un tipo de dato racional
+    racional r;
+
+    // Asignamos valores
+    r.num = a;
+    r.den = 1;
+
+    return r;
+}
+
 racional construir(int a, int b)
 {
     // Declaramos un tipo de dato racional
