@@ -15,10 +15,14 @@ int fibo(int);
 
 int main()
 {
-    printf("Serie Fibonacci:\n\n");
+    int limite;
+
+    printf("Serie Fibonacci: ");
+    scanf("%i", &limite);
+    printf("\n");
 
     // Imprimimos la serie fibonacci
-    for(int i = 1; i < 21; i++){
+    for(int i = 1; i <= limite; i++){
         printf("f%i: %i\n", i, fibo(i));
     }
 
