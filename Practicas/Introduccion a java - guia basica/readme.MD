@@ -34,3 +34,11 @@ Escribir un programa en el que tomemos un numero (un argumento por consola) y mo
 ## Programa 4. [AtributosMetodos]
 
 Programa donde se declaran atributos y metodos estaticos de una clase, se declara un atributo para almacenar el numero de instancias de la clase, asi como un metodo para incrementarlo y otro para obtener el numero de instancias.
+
+## Programa 5. [Objeto]
+
+Programa donde mostramos el seno de los angulos 0 a 359, en el proceso aprendemos a crear la instancia de la clase desde el constructor, el programa almacenara el seno de los angulos 0 a 359 en un array y despues los mostraremos en pantalla.
+
+## Programa 6. [Sin]
+
+En este programa vamos a modificar el ejemplo del programa Objeto (programa anterior), declarando un método static al que se le pase el valor de un ángulo en grados y nos devuelva el seno.

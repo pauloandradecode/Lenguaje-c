@@ -1,7 +1,10 @@
 /*
 * Fecha: 28/05/2016
 * Nombre: atributos y metodos (pagina 30)
-* Nota: En este programa vamos a ver como utilizar atributos y metodos estaticos
+* Nota: En este programa vamos a ver como utilizar atributos y metodos estaticos, un metodo
+*       declarado como static, se puede utilizar sin necesidad de inicializar un objeto de
+*       la clase, solo tiene una restricción y es que solo puede acceder a atributos y
+*       metodos declarados como static.
 */
 
 public class AtributosMetodos
