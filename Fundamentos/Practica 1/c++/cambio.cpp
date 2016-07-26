@@ -10,6 +10,11 @@ using namespace std;
 
 int main()
 {
+	// Configuracion para 2 decimales
+    cout.setf(ios::fixed);
+    cout.setf(ios::showpoint);
+    cout.precision(2);
+
     float dinero, total, cambio;
 
     cout << "Ingrese el total de la venta: ";
