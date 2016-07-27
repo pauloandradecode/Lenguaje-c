@@ -1,4 +1,16 @@
+/*
+* Autor: Paulo Andrade
+* Descripción: Programa para examen de regularización
+*
+* Nota: En este programa vamos a crear un nuevo tipo de dato (struct) para almacenar numero racionales,
+*       es decir, un numero fraccionario, y apartir de hay crear funciones para realizar operaciones
+*       basicas con estos.
+*/
+
 #include <iostream>
+#include <cstdio>
+
+using namespace std;
 
 // Creamos el nuevo tipo de dato
 typedef struct{
@@ -26,19 +38,19 @@ int main()
     y = lee();
 
     // Operaciones con los numeros x y y
-    printf("\nSuma:           ");
+    cout << "\nSuma:           ";
     z = suma(x, y);
     imprime(z);
 
-    printf("\nResta:          ");
+    cout << "\nResta:          ";
     z = resta(x, y);
     imprime(z);
 
-    printf("\nMultiplicacion: ");
+    cout << "\nMultiplicacion: ";
     z = multiplica(x, y);
     imprime(z);
 
-    printf("\nDivision:       ");
+    cout << "\nDivision:       ";
     z = divide(x, y);
     imprime(z);
 
@@ -113,5 +125,5 @@ racional divide(racional x, racional y)
 void imprime(racional x)
 {
     // Imprimimos el valor del numero racional
-    printf("[%i:%i]\n", x.p, x.q);
+    cout << "[" << x.p << ":" << x.q << "]" << endl;
 }
