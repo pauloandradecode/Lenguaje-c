@@ -34,7 +34,7 @@ public class Divisa
         // Leemos
         Scanner cin = new Scanner(System.in); //Creación de un objeto Scanner
         data = cin.nextLine(); //Invocamos un método sobre un objeto Scanner
-        x = Double.parseDouble(data); // Convertimos de String a int
+        x = Double.parseDouble(data); // Convertimos de String a double
 
         return x;
     }
