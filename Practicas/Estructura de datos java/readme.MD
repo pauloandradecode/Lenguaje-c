@@ -20,3 +20,13 @@ En java los array (arreglos) son tratados como objetos y por consiguiente se deb
 * Ordenar.
 * Buscar.
 * Mostrar.
+
+## Programa 2. [listas]
+
+En este ejemplo veremos como crear una estructura de datos para listas en java, dentro de las que encontramos: listas ligadas, listas doblemente ligadas, listas circulares, listas desordenadas y listas ordenadas, dicha estructura contiene los siguientes metodos.-
+
+* insertar un nuevo NodoDeLista
+* buscar un NodoDeLista
+* eliminar un NodoDeLista
+* obtener un NodoDeLista en alguna posición
+* mostrar la lista
