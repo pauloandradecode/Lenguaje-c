@@ -17,7 +17,16 @@ Primera practica en donde arendera los siguientes puntos.-
 
 ## Calculadora [directorio]
 
-Segunda practica en donde creamos una claculadora basica en donde aprenderemos los siguientes puntos.-
+Segunda practica en donde creamos una calculadora basica en donde aprenderemos los siguientes puntos.-
+
+* Procesar información de diferentes formas en los métodos.
+* Mostrar cierto numero de decimales.
+* Trabajar con métodos getter y setter.
+* Metodos basicos de una calculadora.-
+	* suma, resta, multiplicación y división.
+	* factorial.
+	* Saber si un número es par.
+	* Saber si un número es primo.
 
 ## Errores y aclaraciones sobre el código
 
