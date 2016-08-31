@@ -32,4 +32,4 @@ Segunda practica en donde creamos una calculadora basica en donde aprenderemos l
 
 Si encuentras algun error en el código o la forma de optimizarlo puedes informarme en el siguiente enlace para realizar las correcciones correspondientes.-
 
-<a href="https://github.com/nemesis866/lenguaje-c/issues">https://github.com/nemesis866/lenguaje-c/issues</a>
+<a href="https://github.com/nemesis866/Lenguaje-c/issues">https://github.com/nemesis866/lenguaje-c/issues</a>

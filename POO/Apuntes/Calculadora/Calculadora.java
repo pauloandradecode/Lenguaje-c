@@ -5,6 +5,9 @@ Nombre: Paulo Andrade
 Email: source.compu@gmail.com
 ************************************************************/
 
+// Importamos BigInteger para numeros muy grandes
+import java.math.BigInteger;
+
 public class Calculadora
 {
 	// Propiedades
@@ -30,16 +33,16 @@ public class Calculadora
 		return n1 / n2;
 	}
 	// Metodo que retorna el factorial
-	public long factorial()
+	public BigInteger factorial()
 	{
-		long fac = 1; // Empezamos la base del factorial
+		BigInteger fac = new BigInteger("1"); // Empezamos la base del factorial
 		int n = (int) this.num1; // Convertimos a entero el tipo double para usarlo en el bucle
 
 		// Obtenemos el factorial solo si el numero es mayor a 2
 		if(n >= 2){
 			// Proceso para obtener el factorial
 			for(int i = 1; i <= n; i++){
-				fac = i * fac;
+				fac = fac.multiply(new BigInteger(i + ""));
 			}
 		}
 
