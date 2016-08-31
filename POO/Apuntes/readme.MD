@@ -18,3 +18,9 @@ Primera practica en donde arendera los siguientes puntos.-
 ## Calculadora [directorio]
 
 Segunda practica en donde creamos una claculadora basica en donde aprenderemos los siguientes puntos.-
+
+## Errores y aclaraciones sobre el código
+
+Si encuentras algun error en el código o la forma de optimizarlo puedes informarme en el siguiente enlace para realizar las correcciones correspondientes.-
+
+<a href="https://github.com/nemesis866/lenguaje-c/issues">https://github.com/nemesis866/lenguaje-c/issues</a>
