@@ -1,6 +1,7 @@
 /************************************************************
 Clase TestCalculadora - Clase para ejecutar operaciones
 
+Practica: 1
 Nombre: Paulo Andrade
 Email: source.compu@gmail.com
 ************************************************************/
