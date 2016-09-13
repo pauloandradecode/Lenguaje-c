@@ -55,6 +55,8 @@ class TestCalculadora
 					n2 = lector.nextDouble();
 
 					System.out.println("La suma es " + df.format(calc.sumar(n1, n2)) + "\n");
+
+					break;
 				case 2:
 					// Resta
 					System.out.print("Numero 1: ");

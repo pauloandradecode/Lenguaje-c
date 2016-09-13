@@ -7,7 +7,6 @@ Email: source.compu@gmail.com
 ************************************************************/
 
 import java.util.Scanner; //Importación del código de la clase Scanner desde la biblioteca Java
-import java.text.DecimalFormat; // Para limitar el numero de decimales
 
 class TestArreglo
 {
@@ -15,6 +14,10 @@ class TestArreglo
 	public static int opcion;
 	public static int indice; // Almacenamos el total de indices para un vector
 	public static int indice2;
+	public static int renglones;
+	public static int renglones2;
+	public static int columnas;
+	public static int columnas2;
 	public static int[] vector; // Vector
 	public static int[][] m1; // Matriz 1
 	public static int[][] m2; // Matriz 2
@@ -33,8 +36,6 @@ class TestArreglo
 		Arreglo arreglo = new Arreglo();
 		// Inicializamos la clase para obtener datos desde el teclado
 		Scanner lector = new Scanner(System.in);
-		// Instanciamos un objeto de DecimalFormat y le asignamos 2 decimales
-		DecimalFormat df = new DecimalFormat("0.00");
 
 		do{
 			System.out.println("***********************************");
@@ -95,10 +96,10 @@ class TestArreglo
 					m2 = new int[indice][indice];
 
 					System.out.println("Ingrese los valores de la matriz 1:");
-					m1 = capturaMatriz(indice);
+					m1 = capturaMatriz(indice, indice);
 
 					System.out.println("Ingrese los valores de la matriz 2:");
-					m2 = capturaMatriz(indice);
+					m2 = capturaMatriz(indice, indice);
 
 					// Mandamos los datos
 					arreglo.setM1(m1);
@@ -117,10 +118,10 @@ class TestArreglo
 					m2 = new int[indice][indice];
 
 					System.out.println("Ingrese los valores de la matriz 1:");
-					m1 = capturaMatriz(indice);
+					m1 = capturaMatriz(indice, indice);
 
 					System.out.println("Ingrese los valores de la matriz 2:");
-					m2 = capturaMatriz(indice);
+					m2 = capturaMatriz(indice, indice);
 
 					// Mandamos los datos
 					arreglo.setM2(m2);
@@ -131,22 +132,30 @@ class TestArreglo
 					break;
 				case 5:
 					// Multiplicar matrices
-					System.out.print("Ingrese el numero de indices de la primer matriz: ");
-					indice = lector.nextInt();
-					m1 = new int[indice][indice];
+					System.out.print("Ingrese el numero de filas de la primer matriz: ");
+					renglones = lector.nextInt();
+					System.out.print("Ingrese el numero de columnas de la primer matriz: ");
+					columnas = lector.nextInt();
+					m1 = new int[renglones][columnas];
+					arreglo.setRenglones(renglones);
+					arreglo.setColumnas(columnas);
 
 					System.out.println("Ingrese los valores de la matriz 1:");
-					m1 = capturaMatriz(indice);
+					m1 = capturaMatriz(renglones, columnas);
 
 					// Pasamos los datos
 					arreglo.setM1(m1);
 
-					System.out.print("Ingrese el numero de indices de la segunda matriz matriz: ");
-					indice2 = lector.nextInt();
-					m2 = new int[indice2][indice2];
+					System.out.print("Ingrese el numero de filas de la segunda matriz matriz: ");
+					renglones2 = lector.nextInt();
+					System.out.print("Ingrese el numero de columnas de la segunda matriz matriz: ");
+					columnas2 = lector.nextInt();
+					m2 = new int[renglones2][columnas2];
+					arreglo.setRenglones2(renglones2);
+					arreglo.setColumnas2(columnas2);
 
 					System.out.println("Ingrese los valores de la matriz 2:");
-					m2 = capturaMatriz(indice2);
+					m2 = capturaMatriz(renglones2, columnas2);
 
 					// Pasamos los datos
 					arreglo.setM2(m2);
@@ -159,7 +168,7 @@ class TestArreglo
 						// Mostramos el resultado
 						for(int i = 0; i < mRes.length; i++){
 							System.out.println("");
-							for(int j = 0; j < mRes.length; j++){
+							for(int j = 0; j < mRes[0].length; j++){
 								System.out.print(mRes[i][j] + " ");
 								//System.out.printf("%-4s\n", mRes[i][j]);
 							}
@@ -173,31 +182,19 @@ class TestArreglo
 			}
 		} while (opcion != 0);
 	}
-	private static int[][] capturaMatriz(int indice)
+	private static int[][] capturaMatriz(int renglon, int columna)
 	{
 		// Inicializamos la clase para obtener datos desde el teclado
 		Scanner lector = new Scanner(System.in);
-		int[][] m2 = new int[indice][indice];
+		int[][] m2 = new int[renglon][columna];
 
-		for(int i = 1; i <= indice; i++){
-			for(int j = 1; j <= indice; j++){
+		for(int i = 1; i <= renglon; i++){
+			for(int j = 1; j <= columna; j++){
 				System.out.print(i + "," + j + ": ");
 				m2[i - 1][j - 1] = lector.nextInt();
 			}
 		}
 
 		return m2;
-	}
-	private static boolean isEmpty(int[][] a)
-	{
-		boolean empty = true;
-
-		for(int i = 0; i < a.length; i++){
-			if(a[i] != null){
-				empty = false;
-			}
-		}
-
-		return empty;
 	}
 }

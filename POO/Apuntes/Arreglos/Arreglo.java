@@ -10,7 +10,9 @@ public class Arreglo
 {
 	// Propiedades
 	public int renglones;
+	public int renglones2;
 	public int columnas;
+	public int columnas2;
 	public int[] vector;
 	public int[][] m1;
 	public int[][] m2;
@@ -27,10 +29,7 @@ public class Arreglo
 	*****************************************************/
 
 	// Metodo get para columnas
-	public int setColumnas ()
-	{
-		return columnas;
-	}
+
 	// Metodo get para m1
 	public int[][] getM1() {
         return m1;
@@ -48,6 +47,11 @@ public class Arreglo
 	{
 		return renglones;
 	}
+	// Metodo get para renglones
+	public int getRenglones2 ()
+	{
+		return renglones2;
+	}
 	// Metodo get para vector
 	public int[] getVector() {
         return vector;
@@ -57,6 +61,12 @@ public class Arreglo
 	public void setColumnas (int columnas)
 	{
 		this.columnas = columnas;
+	}
+	// Metodo set para columnas
+    // @param columnas numero de columnas
+	public void setColumnas2 (int columnas)
+	{
+		this.columnas2 = columnas;
 	}
 	// Metodo set para m1
 	// @param m1 matriz a asignar
@@ -79,6 +89,12 @@ public class Arreglo
 	{
 		this.renglones = renglones;
 	}
+	// Metodo set para renglones
+    // @param renglones numero de renglones
+	public void setRenglones2 (int renglones)
+	{
+		this.renglones2 = renglones;
+	}
 	// Metodo set para vector
 	// @param vector vector a asignar
 	public void setVector(int[] vector) {
@@ -90,21 +106,26 @@ public class Arreglo
 	*****************************************************/
 
 	// Metodo que multiplica una matriz
+	// Para poder multiplicar dos matrices A de orden m*p y B de orden p*q ha de ocurrir:
+	// que el número de columnas de A sea igual al número de filas de B : p
+	// además observa que el resultado es otra matriz
+	// C = A.B
+	// que tiene orden m*q,es decir el número de filas de A y el número de  columnas de B
 	public int[][] multiplicarMatriz ()
 	{
-		int indice = this.m1.length;
-		int indice2 = this.m2.length;
 		int suma = 0;
 		int[][] multi = null;
 
 		// Verificamos que las matrices sean cuadradas
-		if(indice == indice2){
-			multi  = new int[indice][indice];
+		if(this.columnas == this.renglones2){
+			// Matrices no cuadradas
+			multi  = new int[this.renglones][this.columnas2];
 
-			for(int i = 1; i <= indice; i++){
-				for(int j = 1; j <= indice; j++){
-					for(int k = 1; k <= indice; k++){
-						multi[i - 1][j - 1] += this.m1[k - 1][j - 1] * this.m2[j -1][k - 1];
+			for(int i = 1; i <= renglones; i++){ // Filas A
+				for(int j = 1; j <= columnas2; j++){ // Columna B				
+					for(int k = 1; k <= columnas; k++){ 
+						// (C[i][j]+(A[i][k]*B[k][j]))
+						multi[i - 1][j - 1] += this.m1[i - 1][k - 1] * this.m2[k -1][j - 1];
 					}
 				}
 			}
