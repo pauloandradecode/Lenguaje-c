@@ -9,10 +9,10 @@ Email: source.compu@gmail.com
 public class Arreglo
 {
 	// Propiedades
-	public int renglones;
-	public int renglones2;
-	public int columnas;
-	public int columnas2;
+	public int renglones; // para matriz 1
+	public int renglones2; // para matriz 2
+	public int columnas; // para matriz 1
+	public int columnas2; // para matriz 2
 	public int[] vector;
 	public int[][] m1;
 	public int[][] m2;
@@ -21,7 +21,10 @@ public class Arreglo
 	// Constructor
 	Arreglo()
 	{
-
+		this.renglones = 0;
+		this.renglones2 = 0;
+		this.columnas = 0;
+		this.columnas2 = 0;
 	}
 
 	/*****************************************************
