@@ -1,5 +1,5 @@
 /****************************************************
-
+Superclase persona
 
 Name: Andrade Gonzalez Paulo Cesar
 Fecha: 20/09/2016
@@ -49,7 +49,7 @@ public class Persona
 
     public String concentrarse()
     {
-    	return "Estoy en la concentración";
+    	return "Estoy en la concentracion";
     }
     public void viajar()
     {

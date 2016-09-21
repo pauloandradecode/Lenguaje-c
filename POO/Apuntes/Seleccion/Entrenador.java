@@ -1,5 +1,5 @@
 /****************************************************
-
+Subclase entrenador
 
 Name: Andrade Gonzalez Paulo Cesar
 Fecha: 20/09/2016
