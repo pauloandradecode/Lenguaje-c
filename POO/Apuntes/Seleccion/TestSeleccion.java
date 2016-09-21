@@ -45,9 +45,7 @@ public class TestSeleccion
 				case 0:
 					System.out.println("Fin del programa");
 					break;
-				case 1:
-					// Opcion - Agregar entrenador
-
+				case 1: // Opcion - Agregar entrenador
 					// Ingresamos los datos del entrenador
 					System.out.print("\nNombre: ");
 					lector.nextLine(); // Limpiamos el buffer
@@ -61,9 +59,9 @@ public class TestSeleccion
 					e.setFechaNacimiento(readDate());
 					System.out.print("Historial: ");
 					e.setHistorial(lector.nextLine());
-					System.out.print("Años de experiencia: ");
-					// Usamos parseInt para evitar errores de ingreso
-					e.setAniosExperiencia(Integer.parseInt(lector.next()));
+					System.out.print("Anios de experiencia: ");
+					// Capturamos los años de experiencia
+					e.setAniosExperiencia(readNumber());	
 					System.out.print("Especialidad: ");
 					lector.nextLine(); // Limpiamos el buffer
 					e.setEspecialidad(lector.nextLine());
@@ -71,8 +69,7 @@ public class TestSeleccion
 					// Agregamos al array list
 					lista.add(e);
 					break;
-				case 2:
-					// Mostrar entrenadores
+				case 2: // Mostrar entrenadores
 					int count = 1; // Contador
 
 					// Verificamos si el arrayList esta vacio
@@ -134,6 +131,22 @@ public class TestSeleccion
 
     	// Si es correcto la retornamos
         return testDate;
+    }
+    // Metodo para leer numero enteros
+    public static int readNumber()
+    {
+    	Scanner lector = new Scanner(System.in); // Instanciamos el lector
+    	int number = 0;
 
+    	// Obtenemos el numero desde el teclado
+    	try{
+			number = lector.nextInt();
+		} catch(Exception error) {
+			System.out.print("Esto no es un numero, ingrese de nuevo: ");
+			return readNumber();
+		}
+
+		// Retornamos el numero
+		return number;
     }
 }
