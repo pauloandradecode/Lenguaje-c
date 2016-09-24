@@ -10,10 +10,10 @@ Nota: El metodo next() captura un string hasta encontrar
 	ultimo, el primero servira para vaciar el buffer de entrada.
 ****************************************************/
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.Scanner;
-import java.text.SimpleDateFormat;
+import java.util.ArrayList; // Uso de arrayList
+import java.util.Date; // Uso de tipo date
+import java.util.Scanner; // Entrada de datos
+import java.text.SimpleDateFormat; // Formato para el tipo date
 
 public class TestSeleccion
 {
@@ -43,7 +43,7 @@ public class TestSeleccion
 			// Seleccionamos la opcion
 			switch(opcion){
 				case 0:
-					System.out.println("Fin del programa");
+					System.out.println("\nFin del programa\n");
 					break;
 				case 1: // Opcion - Agregar entrenador
 					// Ingresamos los datos del entrenador
@@ -63,11 +63,11 @@ public class TestSeleccion
 					// Capturamos los años de experiencia
 					e.setAniosExperiencia(readNumber());	
 					System.out.print("Especialidad: ");
-					lector.nextLine(); // Limpiamos el buffer
 					e.setEspecialidad(lector.nextLine());
 
 					// Agregamos al array list
 					lista.add(e);
+
 					break;
 				case 2: // Mostrar entrenadores
 					int count = 1; // Contador
@@ -102,6 +102,7 @@ public class TestSeleccion
 		} while(opcion != 0);
 	}
 	// Método para darle formato a la fecha
+	// @param fecha fecha a transformar en un string con formato
 	public static String formatDate(Date fecha)
 	{
 		SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy"); // Creamos un formato para la fecha
@@ -141,7 +142,7 @@ public class TestSeleccion
     	// Obtenemos el numero desde el teclado
     	try{
 			number = lector.nextInt();
-		} catch(Exception error) {
+		} catch(Exception e) {
 			System.out.print("Esto no es un numero, ingrese de nuevo: ");
 			return readNumber();
 		}

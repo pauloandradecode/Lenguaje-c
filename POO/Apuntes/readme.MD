@@ -28,6 +28,17 @@ Segunda practica en donde creamos una calculadora basica en donde aprenderemos l
 	* Saber si un número es par.
 	* Saber si un número es primo.
 
+## Selección [directorio]
+
+Tercera practica en donde creamos un programa para capturar datos sobre entrenadores, en este programa aprenderemos los siguientes puntos.-
+
+* Trabajar con ArrayList.-
+	* Agregar un elemento - add().
+	* Mostrarlos mediante foreach.
+* Capturar fechas.-
+	* Uso de la clase Date.
+	* Uso de la clase SimpleDateFormat.
+
 ## Errores y aclaraciones sobre el código
 
 Si encuentras algun error en el código o la forma de optimizarlo puedes informarme en el siguiente enlace para realizar las correcciones correspondientes.-
