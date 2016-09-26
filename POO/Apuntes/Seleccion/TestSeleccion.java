@@ -61,7 +61,7 @@ public class TestSeleccion
 					e.setHistorial(lector.nextLine());
 					System.out.print("Anios de experiencia: ");
 					// Capturamos los años de experiencia
-					e.setAniosExperiencia(readNumber());	
+					e.setAniosExperiencia(readInt());	
 					System.out.print("Especialidad: ");
 					e.setEspecialidad(lector.nextLine());
 
@@ -118,7 +118,7 @@ public class TestSeleccion
         System.out.println("Introduzca su fecha de nacimiento [dd/mm/yyyy]");
         String fecha = lector.nextLine(); // Capturamos la fecha
         SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy"); // Creamos un formato para la fecha
-        Date testDate = null;
+        Date testDate = null; // declaramos testDate como tipo Date
 
         // Convertimos el string en tipo Date
         // Nota: Para usar el metodo parse() hay que hacerlo utilizando excepciones
@@ -134,7 +134,7 @@ public class TestSeleccion
         return testDate;
     }
     // Metodo para leer numero enteros
-    public static int readNumber()
+    public static int readInt()
     {
     	Scanner lector = new Scanner(System.in); // Instanciamos el lector
     	int number = 0;
@@ -144,7 +144,7 @@ public class TestSeleccion
 			number = lector.nextInt();
 		} catch(Exception e) {
 			System.out.print("Esto no es un numero, ingrese de nuevo: ");
-			return readNumber();
+			return readInt();
 		}
 
 		// Retornamos el numero
