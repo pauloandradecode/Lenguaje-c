@@ -18,9 +18,11 @@ import java.text.SimpleDateFormat; // Formato para el tipo date
 public class TestSeleccion
 {
 	// Creamos una instancia de la clase Entrenador
-	public static Entrenador e = new Entrenador();
+	//public static Entrenador e = new Entrenador();
 	// Creamos un array list de tipo Persona
 	public static ArrayList<Entrenador> lista = new ArrayList<Entrenador>();
+	public static ArrayList<Jugador> jugador = new ArrayList<Jugador>();
+	public static ArrayList<Masajista> masajista = new ArrayList<Masajista>();
 
 	public static void main(String[] args)
 	{
@@ -33,7 +35,11 @@ public class TestSeleccion
 			System.out.println("SELECCION");
 			System.out.println("*********\n");
 			System.out.println("1.- AGREGAR ENTRENADOR");
-			System.out.println("2.- MOSTRAR ENTRENADORES");
+			System.out.println("2.- AGREGAR JUGADOR");
+			System.out.println("3.- AGREGAR MASAJISTA");
+			System.out.println("4.- MOSTRAR ENTRENADORES");
+			System.out.println("5.- MOSTRAR JUGADORES");
+			System.out.println("6.- MOSTRAR MASAJISTAS");
 			System.out.println("0.- SALIR");
 
 			// Elegimos la opcion
@@ -46,6 +52,8 @@ public class TestSeleccion
 					System.out.println("\nFin del programa\n");
 					break;
 				case 1: // Opcion - Agregar entrenador
+
+					Entrenador e = new Entrenador();
 					// Ingresamos los datos del entrenador
 					System.out.print("\nNombre: ");
 					lector.nextLine(); // Limpiamos el buffer
@@ -69,7 +77,47 @@ public class TestSeleccion
 					lista.add(e);
 
 					break;
-				case 2: // Mostrar entrenadores
+				case 2: // Agregar jugador
+					Jugador j = new Jugador();
+					// Ingresamos los datos del entrenador
+					System.out.print("\nNombre: ");
+					lector.nextLine(); // Limpiamos el buffer
+					j.setNombre(lector.nextLine());
+					System.out.print("Domicilio: ");
+					j.setDomicilio(lector.nextLine());
+					System.out.print("Telefono: ");
+					j.setTelefono(lector.next());
+					// Como leer la fecha de nacimiento
+					lector.nextLine(); // Limpiamos el buffer
+					j.setFechaNacimiento(readDate());
+					System.out.print("Numero camisa: ");
+					j.setNumeroCamisa(readInt());
+					System.out.print("Posicion: ");
+					j.setPosicion(lector.nextLine());
+					
+					jugador.add(j);
+
+					break;
+				case 3: // Agregar masajista
+					Masajista m = new Masajista();
+					// Ingresamos los datos del entrenador
+					System.out.print("\nNombre: ");
+					lector.nextLine(); // Limpiamos el buffer
+					m.setNombre(lector.nextLine());
+					System.out.print("Domicilio: ");
+					m.setDomicilio(lector.nextLine());
+					System.out.print("Telefono: ");
+					m.setTelefono(lector.next());
+					// Como leer la fecha de nacimiento
+					lector.nextLine(); // Limpiamos el buffer
+					m.setFechaNacimiento(readDate());
+					System.out.print("Especialidad: ");
+					m.setEspecialidad(lector.nextLine());
+
+					masajista.add(m);
+
+					break;
+				case 4: // Mostrar entrenadores
 					int count = 1; // Contador
 
 					// Verificamos si el arrayList esta vacio
@@ -92,6 +140,60 @@ public class TestSeleccion
 							temp.viajar();
 							temp.dirigirEntrenamiento();
 							System.out.println(temp.dirigirPartido());
+
+							count++; // Aumentamos el contador
+						}
+					}
+
+					break;
+				case 5: // Mostrar jugadores
+					count = 1; // Contador
+
+					// Verificamos si el arrayList esta vacio
+					if(jugador.isEmpty()){
+						System.out.println("\nNo hay jugadores registrados");
+					} else {
+						// Recorremos el ArrayList
+						for(Jugador temp: jugador){
+							// Mostramos los datos
+							System.out.println("\nJugador " + count + ":");
+							System.out.println("=============\n");
+							System.out.println("Nombre: " + temp.getNombre());
+							System.out.println("Domicilio: " + temp.getDomicilio());
+							System.out.println("Telefono: " + temp.getTelefono());
+							System.out.println("Fecha de nacimiento: " + formatDate(temp.getFechaNacimiento()));
+							System.out.println("Numero de camisa: " + temp.getNumeroCamisa());
+							System.out.println("Posicion: " + temp.getPosicion());
+							System.out.println(temp.concentrarse());
+							temp.viajar();
+							System.out.println(temp.entrenar());
+							System.out.println(temp.jugar());
+
+							count++; // Aumentamos el contador
+						}
+					}
+
+					break;
+				case 6: // Mostrar masajistas
+					count = 1; // Contador
+
+					// Verificamos si el arrayList esta vacio
+					if(lista.isEmpty()){
+						System.out.println("\nNo hay masajistas registrados");
+					} else {
+						// Recorremos el ArrayList
+						for(Masajista temp: masajista){
+							// Mostramos los datos
+							System.out.println("\nMasajista " + count + ":");
+							System.out.println("=============\n");
+							System.out.println("Nombre: " + temp.getNombre());
+							System.out.println("Domicilio: " + temp.getDomicilio());
+							System.out.println("Telefono: " + temp.getTelefono());
+							System.out.println("Fecha de nacimiento: " + formatDate(temp.getFechaNacimiento()));
+							System.out.println("Especialidad: " + temp.getEspecialidad());
+							System.out.println(temp.concentrarse());
+							temp.viajar();
+							System.out.println(temp.darMasaje());
 
 							count++; // Aumentamos el contador
 						}
