@@ -35,6 +35,8 @@ Tercera practica en donde creamos un programa para capturar datos sobre entrenad
 * Trabajar con ArrayList.-
 	* Agregar un elemento - add().
 	* Mostrarlos mediante foreach.
+	* Guardar instancias de diferentes clases, las cuales heredan desde la misma superclase.
+	* Casting de clases para mostrar atributos y métodos de diferentes clases.
 * Capturar fechas.-
 	* Uso de la clase Date.
 	* Uso de la clase SimpleDateFormat.

@@ -18,7 +18,7 @@ import java.text.SimpleDateFormat; // Formato para el tipo date
 public class TestSeleccion
 {
 	// Creamos una instancia de la clase Entrenador
-	//public static Entrenador e = new Entrenador();
+	// public static Entrenador e = new Entrenador();
 	// Creamos un array list de tipo Persona
 	public static ArrayList<Persona> lista = new ArrayList<Persona>();
 
