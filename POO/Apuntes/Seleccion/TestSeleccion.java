@@ -20,9 +20,7 @@ public class TestSeleccion
 	// Creamos una instancia de la clase Entrenador
 	//public static Entrenador e = new Entrenador();
 	// Creamos un array list de tipo Persona
-	public static ArrayList<Entrenador> lista = new ArrayList<Entrenador>();
-	public static ArrayList<Jugador> jugador = new ArrayList<Jugador>();
-	public static ArrayList<Masajista> masajista = new ArrayList<Masajista>();
+	public static ArrayList<Persona> lista = new ArrayList<Persona>();
 
 	public static void main(String[] args)
 	{
@@ -95,7 +93,7 @@ public class TestSeleccion
 					System.out.print("Posicion: ");
 					j.setPosicion(lector.nextLine());
 					
-					jugador.add(j);
+					lista.add(j);
 
 					break;
 				case 3: // Agregar masajista
@@ -114,89 +112,92 @@ public class TestSeleccion
 					System.out.print("Especialidad: ");
 					m.setEspecialidad(lector.nextLine());
 
-					masajista.add(m);
+					lista.add(m);
 
 					break;
 				case 4: // Mostrar entrenadores
 					int count = 1; // Contador
 
-					// Verificamos si el arrayList esta vacio
-					if(lista.isEmpty()){
-						System.out.println("\nNo hay entrenadores registrados");
-					} else {
-						// Recorremos el ArrayList
-						for(Entrenador temp: lista){
-							// Mostramos los datos
+					// Recorremos el ArrayList
+					for(Persona temp: lista){
+						// Mostramos los datos
+						if(temp instanceof Entrenador){
 							System.out.println("\nEntrenador " + count + ":");
 							System.out.println("=============\n");
 							System.out.println("Nombre: " + temp.getNombre());
 							System.out.println("Domicilio: " + temp.getDomicilio());
 							System.out.println("Telefono: " + temp.getTelefono());
 							System.out.println("Fecha de nacimiento: " + formatDate(temp.getFechaNacimiento()));
-							System.out.println("Historial: " + temp.getHistorial());
-							System.out.println("Anios de experiencia: " + temp.getAniosExperiencia());
-							System.out.println("Especialidad: " + temp.getEspecialidad());
+							System.out.println("Historial: " + ((Entrenador) temp).getHistorial());
+							System.out.println("Anios de experiencia: " + ((Entrenador) temp).getAniosExperiencia());
+							System.out.println("Especialidad: " + ((Entrenador) temp).getEspecialidad());
 							System.out.println(temp.concentrarse());
 							temp.viajar();
-							temp.dirigirEntrenamiento();
-							System.out.println(temp.dirigirPartido());
+							((Entrenador) temp).dirigirEntrenamiento();
+							System.out.println(((Entrenador) temp).dirigirPartido());
 
 							count++; // Aumentamos el contador
 						}
+					}
+					// Verificamos si el arrayList esta vacio
+					if(count == 1){
+						System.out.println("\nNo hay entrenadores registrados");
 					}
 
 					break;
 				case 5: // Mostrar jugadores
 					count = 1; // Contador
 
-					// Verificamos si el arrayList esta vacio
-					if(jugador.isEmpty()){
-						System.out.println("\nNo hay jugadores registrados");
-					} else {
-						// Recorremos el ArrayList
-						for(Jugador temp: jugador){
-							// Mostramos los datos
+					// Recorremos el ArrayList
+					for(Persona temp: lista){
+						// Mostramos los datos
+						if(temp instanceof Jugador){
 							System.out.println("\nJugador " + count + ":");
 							System.out.println("=============\n");
 							System.out.println("Nombre: " + temp.getNombre());
 							System.out.println("Domicilio: " + temp.getDomicilio());
 							System.out.println("Telefono: " + temp.getTelefono());
 							System.out.println("Fecha de nacimiento: " + formatDate(temp.getFechaNacimiento()));
-							System.out.println("Numero de camisa: " + temp.getNumeroCamisa());
-							System.out.println("Posicion: " + temp.getPosicion());
+							System.out.println("Numero de camisa: " + ((Jugador) temp).getNumeroCamisa());
+							System.out.println("Posicion: " + ((Jugador) temp).getPosicion());
 							System.out.println(temp.concentrarse());
 							temp.viajar();
-							System.out.println(temp.entrenar());
-							System.out.println(temp.jugar());
+							System.out.println(((Jugador) temp).entrenar());
+							System.out.println(((Jugador) temp).jugar());
 
 							count++; // Aumentamos el contador
 						}
+					}
+					// Verificamos si el arrayList esta vacio
+					if(count == 1){
+						System.out.println("\nNo hay jugadores registrados");
 					}
 
 					break;
 				case 6: // Mostrar masajistas
 					count = 1; // Contador
 
-					// Verificamos si el arrayList esta vacio
-					if(lista.isEmpty()){
-						System.out.println("\nNo hay masajistas registrados");
-					} else {
-						// Recorremos el ArrayList
-						for(Masajista temp: masajista){
-							// Mostramos los datos
+					// Recorremos el ArrayList
+					for(Persona temp: lista){
+						// Mostramos los datos
+						if(temp instanceof Masajista){
 							System.out.println("\nMasajista " + count + ":");
 							System.out.println("=============\n");
 							System.out.println("Nombre: " + temp.getNombre());
 							System.out.println("Domicilio: " + temp.getDomicilio());
 							System.out.println("Telefono: " + temp.getTelefono());
 							System.out.println("Fecha de nacimiento: " + formatDate(temp.getFechaNacimiento()));
-							System.out.println("Especialidad: " + temp.getEspecialidad());
+							System.out.println("Especialidad: " + ((Masajista) temp).getEspecialidad());
 							System.out.println(temp.concentrarse());
 							temp.viajar();
-							System.out.println(temp.darMasaje());
+							System.out.println(((Masajista) temp).darMasaje());
 
 							count++; // Aumentamos el contador
 						}
+					}
+					// Verificamos si el arrayList esta vacio
+					if(count == 1){
+						System.out.println("\nNo hay masajistas registrados");
 					}
 
 					break;
