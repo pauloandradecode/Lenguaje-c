@@ -217,6 +217,7 @@ public class TestSeleccion
 	public static Date readDate ()
     {
     	Scanner lector = new Scanner(System.in); // Instanciamos un lector
+    	Date temp = new Date();
 
         System.out.println("Introduzca su fecha de nacimiento [dd/mm/yyyy]");
         String fecha = lector.nextLine(); // Capturamos la fecha
@@ -230,6 +231,12 @@ public class TestSeleccion
         } catch (Exception e){
         	// Si es incorrecto volvemos a pedir la fecha
         	System.out.println("Formato incorrecto, ingrese de nuevo:");
+        	return readDate();
+        }
+
+        // Verificamos que la fecha este en rango (no mayor a la fecha actual)
+        if(testDate.compareTo(temp) > 0){
+        	// Volvemos a llamar a la funcion
         	return readDate();
         }
 
