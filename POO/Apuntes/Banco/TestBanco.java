@@ -436,6 +436,9 @@ public class TestBanco
     	// Obtenemos el numero desde el teclado
     	try{
 			number = lector.nextDouble();
+			if(number <= 0.0){
+				return readDouble();
+			}
 		} catch(Exception e) {
 			System.out.print("Esto no es un numero, ingrese de nuevo: ");
 			return readDouble();
