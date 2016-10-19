@@ -263,6 +263,7 @@ public class TestFigura
     	try{
 			number = lector.nextDouble();
 			if(number <= 0.0){
+				System.out.print("Ingrese un numero mayor a 0: ");
 				return readDouble();
 			}
 		} catch(Exception e) {
