@@ -90,9 +90,4 @@ public class CuentaBancaria
 	{
 		this.saldo -= retiro;
 	}
-	/*
-	public abstract double transferir();
-	public abstract void cancelarCuenta();
-	public abstract void contactoSoporte();
-	*/
 }
