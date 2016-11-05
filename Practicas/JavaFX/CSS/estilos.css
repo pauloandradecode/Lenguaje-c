@@ -1,0 +1,25 @@
+/********************************************************
+Hoja de estilos
+
+Autor: Paulo Andrade
+Fecha: 04/11/2016
+********************************************************/
+
+*
+{
+	-fx-background-color: #00f;
+}
+
+#action-target
+{
+	-fx-fill: FIREBRICK;
+	-fx-font-weight: bold;
+	-fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.5), 0, 0, 0, 1);
+}
+#welcome-text
+{
+	-fx-font-size: 32px;
+	-fx-font-family: "Arial Black";
+	-fx-fill: #818181;
+	-fx-effect: innershadow(three-pass-box, rgba(0, 0, 0, 0.7), 6, 0, 0, 0.2);
+}
