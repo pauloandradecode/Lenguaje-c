@@ -1,5 +1,5 @@
 /********************************************************
-Layput de tipo rejilla flexible
+Layout de tipo rejilla flexible
 
 Autor: Paulo Andrade
 Fecha: 04/11/2016
@@ -16,7 +16,7 @@ import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
 // Clase principal de la aplicacion
-public class GridPane extends Application
+public class Ventana extends Application
 {
 	// Punto principal del programa (Stage es el contenedor principal)
 	public void start(Stage primaryStage)
@@ -31,7 +31,7 @@ public class GridPane extends Application
 		grid.setPadding(new Insets(25, 25, 25, 25)); // Espacio del borde
 
 		Scene escena = new Scene(grid, 300, 275); // Nodo root
-		primaryStage.setScene(escena);
+		primaryStage.setScene(escena); // Agregamos una escena
 	}
 
 	// Metodo principal
