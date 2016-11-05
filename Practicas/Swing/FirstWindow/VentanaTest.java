@@ -13,5 +13,7 @@ public class VentanaTest
 		MiVentana v = new MiVentana();
 		// Hacemos visible la ventana
 		v.setVisible(true);
+		// La hacemos no redimensionable
+		v.setResizable(false);
 	}
 }
