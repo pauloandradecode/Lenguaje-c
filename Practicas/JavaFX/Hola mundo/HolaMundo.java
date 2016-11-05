@@ -17,7 +17,7 @@ import javafx.stage.Stage;
 // Clase principal de la aplicacion
 public class HolaMundo extends Application
 {
-	// Punto principal del programa
+	// Punto principal del programa (Stage es el contenedor principal)
 	public void start(Stage stage)
 	{
 		Button boton = new Button(); // Componente
@@ -31,8 +31,8 @@ public class HolaMundo extends Application
 		});
 
 		StackPane layout = new StackPane(); // Nodo raiz
-		layout.getChildren().add(boton);
-		Scene escena = new Scene(layout, 300, 250);
+		layout.getChildren().add(boton); // Nodo hijo
+		Scene escena = new Scene(layout, 300, 250); // Contenedor del contenido
 
 		stage.setTitle("Hola mundo!"); // Titulo
 		stage.setScene(escena); // Agregamos la escena
