@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<BorderPane focusTraversable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <Pane fx:id="menuPrincipal" focusTraversable="true" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="lblMenuTitle" layoutX="102.0" layoutY="23.0" text="SISTEMA PUNTO DE VENTA" textAlignment="CENTER" />
+         </children>
+         <cursor>
+            <Cursor fx:constant="NONE" />
+         </cursor>
+      </Pane>
+   </center>
+   <padding>
+      <Insets bottom="300.0" left="150.0" right="300.0" top="150.0" />
+   </padding>
+   <cursor>
+      <Cursor fx:constant="NONE" />
+   </cursor>
+</BorderPane>
