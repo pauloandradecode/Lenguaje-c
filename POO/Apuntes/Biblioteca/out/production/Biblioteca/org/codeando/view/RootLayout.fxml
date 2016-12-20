@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.codeando.model.RootLayoutController">
+    <top>
+        <MenuBar BorderPane.alignment="CENTER">
+            <menus>
+                <Menu mnemonicParsing="false" text="Archivo">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#closeWindow" text="Cerrar" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Registros">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#openPersonLayout" text="Clientes" />
+                        <MenuItem mnemonicParsing="false" onAction="#openBookLayout" text="Libros" />
+                    </items>
+                </Menu>
+            <Menu mnemonicParsing="false" text="Prestamos">
+              <items>
+                        <MenuItem mnemonicParsing="false" onAction="#openLendLayout" text="Prestamos (todos)" />
+                <MenuItem mnemonicParsing="false" onAction="#openVenLendLayout" text="Prestamos vencidos" />
+              </items>
+            </Menu>
+                <Menu mnemonicParsing="false" text="Ayuda">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#openAbout" text="Acerca de" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+</BorderPane>

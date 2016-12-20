@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="40.0" layoutY="123.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="img.png" />
+         </image></ImageView>
+      <Label layoutX="282.0" layoutY="27.0" text="SAB">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="173.0" layoutY="63.0" text="Sistema de Administracion de Bibliotecas">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="269.0" layoutY="118.0" text="Developers:" />
+      <Label layoutX="300.0" layoutY="152.0" text="Andrade Gonzalez Paulo Cesar" />
+      <Label layoutX="300.0" layoutY="185.0" text="Sanchez Gutierrez Alejandra Amaranta" />
+      <Label layoutX="269.0" layoutY="224.0" text="Version:" />
+      <Label layoutX="300.0" layoutY="262.0" text="0.3.13" />
+   </children>
+</AnchorPane>
