@@ -5,6 +5,7 @@ Nota:
 
 #include <cstdio>
 
+// Paso de variables por referencia
 void swap(int &a, int &b)
 {
     int x = a;
