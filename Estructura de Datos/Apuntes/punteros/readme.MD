@@ -1,11 +1,29 @@
 Punteros
 ========
 
+Los apuntadores son variables que almacenan la dirección de memoria de alguna variable en especifico.
+
 # Contenido
 
 ## Arreglos [programa]
 
 En este programa se muestra como declarar un puntero que almacene la direccion de memoria de un arreglo, asi como obtener datos mediante indireccion.
+
+## Ejemplo 1 [programa]
+
+En este programa se ve el uso de punteros: declaracion; inicializacion por referenciacion; acceso.
+
+## Ejemplo 2 [programa]
+
+En este programa se ve el uso de punteros en arreglos.
+
+## Ejemplo 3 [programa]
+
+En este programa se ve la unidad de desplazamiento de los punteros, esta unidad de desplazamiento depende del tipo de dato al que pertenesca el puntero (se aplica en arreglos).
+
+## Ejemplo 4 [programa]
+
+En este programa se ve el uso de punteros con arreglos de tipo char (arreglos de cadenas).
 
 ## Indirección [programa]
 
