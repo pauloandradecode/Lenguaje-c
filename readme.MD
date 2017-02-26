@@ -17,6 +17,10 @@ Los lenguajes de programación utilizados en estos repositorios son.
 
 En este directorio encontraras algoritmos para utilizar en tus programas, por ejemplo factorial mediante recursividad o factorial usando el ciclo for.
 
+## Estructura de datos [directorio]
+
+En este directorio encontraras apuntes y ejemplo de las clases de estructura de datos (semestre 3) y las practicas desarrolladas.
+
 ## Fundamentos [directorio]
 
 En este directorio encontraras los ejemplos de las clases de fundamentos de programación (semestre 1) y las practicas desarrolladas.

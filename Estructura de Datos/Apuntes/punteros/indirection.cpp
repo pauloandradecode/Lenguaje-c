@@ -11,20 +11,6 @@ Nota: La indireccion es la forma de acceder al dato almacenado
 
 int main()
 {
-    int a = 4;
-    int b = 7;
-
-    printf("a: %i\n", a);
-    printf("b: %i\n", b);
-
-    // Intercambio
-    int x = a;
-    a = b;
-    b = x;
-
-    printf("a: %i\n", a);
-    printf("b: %i\n", b);
-
     // Aplicamos indireccion
     int num = 10;
     // Inicializacion por referenciacion

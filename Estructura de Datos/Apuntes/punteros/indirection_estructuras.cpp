@@ -1,7 +1,11 @@
 /*
 Fecha: 15/02/2017
 Nota: En este ejemplo mostramos como utilizar una estructura por medio
-    de indireccion de punteros utilizando memoria dinamica
+    de indireccion utilizando memoria dinamica.
+
+    Para crear utilizando memoria dinamica utilizamos el operador new (c++)
+    y malloc (c), y al crear de esta forma es necesario destruir mediante
+    el operador delete (c++) y la función free() (c).
 */
 
 #include <cstdio>

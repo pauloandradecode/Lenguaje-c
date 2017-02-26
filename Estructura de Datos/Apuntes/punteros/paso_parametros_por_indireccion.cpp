@@ -1,6 +1,17 @@
 /*
 Fecha: 20/02/2017
-Nota:
+Nota: El paso de parametros por indirección se realiza de la misma forma
+    en la que declaramos e inicializamos un puntero.-
+
+    // Forma normal
+    int num = 10;
+    int *p = &num;
+
+    // Se declara el puntero desde los parametros de la función
+    void swap(int *a, int *b)
+
+    // Se inicializa al momento de llamar a la función
+    swap(&x, &y)
 */
 
 #include <cstdio>
@@ -23,6 +34,7 @@ void ejemplo()
 
     printf("x: %i y: %i\n", x, y);
 
+    // Llamamos a la funcion
     swap(&x, &y);
 
     printf("x: %i y: %i\n", x, y);
