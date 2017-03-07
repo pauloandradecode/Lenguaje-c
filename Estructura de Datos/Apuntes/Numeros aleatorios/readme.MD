@@ -13,6 +13,10 @@ En conclusión un número se considera aleatorio, si cada número es estadistica
 
 # contenido
 
+## Números decimales [programa]
+
+En este programa mostramos una tecnica para generar números decimales grandes sin que estos se desborden.
+
 ## Numeros_largos [programa]
 
 En este programa se muestra una tecnica para generar números bastante grandes que si son generados de forma normal en C/C++ (long unsigned) estos pueden desbordar la memoria.
