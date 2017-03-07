@@ -5,6 +5,10 @@ Apuntes y programas desarollados en el curso de estructura de datos.
 
 # contenido
 
+## Números aleatorios [directorio]
+
+En este directorio encontraras programas de ejemplos sobre la generación de pseudo numeros aleatorios.
+
 ## Punteros [directorio]
 
 En este directorio encontraras programas de ejemplos sobre punteros con los siguientes temas.-
@@ -15,6 +19,16 @@ En este directorio encontraras programas de ejemplos sobre punteros con los sigu
 * Paso de parametros por referenciación.
 * Punteros en arreglos.
 * Punteros en estructuras.
+
+## Recursividad [directorio]
+
+En este directorio encontraras programas de ejemplos sobre el tema de recursividad y recursividad lineal, mediante los siguientes ejemplos.-
+
+* Ley de Benfort.
+* Número phi.
+* Serie fibonacci.
+* Torre de Hanoi.
+
 
 ## Errores y aclaraciones sobre el código
 
