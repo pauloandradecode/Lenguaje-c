@@ -7,7 +7,7 @@ Apuntes y practicas de c/c++, en el tema estructura de datos del tercer semestre
 
 ## Apuntes [directorio]
 
-En este directorio encontraras todos los codigos utilizados en clases (teoria y programas).
+En este directorio encontraras todos los códigos utilizados en clases (teoria y programas).
 
 ## Errores y aclaraciones sobre el código
 

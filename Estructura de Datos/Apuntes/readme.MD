@@ -1,7 +1,7 @@
 Apuntes - Estructura de datos
 =============================
 
-Apuntes y programas desarollados en el curso de estructura de datos.
+Apuntes y programas desarrollados en el curso de estructura de datos.
 
 # contenido
 

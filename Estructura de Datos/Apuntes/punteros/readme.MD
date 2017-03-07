@@ -31,15 +31,15 @@ En este programa se muestra como inicializar un puntero por medio de referenciac
 
 ## Indirección estructuras [programa]
 
-En este programa se muestra como inicializar punteros por medio de referencia a estructuras y mostrar datos de las mismas por medio de indirección.
+En este programa se muestra como inicializar punteros por medio de referencia a estructuras y mostrar elementos de las mismas por medio de indirección.
 
-## Paso de parametros por indireccion [programa]
+## Paso de parametros por indirección [programa]
 
-En este programa se muestra como trabajar con parametros en donde se utilice el proceso de inicializacion por medio de referenciación.
+En este programa se muestra como trabajar con parametros en donde se utilice el proceso de inicialización por medio de referenciación.
 
 ## Paso de parametros por referencia [programa]
 
-En este programa se muestra otra forma decomo trabajar con parametros, aqui solo se pasa el valor por referencia, no se inicializan punteros directamente.
+En este programa se muestra otra forma de como trabajar con parametros, aqui solo se pasa el valor por referencia, no se inicializan punteros directamente.
 
 ## Strings [programa]
 

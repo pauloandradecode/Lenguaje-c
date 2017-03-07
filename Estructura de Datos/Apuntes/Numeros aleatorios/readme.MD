@@ -9,17 +9,17 @@ Se utilizan para varios propositos.-
 * Modelado y simulación.
 * selección de datos de ejemplo.
 
-En conclusión un numero se considera aleatorio, si cada número es estadisticamente independiente del resto.
+En conclusión un número se considera aleatorio, si cada número es estadisticamente independiente del resto.
 
 # contenido
 
 ## Numeros_largos [programa]
 
-En este programa se muestra una tecnica para generar numeros bastante grandes que si son generados de forma normal en C/C++ estos pueden desbordar la memoria.
+En este programa se muestra una tecnica para generar números bastante grandes que si son generados de forma normal en C/C++ (long unsigned) estos pueden desbordar la memoria.
 
 ## Pseudoaleatorios [programa]
 
-En este programa se muestra como generar numeros pseudo aleatorios en C/C++ mediante la función rand() perteneciente a la libreria cstdlib, para generarlos se utiliza una semilla (seed) que genera siempre la misma secuencia.
+En este programa se muestra como generar números pseudo aleatorios en C/C++ mediante la función rand() perteneciente a la libreria cstdlib, para generarlos se utiliza una semilla (seed) que genera siempre la misma secuencia.
 
 Pero si lo combinamos con la función srand() a la cual le pasamos un valor por parametro (por ejemplo la hora en milisegundos) podemos generar secuencias de números diferentes cada ves que los necesitemos.
 

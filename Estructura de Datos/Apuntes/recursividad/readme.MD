@@ -1,7 +1,7 @@
 Recursividad
 ============
 
-La recursividad se trata de una caracteristica que tiene un sistema de estar estructuralmente sujeto recurrementemente por reglas o guias.
+La recursividad se trata de una caracteristica que tiene un sistema estructuralmente sujeto recurrementemente por reglas o guias.
 
 En otras palabras la regla recurrente es la que nos indica como ir desde la base hacia el siguiente elemento, siguiendo esta definición.-
 
