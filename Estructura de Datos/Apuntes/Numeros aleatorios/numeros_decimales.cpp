@@ -20,13 +20,15 @@ int main()
     srand(time(NULL));
 
     int n;
-    cin >> n ;
+    cin >> n;
 
-    // double x = randFloat(8);
+    // Configuracion de los decimales
+    cout.setf(ios::fixed);
+    cout.setf(ios::showpoint);
+    cout.precision(n);
 
-    // printf("%.14f", x);
-    string x = randF(n);
-    cout << x << endl;
+    cout << randFloat(n) << endl;
+    // cout << randF(n) << endl;
 
     return 0;
 }
@@ -37,7 +39,9 @@ double randFloat(int p)
     double x = 0.0;
 
     for(int i = 0; i < p; i++){
+        // Obtenemos numeros pseudoaleatorios del 0-9
         x += rand() % 10;
+        // Lo acomodamos hacia la derecha con 10^-n
         x *= .1;
     }
 
