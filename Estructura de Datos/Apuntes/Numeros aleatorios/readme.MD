@@ -15,7 +15,7 @@ En conclusión un número se considera aleatorio, si cada número es estadistica
 
 ## Números decimales [programa]
 
-En este programa mostramos una tecnica para generar números decimales grandes sin que estos se desborden.
+En este programa mostramos una tecnica para generar números decimales grandes sin que estos se desborden. (con una presición mayor a 15 decimales).
 
 ## Numeros_largos [programa]
 
