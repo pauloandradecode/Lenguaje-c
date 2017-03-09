@@ -1,6 +1,8 @@
 /*
 Fecha: 07/03/2017
 Nota: Numeros decimales aleatorios
+    Genera numeros decimales entre 0 y 1
+    0 < x <
 */
 
 #include <cstdio>
