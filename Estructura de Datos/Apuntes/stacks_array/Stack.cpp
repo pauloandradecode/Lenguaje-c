@@ -26,6 +26,8 @@ void Stack::push(int data)
     if(!full()){
         // Agregamos el dato
         array[_s++] = data;
+    } else {
+        printf("Pila llena \n");
     }
 }
 int Stack::pop()

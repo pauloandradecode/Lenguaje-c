@@ -8,3 +8,7 @@
 1490111529 /home/paulo/github/Lenguaje-c/Estructura de Datos/Apuntes/stacks_array/Stack.hpp
 	<cstdio>
 
+1490112614 source:/home/paulo/github/Lenguaje-c/Estructura de Datos/Apuntes/stacks_array/Stack.cpp
+	<cstdio>
+	"Stack.hpp"
+
