@@ -35,7 +35,7 @@ En este directorio encontraras programas de ejemplos sobre el tema de recursivid
 
 ## Stacks array [directorio]
 
-En este directorio encontrara un ejemplo sobre como implementar una estructura lineal (LIFO) utilizando un array, mediante programación orientada a objetos.
+En este directorio encontrara un ejemplo sobre como implementar una estructura lineal (LIFO) utilizando un array, mediante programación orientada a objetos (el ejemplo se encuentra en proyecto de codeblocks).
 
 ## Errores y aclaraciones sobre el código
 
