@@ -5,6 +5,10 @@ Apuntes y programas desarrollados en el curso de estructura de datos.
 
 # contenido
 
+## Listas enlazadas [directorio]
+
+En este directorio encontrara un ejemplo para implimentar la forma basica (sus propiedades y métodos basicos) de una estructura con POO.
+
 ## Números aleatorios [directorio]
 
 En este directorio encontraras programas de ejemplos sobre la generación de pseudo numeros aleatorios.
@@ -29,6 +33,9 @@ En este directorio encontraras programas de ejemplos sobre el tema de recursivid
 * Serie fibonacci.
 * Torre de Hanoi.
 
+## Stacks array [directorio]
+
+En este directorio encontrara un ejemplo sobre como implementar una estructura lineal (LIFO) utilizando un array, mediante programación orientada a objetos.
 
 ## Errores y aclaraciones sobre el código
 
