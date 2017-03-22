@@ -1,4 +1,6 @@
 /*
+Implementaciones
+
 Fecha: 21/03/2017
 Nota: Pilas con arrays - Estructura lineal
 */
@@ -6,20 +8,20 @@ Nota: Pilas con arrays - Estructura lineal
 #include <cstdio>
 #include "Stack.hpp"
 
-// Implementaciones
-
+// Constructor
 Stack::Stack(int s) : _n(s), _s(0)
 {
     // Creamos el arreglo
     array = new int[_n];
 }
-
+// Destructor
 Stack::~Stack()
 {
     // Liberamos la memoria
     delete [] array;
 }
-
+// Método para insertar un dato al final del array
+// @param data entero a almacenar
 void Stack::push(int data)
 {
     // Precondicion
@@ -30,6 +32,7 @@ void Stack::push(int data)
         printf("Pila llena \n");
     }
 }
+// Metodo para obtener el ultimo dato del array y borrarlo
 int Stack::pop()
 {
     // Precondicion
@@ -42,6 +45,7 @@ int Stack::pop()
         return 0;
     }
 }
+// Metodo para mostrar el ultimo dato del arreglo sin borrarlo
 int Stack::top()
 {
     // Precondicion
@@ -50,4 +54,3 @@ int Stack::top()
         return array[_s-1];
     }
 }
-

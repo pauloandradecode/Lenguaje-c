@@ -1,5 +1,5 @@
 /*
-Fecha: 21/o3/2017
+Fecha: 21/03/2017
 Nota: Pilas con arrays - Estructura lineal
 */
 
@@ -10,6 +10,7 @@ Nota: Pilas con arrays - Estructura lineal
 
 int main()
 {
+    // Semilla para numeros aleatorios
     srand((unsigned) time(NULL));
 
     // Creamos una pila
@@ -19,6 +20,7 @@ int main()
     int n = rand() % 20 + 1;
     printf("%i datos: \n\n", n);
 
+    // Insertamos los datos a la pila
     for(int i = 0; i < n; i++){
         int data = rand() % 100 + 1;
         printf("Push %i\n", data);
@@ -27,10 +29,10 @@ int main()
 
     printf("\n\n Vaciando la pila \n\n");
 
+    // Mostramos y vaciamos la pila
     while(!pila.empty()){
         printf("Pop %i\n", pila.pop());
     }
 
     return 0;
 }
-
