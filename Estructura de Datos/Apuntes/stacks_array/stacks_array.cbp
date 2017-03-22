@@ -32,6 +32,8 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Stack.cpp" />
+		<Unit filename="Stack.hpp" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />
