@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1490624582 source:/home/paulo/github/Lenguaje-c/Estructura de Datos/Apuntes/stack_dinamico/main.cpp
+	<cstdio>
+	<cstdlib>
+	<ctime>
+	"Stack.hpp"
+
+1490661725 /home/paulo/github/Lenguaje-c/Estructura de Datos/Apuntes/stack_dinamico/Stack.hpp
+	<cstdio>
+
