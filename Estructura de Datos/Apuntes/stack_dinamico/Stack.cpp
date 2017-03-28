@@ -63,9 +63,6 @@ void Stack::push(int data)
             aux->next(start);
             // Remplazamos la pila aux con la original
             start = aux;
-
-            // Liberamos memoria
-            // delete aux;
         }
 
         // Incrementamos el tamaño de la pila
@@ -82,11 +79,11 @@ int Stack::pop()
     if(!empty()){
         // Almacenamos nuestra pila original en una pila auxiliar
         Node *aux = start;
-        // Sobrescribimos la pila original con el nodo siguiente
-        // del auxiliar para eliminar el primer nodo
-        start = aux->next();
         // Obtenemos el dato del nodo eliminado
         int x = aux->data();
+        // Sobrescribimos la pila original con el nodo siguiente
+        // del auxiliar para eliminar el primer nodo
+        start = start->next();
         // Liberamos memoria
         delete aux;
 
@@ -94,11 +91,11 @@ int Stack::pop()
         _s--;
 
         return x;
-    } else {
-        // Valor centinela solo para que no marque un error
-        printf("Pila vacia \n");
-        return 0;
     }
+
+    // Valor centinela solo para que no marque un error
+    printf("Pila vacia \n");
+    return 0;
 }
 
 // Metodo para mostrar el ultimo dato del arreglo sin borrarlo
@@ -108,8 +105,8 @@ int Stack::top()
     if(!empty()){
         // Retornamos un dato
         return start->data();
-    } else {
-        // Solo en caso de que la pila este vacia
-        return 0;
     }
+
+    // Solo en caso de que la pila este vacia
+    return 0;
 }
