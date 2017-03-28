@@ -1,14 +1,14 @@
 # depslib dependency file v1.0
-1490110912 source:/home/paulo/github/Lenguaje-c/Estructura de Datos/Apuntes/stacks_array/main.cpp
+1490150130 source:/home/paulo/github/Lenguaje-c/Estructura de Datos/Apuntes/stacks_array/main.cpp
 	<cstdio>
 	<cstdlib>
 	<ctime>
 	"Stack.hpp"
 
-1490111529 /home/paulo/github/Lenguaje-c/Estructura de Datos/Apuntes/stacks_array/Stack.hpp
+1490150072 /home/paulo/github/Lenguaje-c/Estructura de Datos/Apuntes/stacks_array/Stack.hpp
 	<cstdio>
 
-1490112614 source:/home/paulo/github/Lenguaje-c/Estructura de Datos/Apuntes/stacks_array/Stack.cpp
+1490149978 source:/home/paulo/github/Lenguaje-c/Estructura de Datos/Apuntes/stacks_array/Stack.cpp
 	<cstdio>
 	"Stack.hpp"
 
