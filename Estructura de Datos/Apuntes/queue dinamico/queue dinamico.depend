@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1490710013 source:/home/paulo/github/Lenguaje-c/Estructura de Datos/Apuntes/queue dinamico/main.cpp
+	<cstdio>
+	<cstdlib>
+	<ctime>
+	"Queue.hpp"
+
+1490710813 /home/paulo/github/Lenguaje-c/Estructura de Datos/Apuntes/queue dinamico/Queue.hpp
+
+1490710800 source:/home/paulo/github/Lenguaje-c/Estructura de Datos/Apuntes/queue dinamico/Queue.cpp
+	<cstdio>
+	"Queue.hpp"
+
