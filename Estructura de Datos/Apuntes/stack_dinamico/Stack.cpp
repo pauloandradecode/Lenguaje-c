@@ -2,7 +2,7 @@
 Implementaciones
 
 Fecha: 27/03/2017
-Nota: Pilas con arrays - Estructura lineal
+Nota: Pilas con estructuras dinamicas - Estructura lineal
 */
 
 #include <cstdio>
@@ -108,5 +108,8 @@ int Stack::top()
     if(!empty()){
         // Retornamos un dato
         return start->data();
+    } else {
+        // Solo en caso de que la pila este vacia
+        return 0;
     }
 }

@@ -5,6 +5,10 @@
 	<ctime>
 	"Stack.hpp"
 
-1490661725 /home/paulo/github/Lenguaje-c/Estructura de Datos/Apuntes/stack_dinamico/Stack.hpp
+1490672182 /home/paulo/github/Lenguaje-c/Estructura de Datos/Apuntes/stack_dinamico/Stack.hpp
 	<cstdio>
+
+1490672140 source:/home/paulo/github/Lenguaje-c/Estructura de Datos/Apuntes/stack_dinamico/Stack.cpp
+	<cstdio>
+	"Stack.hpp"
 
