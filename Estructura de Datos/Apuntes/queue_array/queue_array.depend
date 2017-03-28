@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1490623479 source:/home/paulo/github/Lenguaje-c/Estructura de Datos/Apuntes/queue_array/main.cpp
+	<cstdio>
+	<cstdlib>
+	<ctime>
+	"Queue.hpp"
+
+1490623489 /home/paulo/github/Lenguaje-c/Estructura de Datos/Apuntes/queue_array/Queue.hpp
+
