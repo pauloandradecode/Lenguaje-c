@@ -24,6 +24,14 @@ En este directorio encontraras programas de ejemplos sobre punteros con los sigu
 * Punteros en arreglos.
 * Punteros en estructuras.
 
+## queue dinamico [directorio]
+
+En este directorio encontrara un ejemplo sobre como implementar una estructura lineal (FIFO - colas) utilizando listas simples, mediante programación orientada a objetos (el ejemplo se encuentra en proyecto de codebocks).
+
+## queue array [directorio]
+
+En este directorio encontrara un ejemplo sobre como implementar una estructura lineal (FIFO - colas) utilizando arrays, mediante programación orientada a objetos (el ejemplo se encuentra en proyecto de codebocks).
+
 ## Recursividad [directorio]
 
 En este directorio encontraras programas de ejemplos sobre el tema de recursividad y recursividad lineal, mediante los siguientes ejemplos.-
@@ -32,6 +40,10 @@ En este directorio encontraras programas de ejemplos sobre el tema de recursivid
 * Número phi.
 * Serie fibonacci.
 * Torre de Hanoi.
+
+## Stacks dinamico [directorio]
+
+En este directorio encontrara un ejemplo sobre como implementar una estructura dinamica (LIFO) utilizando listas simples, mediante programación orientada a objetos (el ejemplo se encuentra en proyecto de codebocks).
 
 ## Stacks array [directorio]
 
