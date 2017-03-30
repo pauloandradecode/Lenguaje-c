@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1490834936 source:/home/paulo/github/Lenguaje-c/Estructura de Datos/Apuntes/Order list dinamico/List.cpp
+	<cstdio>
+	"List.hpp"
+
+1490834693 /home/paulo/github/Lenguaje-c/Estructura de Datos/Apuntes/Order list dinamico/List.hpp
+
+1490834698 source:/home/paulo/github/Lenguaje-c/Estructura de Datos/Apuntes/Order list dinamico/main.cpp
+	<cstdio>
+	<cstdlib>
+	<ctime>
+	"List.hpp"
+
