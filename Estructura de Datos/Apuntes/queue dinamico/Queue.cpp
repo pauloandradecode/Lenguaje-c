@@ -61,7 +61,7 @@ void Queue::enqueue(int x)
         // Incremento tamaño
         _s++;
     } else {
-        // Mostramos emensaje en caso de que la cola este llena
+        // Mostramos el mensaje en caso de que la cola este llena
         printf("Cola llena \n");
     }
 }
