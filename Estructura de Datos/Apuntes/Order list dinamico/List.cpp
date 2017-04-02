@@ -56,9 +56,6 @@ bool List::ins(int x)
         if(start == NULL){
             // Si esta vacia, creamos el primer nodo
             start = new Node(x);
-            // Incrementamos tamaño de la lista
-            _s++;
-            return true;
         } else {
             // p es igual al inicio de la lista
             p = start;
@@ -86,15 +83,16 @@ bool List::ins(int x)
                 q->next(aux);
                 aux->next(p);
             }
-            // Incrementamos tamaño de la lista
-            _s++;
-            return true;
         }
-    } else {
-        // Mostramos el mensaje en caso de que la cola este llena
-        printf("Lista llena ");
-        return false;
+
+        // Incrementamos tamaño de la lista
+        _s++;
+        return true;
     }
+
+    // Mostramos el mensaje en caso de que la lista este llena
+    printf("Lista llena ");
+    return false;
 }
 
 // Funcion para extraccion de datos
@@ -116,7 +114,7 @@ int List::ext()
         return data;
     }
 
-    // Imprime un mensaje si la cola esta vacia
+    // Imprime un mensaje si la lista esta vacia
     printf("Lista vacia\n");
     return 0;
 }
@@ -129,7 +127,7 @@ int List::read()
         return start->data();
     }
 
-    // Mostramos mensaje en caso de cola vacia
+    // Mostramos mensaje en caso de lista vacia
     printf("Lista vacia\n");
     return 0;
 }

@@ -34,7 +34,7 @@ int main()
 
     // Mostramos y vaciamos la pila
     while(!lista.empty()){
-        // Mostramos el tamaño de la cola y el valor obtenido
+        // Mostramos el tamaño de la lista y el valor obtenido
         printf("[%i]: Pop %i\n", lista.size(), lista.ext());
     }
 
