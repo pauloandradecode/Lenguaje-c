@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1491226683 source:/home/paulo/github/Lenguaje-c/Estructura de Datos/Apuntes/olist/main.cpp
+	<cstdio>
+	<cstdlib>
+	<ctime>
+	"olist.hpp"
+
+1491226165 /home/paulo/github/Lenguaje-c/Estructura de Datos/Apuntes/olist/olist.hpp
+
+1491226456 source:/home/paulo/github/Lenguaje-c/Estructura de Datos/Apuntes/olist/olist.cpp
+	<cstdio>
+	"olist.hpp"
+
