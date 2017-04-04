@@ -4,17 +4,21 @@ Integrantes:
     Andrade Gonzlez Paulo Cesar
     Lazo Godinez Maria Ines
     Lopez Gacia Romina Arantxa
-    Sanches Gutierrez Alejandra Amaranta
+    Sanchez Gutierrez Alejandra Amaranta
 Nota: Implementacion de colas con estructuras dinamicas
 */
 
 #include <cstdio>
+#include <cstdlib>
 #include "Queue.hpp"
+#include "Process.hpp"
 
 int main()
 {
-    puts("*****************************************");
-    puts("                SHEDULING");
-    puts("*****************************************");
+    Process p;
+
+    // Mostramos el menu
+    p.menu();
+
     return 0;
 }

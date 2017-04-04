@@ -4,7 +4,7 @@ Integrantes:
     Andrade Gonzlez Paulo Cesar
     Lazo Godinez Maria Ines
     Lopez Gacia Romina Arantxa
-    Sanches Gutierrez Alejandra Amaranta
+    Sanchez Gutierrez Alejandra Amaranta
 Nota: Implementacion de colas con estructuras dinamicas
 */
 
