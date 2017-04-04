@@ -40,13 +40,13 @@ Clase List
 ***********************************************/
 
 // Constructor
-List::List(int n): _n(n), _s(0), start(NULL), p(NULL), q(NULL) {}
+List::List(int n): _n(n), _s(0), start(NULL) {}
 // Destructor
 List::~List() {}
 
 // Metodos para la lista ordenada
 
-// Funcion para inserccion de datos
+// Metodo para inserccion de datos
 // Algoritmo de inserccion
 bool List::ins(int x)
 {
@@ -58,7 +58,8 @@ bool List::ins(int x)
             start = new Node(x);
         } else {
             // p es igual al inicio de la lista
-            p = start;
+            Node *p = start;
+            Node *q = NULL;
 
             // Recorremos la lista en busca del punto de inserccion
             while(p != NULL && p->data() < x){
@@ -100,18 +101,18 @@ int List::ext()
 {
     // Precondicion
     if(!empty()){
-        Node *aux = start;
         // Respaldamos el dato
         int data = start->data();
-        // Apuntamos al siguiente nodo
-        start = start->next();
-        // Eliminamos el auxiliar
-        delete aux;
-        // Decrementamos el tamaño
-        _s--;
 
-        // Regresamos el dato
-        return data;
+        // Buscamos y eliminamos el nodo
+        if(supr(data)){
+            // Decrementamos el tamaño
+            _s--;
+
+            // Regresamos el dato
+            return data;
+        }
+        return 0;
     }
 
     // Imprime un mensaje si la lista esta vacia
@@ -119,15 +120,73 @@ int List::ext()
     return 0;
 }
 
-// Funcion para lectura de datos
-int List::read()
+// Metodo para busqueda de nodos
+// Adaptado para retornar un nodo anteriro al que se busca
+List::Node *List::search(int x)
 {
     if(!empty()){
-        // Retornamos el dato
-        return start->data();
+        // Inicializamos el puntero p
+        Node *p = start;
+        Node *q = NULL;
+
+        // Recorremos en busca del nodo
+        while(p && p->data() < x){
+            q = p;
+            p = p->next();
+        }
+
+        // Verificamos si el dato buscado es igual al del nodo
+        if(p && p->data() == x) return q; // Retornamos el nodo
+        else return NULL; // Retornamos null, al no encontrar el dato
     }
 
-    // Mostramos mensaje en caso de lista vacia
-    printf("Lista vacia\n");
-    return 0;
+    return NULL;
+}
+
+// Metodo para la eliminacion de nodos
+bool List::supr(int x)
+{
+    // Precondicion
+    if(!empty()){
+        // Inicializamos el puntero p
+        Node *p = start;
+        Node *q = NULL;
+
+        // Buscamos el item
+        if(q = search(x)) p = q->next();
+
+        // Verificamos si encontramos el item
+        if(p && p->data() == x){
+            if(p == start){
+                // Eliminamos por el frente
+                start = p->next();
+            } else {
+                // Eliminamos por en medio
+                q->next(p->next());
+            }
+
+            // Eliminamos p
+            delete p;
+
+            // Retornamos true por eliminar el nodo
+            return true;
+        }
+    }
+    // Retornamos false por no eliminar ningun nodo
+    return false;
+}
+
+// Imprimimos una lista externa
+void print(List &l)
+{
+    // Los datos privados se pueden acceder por que es una funcion amiga
+    // l es un dato concretro por eso se utiliza (.) para acceder a sus propiedades y metodos
+    printf("[%i]: ", l.size());
+
+    for(List::Node *p = l.start; p; p = p->next()){
+        // Imprimimos el dato a eliminar
+        printf("%4i", l.ext());
+    }
+
+    printf("\n");
 }

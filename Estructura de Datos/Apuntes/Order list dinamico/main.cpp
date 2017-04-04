@@ -33,10 +33,7 @@ int main()
     printf("\n\n Vaciando la lista ordenada \n\n");
 
     // Mostramos y vaciamos la pila
-    while(!lista.empty()){
-        // Mostramos el tamaño de la lista y el valor obtenido
-        printf("[%i]: Pop %i\n", lista.size(), lista.ext());
-    }
+    print(lista);
 
     return 0;
 }

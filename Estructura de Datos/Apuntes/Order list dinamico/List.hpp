@@ -32,10 +32,9 @@ class List
     };
 
     Node *start; // Nodo inicial
-    Node *p; // Apuntador
-    Node *q; // Apuntador
     int _n; // Capacidad de la pila
     int _s; // Tamaño de la pila
+    friend void print(List &); // Funcion amiga para acceder a datos privados
 
     public:
         // Constructor
@@ -43,17 +42,22 @@ class List
         // Destructor
         ~List();
 
-        // Funciones de utileria
+        // Metodos de utileria
         int capacity() const { return _n; } // Obtenemos capacidad
         int size() const { return _s; } // Obtenemos tamaño
         bool empty() { return _s == 0; } // Vacuidad
         bool full() { return _s == _n; } // Plenitud
 
-        // Funciones para listas ordenadas
-        bool ins(int); // Funcion para inserccion de datos
-        int ext(); // Funcion para extraccion de datos
-        int read(); // Funcion para lectura de datos
+        // Metodos para listas ordenadas
+        bool ins(int); // Metodo para inserccion de datos
+        int ext(); // Metodo para extraccion de datos
+        int read(); // Metodo para lectura de datos
+        List::Node *search(int); // Metodo para busqueda
+        bool supr(int); // Metodo para suprimir un nodo
 };
+
+// Funcion externa para imprimir
+extern void print(List &l);
 
 #endif // LIST_HPP_INCLUDED
 
