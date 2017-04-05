@@ -96,6 +96,7 @@ bool List::search()
 {
     return true;
 }
+
 // Funcion para eliminar un nodo
 int List::supr()
 {
