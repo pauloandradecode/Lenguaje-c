@@ -60,6 +60,10 @@ class Queue
         void enqueue(char, int, int); // Ingresa nodo al final de la lista
         int dequeue(); // Obtiene el dato del frente de la lista y elimina el nodo
         int front(); // Obtiene el dato del frente de la lista
+        int quantum(); // Obtenemos el quantum de los procesos
+        void orderByPriority(); // Ordenamos la cola por prioridad
+        Queue::Node *search(char); // Buscamos un nodo
+        bool supr(char); // Eliminamos un nodo
 };
 
 #endif // QUEUE_HPP_INCLUDED

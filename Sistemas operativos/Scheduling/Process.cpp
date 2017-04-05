@@ -10,8 +10,11 @@ Nota: Implementacion del programa
 
 #include <cstdio>
 #include <cstdlib>
+#include <iostream>
 #include "Process.hpp"
 #include "Queue.hpp"
+
+using namespace std;
 
 /***********************************************
 Clase Process
@@ -52,6 +55,51 @@ void Process::menu()
         case 3: // Round Robin
             break;
         case 4: // Prioridad
+            priority();
             break;
     }
+}
+
+// Metodo con el algoritmo de prioridad
+void Process::priority()
+{
+    // Ingresamos los datos
+    Queue *q = push();
+
+    // Obtenemos el quantum
+    int quantum = q->quantum();
+
+    // Ordenamos por prioridad
+    q->orderByPriority();
+}
+
+// Metodo para imprimir los resultados
+void Process::print()
+{
+
+}
+
+// Metodo para ingresar datos
+Queue *Process::push()
+{
+    char x; // ID del proceso
+    int n; // Capacidad
+    int y; // Tiempo del proceso
+    int z; // Prioridad del proceso
+
+    // Obtenemos la capacidad
+    printf("\nIngrese el total de procesos: ");
+    cin >> n;
+
+    // Inicializamos una cola
+    Queue *q = new Queue(n);
+
+    // Ingresamos los datos
+    puts("Ingrese el proceso, ej.- A 5 10 [ID Time Prioridad]:");
+    for(int i = 0; i < n; i++){
+        cin >> x >> y >> z;
+        q->enqueue(x, y, z);
+    }
+
+    return q;
 }

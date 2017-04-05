@@ -32,6 +32,10 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Process.cpp" />
+		<Unit filename="Process.hpp" />
+		<Unit filename="Queue.cpp" />
+		<Unit filename="Queue.hpp" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />

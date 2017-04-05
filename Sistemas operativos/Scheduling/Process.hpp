@@ -12,6 +12,7 @@ Nota: Implementacion del programa
 #define PROCESS_HPP_INCLUDED
 
 #include <cstdio>
+#include "Queue.hpp"
 
 // Clase para los procesos del programa
 class Process
@@ -21,6 +22,9 @@ class Process
         Process();
         // Metodos de la clase
         void menu(); // Metodo que muestra el menu del programa
+        void priority(); // Metodo con el algoritmo de prioridad
+        void print(); // Metodo para imprimir los resultados
+        Queue *push(); // Metodo para insertar datos
 };
 
 #endif // QUEUE_HPP_INCLUDED

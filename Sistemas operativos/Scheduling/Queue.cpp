@@ -127,3 +127,114 @@ int Queue::front()
     printf("Cola vacia\n");
     return 0;
 }
+
+// Obtenemos el quantum de los procesos
+int Queue::quantum()
+{
+    // precondicion
+    if(!empty()){
+        int x = 0; // Suma para el quantum
+        Node *p = start; // Inicializamos el nodo inicio
+
+        // Obtenemos la suma del tiempo
+        while(p){
+            x += p->time();
+            p = p->next();
+        }
+
+        return x / _s;
+    }
+
+    return 0;
+}
+
+// Ordenamos la cola por prioridad
+void Queue::orderByPriority()
+{
+    // Precondicion
+    if(!empty()){
+        // p es igual al inicio de la lista
+        Node *p = start;
+        Node *q = NULL;
+
+        // Eliminamos el nodo
+        if(supr(temp->id())){
+            // Recorremos la lista en busca del punto de inserccion
+            while(p != NULL && p->priority() <= temp->priority()){
+                q = p;
+                p = p->next();
+            }
+
+            // Creamos un nodo
+            Node *aux = new Node(temp->id(), temp->time(), temp->priority());
+
+            // Verificamos si p == NULL e insertamos al final
+            if(p == NULL) q->next(aux);
+            else if(p == start) {
+                // Insertamos al final de la lista
+                aux->next(start);
+                start = aux;
+            } else {
+                // Insertamos a la mitad de la lista
+                q->next(aux);
+                aux->next(p);
+            }
+        }
+    }
+}
+
+// Metodo para busqueda de nodos
+// Adaptado para retornar un nodo anteriro al que se busca
+Queue::Node *Queue::search(char x)
+{
+    if(!empty()){
+        // Inicializamos el puntero p
+        Node *p = start;
+        Node *q = NULL;
+
+        // Recorremos en busca del nodo
+        while(p && p->id() < x){
+            q = p;
+            p = p->next();
+        }
+
+        // Verificamos si el dato buscado es igual al del nodo
+        if(p && p->id() == x) return q; // Retornamos el nodo
+        else return NULL; // Retornamos null, al no encontrar el dato
+    }
+
+    return NULL;
+}
+
+// Metodo para la eliminacion de nodos
+bool Queue::supr(char x)
+{
+    // Precondicion
+    if(!empty()){
+        // Inicializamos el puntero p
+        Node *p = start;
+        Node *q = NULL;
+
+        // Buscamos el item
+        if(q = search(x)) p = q->next();
+
+        // Verificamos si encontramos el item
+        if(p && p->id() == x){
+            if(p == start){
+                // Eliminamos por el frente
+                start = p->next();
+            } else {
+                // Eliminamos por en medio
+                q->next(p->next());
+            }
+
+            // Eliminamos p
+            delete p;
+
+            // Retornamos true por eliminar el nodo
+            return true;
+        }
+    }
+    // Retornamos false por no eliminar ningun nodo
+    return false;
+}
