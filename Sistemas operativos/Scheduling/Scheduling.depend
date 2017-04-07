@@ -7,11 +7,11 @@
 
 1491524067 /home/paulo/github/Lenguaje-c/Sistemas operativos/Scheduling/Queue.hpp
 
-1491521242 source:/home/paulo/github/Lenguaje-c/Sistemas operativos/Scheduling/Queue.cpp
+1491524036 source:/home/paulo/github/Lenguaje-c/Sistemas operativos/Scheduling/Queue.cpp
 	<cstdio>
 	"Queue.hpp"
 
-1491395661 /home/paulo/github/Lenguaje-c/Sistemas operativos/Scheduling/Process.hpp
+1491524535 /home/paulo/github/Lenguaje-c/Sistemas operativos/Scheduling/Process.hpp
 	<cstdio>
 	"Queue.hpp"
 

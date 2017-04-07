@@ -64,7 +64,7 @@ void Process::menu()
 void Process::priority()
 {
     // Ingresamos los datos
-    Queue *q = push();
+    Queue *q = push(true);
 
     // Obtenemos el quantum
     int quantum = q->quantum();
@@ -74,7 +74,8 @@ void Process::priority()
 }
 
 // Metodo para ingresar datos
-Queue *Process::push()
+// @param type Tipo de ordenamiento [NULL-normal, true-prioridad, false-tiempo]
+Queue *Process::push(bool type)
 {
     char x; // ID del proceso
     int n; // Capacidad
@@ -92,7 +93,10 @@ Queue *Process::push()
     puts("Ingrese el proceso, ej.- A 5 10 [ID Time Prioridad]:");
     for(int i = 0; i < n; i++){
         cin >> x >> y >> z;
-        q->orderbypriority(x, y, z);
+        // Decidimos el ordenamiento de la cola
+        if(type == NULL) q->enqueue(x, y, z);
+        else if(type) q->orderbypriority(x, y, z);
+        else q->orderbytime(x, y, z);
     }
 
     return q;

@@ -23,7 +23,7 @@ class Process
         // Metodos de la clase
         void menu(); // Metodo que muestra el menu del programa
         void priority(); // Metodo con el algoritmo de prioridad
-        Queue *push(); // Metodo para insertar datos
+        Queue *push(bool); // Metodo para insertar datos
 };
 
 #endif // QUEUE_HPP_INCLUDED
