@@ -5,7 +5,7 @@ Integrantes:
     Lazo Godinez Maria Ines
     Lopez Gacia Romina Arantxa
     Sanchez Gutierrez Alejandra Amaranta
-Nota: Implementacion del programa
+Nota: Implementacion de la clase Process
 */
 
 #include <cstdio>
@@ -26,37 +26,41 @@ Process::Process() {}
 // Metodo que muestra el menu
 void Process::menu()
 {
-    int option = 0;
+    while(true){
+        char *option;
 
-    do{
-        // Limpiamos la pantalla
-        system("clear");
-        // Nombre del programa
-        puts("*****************************************");
-        puts("                SHEDULING");
-        puts("*****************************************");
-        puts("\n1.- FIFO");
-        puts("2.- SJF");
-        puts("3.- Round Robin");
-        puts("4.- Prioridad");
-        printf("\nElija una opcion: ");
+        do{
+            // Limpiamos la pantalla
+            system("clear");
+            // Nombre del programa
+            puts("*****************************************");
+            puts("                SHEDULING");
+            puts("*****************************************");
+            puts("\n1.- FIFO");
+            puts("2.- SJF");
+            puts("3.- Round Robin");
+            puts("4.- Prioridad");
+            printf("\nElija una opcion: ");
 
-        scanf("%i", &option);
+            cin >> option;
 
-        // Verificamos si es un numero
+            // Verificamos si es un numero
+        } while(*option < 48 || *option > 52);
 
-    } while(option < 1 || option > 4);
-
-    switch(option){
-        case 1: // FIFO
-            break;
-        case 2: // SJF
-            break;
-        case 3: // Round Robin
-            break;
-        case 4: // Prioridad
-            priority();
-            break;
+        switch(*option){
+            case '1': // FIFO
+                fifo();
+                break;
+            case '2': // SJF
+                sjf();
+                break;
+            case '3': // Round Robin
+                roundrobin();
+                break;
+            case '4': // Prioridad
+                priority();
+                break;
+        }
     }
 }
 
@@ -100,4 +104,41 @@ Queue *Process::push(bool type)
     }
 
     return q;
+}
+
+// Metodo con el algoritmo de fifo
+void Process::fifo()
+{
+    puts("\nInes, haber a que hora terminas :)");
+
+    cin.ignore(256,'\n'); // Limpiamos el buffer
+    getchar();
+    puts("Presione cualquier tecla para continuar");
+}
+
+// Metodo con el algoritmo de sjf
+void Process::sjf()
+{
+    puts("\nHay tenias que ser Amaranta, por favor por una ves en tu vida, terminalo :(");
+
+    cin.ignore(256,'\n'); // Limpiamos el buffer
+    getchar();
+    puts("Presione cualquier tecla para continuar");
+}
+
+// Metodo con el algoritmo de round robin
+void Process::roundrobin()
+{
+    puts("\nRomina, no manches, cuando piensas terminar :P");
+
+    cin.ignore(256,'\n'); // Limpiamos el buffer
+    getchar();
+    puts("Presione cualquier tecla para continuar");
+}
+
+int Process::isnumber(int x)
+{
+
+
+    return 0;
 }
