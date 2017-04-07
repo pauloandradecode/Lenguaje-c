@@ -32,6 +32,8 @@ class Queue
             char id() const; // Nos devuelve el ID del proceso
             int time() const; // Nos devuelve el tiempo del proceso
             int priority() const; // Nos devuelve la prioridad del proceso
+            void settime(int); // cambiamos el tiempo del proceso
+            void setpriority(int); // cambiamos la prioridad del proceso
             Node *next() const; // Nos devuelve el siguiente nodo (si no existe retorna NULL)
 
             // Metodo que permite modificar el apuntador
@@ -64,9 +66,11 @@ class Queue
         int quantum(); // Obtenemos el quantum de los procesos
         void orderbypriority(char, int, int); // Ordenamos la cola por prioridad
         void orderbytime(char, int, int); // Ordenamos la cola por tiempo
+        void orderbyid(char, int, int); // Ordenamos la cola por id
         Queue::Node *search(char); // Buscamos un nodo
         bool supr(char); // Eliminamos un nodo
         void print(); // Metodo para imprimir los resultados
+        void result(); // Metodo para imprimir los resultados
         void processpriority(int); // Metodo para procesar el algoritmo de prioridad
 };
 

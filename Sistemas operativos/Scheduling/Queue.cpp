@@ -40,6 +40,18 @@ int Queue::Node::priority() const {
     return _priority;
 }
 
+// cambiamos el tiempo del proceso
+void Queue::Node::settime(int x)
+{
+    _time = x;
+}
+
+// cambiamos la prioridad del proceso
+void Queue::Node::setpriority(int x)
+{
+    _priority = x;
+}
+
 Queue::Node *Queue::Node::next() const
 {
     return _next;
@@ -165,7 +177,7 @@ void Queue::orderbypriority(char x, int y, int z)
             Node *q = NULL;
 
             // Recorremos la lista en busca del punto de inserccion
-            while(p != NULL && p->priority() > z){
+            while(p != NULL && p->priority() >= z){
                 q = p;
                 p = p->next();
             }
@@ -211,7 +223,53 @@ void Queue::orderbytime(char x, int y, int z)
             Node *q = NULL;
 
             // Recorremos la lista en busca del punto de inserccion
-            while(p != NULL && p->time() < x){
+            while(p != NULL && p->time() < y){
+                q = p;
+                p = p->next();
+            }
+
+            // Creamos un nodo
+            Node *aux = new Node(x, y, z);
+
+            // Verificamos si p == NULL e insertamos al final
+            if(p == NULL) q->next(aux);
+            else if(p == start) {
+                // Insertamos al final de la lista
+                aux->next(start);
+                start = aux;
+            } else {
+                // Insertamos a la mitad de la lista
+                q->next(aux);
+                aux->next(p);
+            }
+        }
+
+        // Incremento tamaño
+        _s++;
+    } else {
+        // Mostramos el mensaje en caso de que la cola este llena
+        printf("Cola llena \n");
+    }
+}
+
+// Ordenamos la cola por id
+// @param x ID del proceso
+// @param y Tiempo del proceso
+// @param z Prioridad del proceso
+void Queue::orderbyid(char x, int y, int z)
+{
+    // precondicion
+    if(!full()){
+        if(empty()){
+            // Creamos la cola
+            start = eoq = new Node(x, y, z);
+        } else {
+            // p es igual al inicio de la lista
+            Node *p = start;
+            Node *q = NULL;
+
+            // Recorremos la lista en busca del punto de inserccion
+            while(p != NULL && p->id() < x){
                 q = p;
                 p = p->next();
             }
@@ -288,6 +346,8 @@ bool Queue::supr(char x)
             // Eliminamos p
             delete p;
 
+            _s--; // Restamos el tamaño de la cola
+
             // Retornamos true por eliminar el nodo
             return true;
         }
@@ -299,13 +359,89 @@ bool Queue::supr(char x)
 // Metodo para imprimir los resultados
 void Queue::print()
 {
-    for(Queue::Node *i = start; i; i = i->next()){
-        printf("[%c] %i %i\n", i->id(), i->time(), i->priority());
+    // Precondicion
+    if(!empty()){
+        for(Queue::Node *i = start; i; i = i->next()){
+            printf("%6i", i->priority());
+        }
+        printf("\n");
+
+        for(Queue::Node *i = start; i; i = i->next()){
+            if(i == start){
+                printf("    ");
+            }
+            printf("[%c]", i->id());
+            if(i->next() != NULL){
+                printf("<--");
+            }
+        }
+        printf("\n");
+
+        for(Queue::Node *i = start; i; i = i->next()){
+            printf("%6i", i->time());
+        }
     }
+}
+
+// Metodo para imprimir los resultados
+void Queue::result()
+{
+    float suma = 0.0;
+
+    printf("   ID  |  Tiempo\n");
+    printf("----------------\n");
+
+    for(Node *p = start; p; p = p->next()){
+        printf("  TR%c  |    %i\n", p->id(), p->time());
+        suma += p->time();
+    }
+
+    printf("-----------------\n");
+    printf("T. promedio = %.1f\n\n", suma / _s);
 }
 
 // Metodo para procesar el algoritmo de prioridad
 void Queue::processpriority(int quantum)
 {
+    float suma = 0.0; // Suma del tiempo total
+    int s = _s; // Tamaño de la cola
+    Node *control = start;
+    Queue *respaldo = new Queue(_s);
 
+    printf("\nProcesando el algoritmo: [quantum=%i]\n\n", quantum);
+
+    print(); // Imprimimos la cola inicialmente
+
+    while(control != NULL){
+        Node *p = start; // Nodo a recorrer
+        Node *aux = NULL;
+
+        // Verificamos si el tiempo es igual o menor al quantum
+        if(p->time() <= quantum){
+            // Encontramos resultado
+            suma += p->time(); // Aumentamos el tiempo total
+            printf("\nTR%c = %.0f\n", p->id(), suma);
+            respaldo->orderbyid(p->id(), (int) suma, p->priority()); // Respaldamos
+            supr(p->id()); // Eliminamos el nodo
+            print(); // Imprimimos la cola
+        } else {
+            // Reordenamos la cola
+            printf("\n->\n|\nt.%i\n|\n->\n", quantum); // Imprimimos el quantum
+            suma += quantum; // Aumentamos el tiempo total
+            p->settime(p->time() - quantum); // Recalculamos el tiempo
+            p->setpriority(p->priority() - 1); // Recalculamos la prioridad
+            aux = new Node(p->id(), p->time(), p->priority()); // Respaldamos el nodo
+            if(supr(p->id())){ // Eliminamos el nodo
+                orderbypriority(aux->id(), aux->time(), aux->priority()); // Reordenamos el nodo
+            }
+            print(); // Imprimimos la cola
+        }
+
+        control = start;
+    }
+
+    printf("\nTiempo total: %.0f\n", suma);
+    printf("Tiempo promedio: %.1f\n\n", suma / s);
+    printf("*** Tabla de resultados ***\n\n");
+    respaldo->result();
 }
