@@ -64,19 +64,6 @@ void Process::menu()
     }
 }
 
-// Metodo con el algoritmo de prioridad
-void Process::priority()
-{
-    // Ingresamos los datos
-    Queue *q = push(true);
-
-    // Obtenemos el quantum
-    int quantum = q->quantum();
-
-    // Imprimimos
-    q->print();
-}
-
 // Metodo para ingresar datos
 // @param type Tipo de ordenamiento [NULL-normal, true-prioridad, false-tiempo]
 Queue *Process::push(bool type)
@@ -94,7 +81,7 @@ Queue *Process::push(bool type)
     Queue *q = new Queue(n);
 
     // Ingresamos los datos
-    puts("Ingrese el proceso, ej.- A 5 10 [ID Time Prioridad]:");
+    puts("\nIngrese el proceso, ej.- A 5 10 [ID Time Prioridad]:");
     for(int i = 0; i < n; i++){
         cin >> x >> y >> z;
         // Decidimos el ordenamiento de la cola
@@ -109,31 +96,60 @@ Queue *Process::push(bool type)
 // Metodo con el algoritmo de fifo
 void Process::fifo()
 {
+    // Limpiamos la pantalla
+    system("clear");
+
     puts("\nInes, haber a que hora terminas :)");
 
     cin.ignore(256,'\n'); // Limpiamos el buffer
+    puts("\n\nPresione cualquier tecla para continuar");
     getchar();
-    puts("Presione cualquier tecla para continuar");
 }
 
 // Metodo con el algoritmo de sjf
 void Process::sjf()
 {
+    // Limpiamos la pantalla
+    system("clear");
+
     puts("\nHay tenias que ser Amaranta, por favor por una ves en tu vida, terminalo :(");
 
     cin.ignore(256,'\n'); // Limpiamos el buffer
+    puts("\n\nPresione cualquier tecla para continuar");
     getchar();
-    puts("Presione cualquier tecla para continuar");
 }
 
 // Metodo con el algoritmo de round robin
 void Process::roundrobin()
 {
+    // Limpiamos la pantalla
+    system("clear");
+
     puts("\nRomina, no manches, cuando piensas terminar :P");
 
     cin.ignore(256,'\n'); // Limpiamos el buffer
+    puts("\n\nPresione cualquier tecla para continuar");
     getchar();
-    puts("Presione cualquier tecla para continuar");
+}
+
+// Metodo con el algoritmo de prioridad
+void Process::priority()
+{
+    // Limpiamos la pantalla
+    system("clear");
+
+    // Ingresamos los datos
+    Queue *q = push(true);
+
+    // Obtenemos el quantum
+    int quantum = q->quantum();
+
+    // Relizamos el proceso
+    q->processpriority(quantum);
+
+    cin.ignore(256,'\n'); // Limpiamos el buffer
+    puts("\n\nPresione cualquier tecla para continuar");
+    getchar();
 }
 
 int Process::isnumber(int x)

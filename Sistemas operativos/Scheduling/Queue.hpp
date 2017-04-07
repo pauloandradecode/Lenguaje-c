@@ -67,6 +67,7 @@ class Queue
         Queue::Node *search(char); // Buscamos un nodo
         bool supr(char); // Eliminamos un nodo
         void print(); // Metodo para imprimir los resultados
+        void processpriority(int); // Metodo para procesar el algoritmo de prioridad
 };
 
 #endif // QUEUE_HPP_INCLUDED

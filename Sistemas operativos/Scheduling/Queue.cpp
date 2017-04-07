@@ -303,3 +303,9 @@ void Queue::print()
         printf("[%c] %i %i\n", i->id(), i->time(), i->priority());
     }
 }
+
+// Metodo para procesar el algoritmo de prioridad
+void Queue::processpriority(int quantum)
+{
+
+}
