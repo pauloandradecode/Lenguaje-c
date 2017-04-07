@@ -149,24 +149,29 @@ int Queue::quantum()
 }
 
 // Ordenamos la cola por prioridad
-void Queue::orderByPriority()
+// @param x ID del proceso
+// @param y Tiempo del proceso
+// @param z Prioridad del proceso
+void Queue::orderbypriority(char x, int y, int z)
 {
-    // Precondicion
-    if(!empty()){
-        // p es igual al inicio de la lista
-        Node *p = start;
-        Node *q = NULL;
+    // precondicion
+    if(!full()){
+        if(empty()){
+            // Creamos la cola
+            start = eoq = new Node(x, y, z);
+        } else {
+            // p es igual al inicio de la lista
+            Node *p = start;
+            Node *q = NULL;
 
-        // Eliminamos el nodo
-        if(supr(temp->id())){
             // Recorremos la lista en busca del punto de inserccion
-            while(p != NULL && p->priority() <= temp->priority()){
+            while(p != NULL && p->priority() > z){
                 q = p;
                 p = p->next();
             }
 
             // Creamos un nodo
-            Node *aux = new Node(temp->id(), temp->time(), temp->priority());
+            Node *aux = new Node(x, y, z);
 
             // Verificamos si p == NULL e insertamos al final
             if(p == NULL) q->next(aux);
@@ -180,6 +185,58 @@ void Queue::orderByPriority()
                 aux->next(p);
             }
         }
+
+        // Incremento tamaño
+        _s++;
+    } else {
+        // Mostramos el mensaje en caso de que la cola este llena
+        printf("Cola llena \n");
+    }
+}
+
+// Ordenamos la cola por tiempo
+// @param x ID del proceso
+// @param y Tiempo del proceso
+// @param z Prioridad del proceso
+void Queue::orderbytime(char x, int y, int z)
+{
+    // precondicion
+    if(!full()){
+        if(empty()){
+            // Creamos la cola
+            start = eoq = new Node(x, y, z);
+        } else {
+            // p es igual al inicio de la lista
+            Node *p = start;
+            Node *q = NULL;
+
+            // Recorremos la lista en busca del punto de inserccion
+            while(p != NULL && p->time() < x){
+                q = p;
+                p = p->next();
+            }
+
+            // Creamos un nodo
+            Node *aux = new Node(x, y, z);
+
+            // Verificamos si p == NULL e insertamos al final
+            if(p == NULL) q->next(aux);
+            else if(p == start) {
+                // Insertamos al final de la lista
+                aux->next(start);
+                start = aux;
+            } else {
+                // Insertamos a la mitad de la lista
+                q->next(aux);
+                aux->next(p);
+            }
+        }
+
+        // Incremento tamaño
+        _s++;
+    } else {
+        // Mostramos el mensaje en caso de que la cola este llena
+        printf("Cola llena \n");
     }
 }
 
@@ -237,4 +294,12 @@ bool Queue::supr(char x)
     }
     // Retornamos false por no eliminar ningun nodo
     return false;
+}
+
+// Metodo para imprimir los resultados
+void Queue::print()
+{
+    for(Queue::Node *i = start; i; i = i->next()){
+        printf("[%c] %i %i\n", i->id(), i->time(), i->priority());
+    }
 }

@@ -69,14 +69,8 @@ void Process::priority()
     // Obtenemos el quantum
     int quantum = q->quantum();
 
-    // Ordenamos por prioridad
-    q->orderByPriority();
-}
-
-// Metodo para imprimir los resultados
-void Process::print()
-{
-
+    // Imprimimos
+    q->print();
 }
 
 // Metodo para ingresar datos
@@ -98,7 +92,7 @@ Queue *Process::push()
     puts("Ingrese el proceso, ej.- A 5 10 [ID Time Prioridad]:");
     for(int i = 0; i < n; i++){
         cin >> x >> y >> z;
-        q->enqueue(x, y, z);
+        q->orderbypriority(x, y, z);
     }
 
     return q;

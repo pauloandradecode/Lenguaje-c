@@ -55,15 +55,18 @@ class Queue
         int size() const { return _s; } // Obtenemos tamaño
         bool empty() { return _s == 0; } // Vacuidad
         bool full() { return _s == _n; } // Plenitud
+        Queue::Node *started() { return start; }
 
         // Metodos para colas
         void enqueue(char, int, int); // Ingresa nodo al final de la lista
         int dequeue(); // Obtiene el dato del frente de la lista y elimina el nodo
         int front(); // Obtiene el dato del frente de la lista
         int quantum(); // Obtenemos el quantum de los procesos
-        void orderByPriority(); // Ordenamos la cola por prioridad
+        void orderbypriority(char, int, int); // Ordenamos la cola por prioridad
+        void orderbytime(char, int, int); // Ordenamos la cola por tiempo
         Queue::Node *search(char); // Buscamos un nodo
         bool supr(char); // Eliminamos un nodo
+        void print(); // Metodo para imprimir los resultados
 };
 
 #endif // QUEUE_HPP_INCLUDED

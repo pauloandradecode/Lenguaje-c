@@ -23,7 +23,6 @@ class Process
         // Metodos de la clase
         void menu(); // Metodo que muestra el menu del programa
         void priority(); // Metodo con el algoritmo de prioridad
-        void print(); // Metodo para imprimir los resultados
         Queue *push(); // Metodo para insertar datos
 };
 
