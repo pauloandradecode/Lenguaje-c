@@ -28,8 +28,6 @@ class Process
         void sjf(); // Metodo con el algoritmo de sjf
         void roundrobin(); // Metodo con el algoritmo de round robin
         Queue *push(bool); // Metodo para insertar datos
-        int isnumber(int); // Metodo para checar si es un numero
 };
 
 #endif // QUEUE_HPP_INCLUDED
-

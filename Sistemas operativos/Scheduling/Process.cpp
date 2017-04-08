@@ -23,16 +23,19 @@ Clase Process
 // Constructor
 Process::Process() {}
 
-// Metodo que muestra el menu
+// Metodo que muestra el menu principal del programa
 void Process::menu()
 {
+    // Corremos el ciclo infinitamente
     while(true){
-        char *option;
+        // Inicializamos option para elegir opcion del menu
+        char *option = new char;
 
         do{
             // Limpiamos la pantalla
             system("clear");
-            // Nombre del programa
+
+            // Nombre del programa y opciones
             puts("*****************************************");
             puts("                SHEDULING");
             puts("*****************************************");
@@ -42,11 +45,13 @@ void Process::menu()
             puts("4.- Prioridad");
             printf("\nElija una opcion: ");
 
+            // Capturamos el valor de option
             cin >> option;
 
             // Verificamos si es un numero
         } while(*option < 48 || *option > 52);
 
+        // Elegimos un algoritbo con base a option
         switch(*option){
             case '1': // FIFO
                 fifo();
@@ -85,7 +90,7 @@ Queue *Process::push(bool type)
     for(int i = 0; i < n; i++){
         cin >> x >> y >> z;
         // Decidimos el ordenamiento de la cola
-        if(type == NULL) q->enqueue(x, y, z);
+        if(type == (bool) NULL) q->enqueue(x, y, z);
         else if(type) q->orderbypriority(x, y, z);
         else q->orderbytime(x, y, z);
     }
@@ -138,7 +143,7 @@ void Process::priority()
     // Limpiamos la pantalla
     system("clear");
 
-    // Ingresamos los datos
+    // Ingresamos los datos a la cola
     Queue *q = push(true);
 
     // Obtenemos el quantum
@@ -147,14 +152,8 @@ void Process::priority()
     // Relizamos el proceso
     q->processpriority(quantum);
 
-    cin.ignore(256,'\n'); // Limpiamos el buffer
+    // Limpiamos el buffer
+    cin.ignore(256,'\n');
     puts("\n\nPresione cualquier tecla para continuar");
     getchar();
-}
-
-int Process::isnumber(int x)
-{
-
-
-    return 0;
 }

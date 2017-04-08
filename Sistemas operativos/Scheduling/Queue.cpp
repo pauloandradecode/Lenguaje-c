@@ -69,7 +69,7 @@ Clase Queue
 ***********************************************/
 
 // Constructor
-Queue::Queue(int n): _n(n), _s(0), start(NULL), eoq(NULL) {}
+Queue::Queue(int n): start(NULL), eoq(NULL), _n(n), _s(0) {}
 // Destructor
 Queue::~Queue() {
     delete start;
@@ -154,6 +154,7 @@ int Queue::quantum()
             p = p->next();
         }
 
+
         return x / _s;
     }
 
@@ -168,8 +169,9 @@ void Queue::orderbypriority(char x, int y, int z)
 {
     // precondicion
     if(!full()){
+        // Verificamos si la cola esta vacia
         if(empty()){
-            // Creamos la cola
+            // Si esta vacia creamos la cola
             start = eoq = new Node(x, y, z);
         } else {
             // p es igual al inicio de la lista
@@ -214,8 +216,9 @@ void Queue::orderbytime(char x, int y, int z)
 {
     // precondicion
     if(!full()){
+        // Verificamos si la lista esta vacia
         if(empty()){
-            // Creamos la cola
+            // Si esta vacia creamos la cola
             start = eoq = new Node(x, y, z);
         } else {
             // p es igual al inicio de la lista
@@ -260,8 +263,9 @@ void Queue::orderbyid(char x, int y, int z)
 {
     // precondicion
     if(!full()){
+        // Verificamos si la cola esta vacia
         if(empty()){
-            // Creamos la cola
+            // si esta vacia creamos la cola
             start = eoq = new Node(x, y, z);
         } else {
             // p es igual al inicio de la lista
@@ -300,8 +304,10 @@ void Queue::orderbyid(char x, int y, int z)
 
 // Metodo para busqueda de nodos
 // Adaptado para retornar un nodo anteriro al que se busca
+// @param x id del nodo a buscar
 Queue::Node *Queue::search(char x)
 {
+    // Verificamos que la cola no este vacia
     if(!empty()){
         // Inicializamos el puntero p
         Node *p = start;
@@ -318,10 +324,12 @@ Queue::Node *Queue::search(char x)
         else return NULL; // Retornamos null, al no encontrar el dato
     }
 
+    // Si no existe el nodo retornamos null
     return NULL;
 }
 
 // Metodo para la eliminacion de nodos
+// @param x ID del nodo a buscar
 bool Queue::supr(char x)
 {
     // Precondicion
@@ -331,7 +339,7 @@ bool Queue::supr(char x)
         Node *q = NULL;
 
         // Buscamos el item
-        if(q = search(x)) p = q->next();
+        if((q = search(x))) p = q->next();
 
         // Verificamos si encontramos el item
         if(p && p->id() == x){
@@ -361,23 +369,33 @@ void Queue::print()
 {
     // Precondicion
     if(!empty()){
+        // Recorremos la cola para imprimir los datos
         for(Queue::Node *i = start; i; i = i->next()){
+            // Imprimimos la prioridad
             printf("%6i", i->priority());
         }
         printf("\n");
 
         for(Queue::Node *i = start; i; i = i->next()){
+            // Verificamos si es el nodo inicial
             if(i == start){
+                // Si lo es imprimimos un espacio extra
                 printf("    ");
             }
+
+            // Imprimimos el ID del proceso
             printf("[%c]", i->id());
+
+            // Verificamos si se trata del ultimo nodo
             if(i->next() != NULL){
+                // Si no lo es agregamos union de nodos
                 printf("<--");
             }
         }
         printf("\n");
 
         for(Queue::Node *i = start; i; i = i->next()){
+            // Imprimimos el tiempo del proceso
             printf("%6i", i->time());
         }
     }
@@ -386,12 +404,15 @@ void Queue::print()
 // Metodo para imprimir los resultados
 void Queue::result()
 {
+    // Suma de los tiempos de los procesos
     float suma = 0.0;
 
     printf("   ID  |  Tiempo\n");
     printf("----------------\n");
 
+    // Recorremos la lista
     for(Node *p = start; p; p = p->next()){
+        // Imprimimos el ID y tiempo del procesp
         printf("  TR%c  |    %i\n", p->id(), p->time());
         suma += p->time();
     }
@@ -401,17 +422,19 @@ void Queue::result()
 }
 
 // Metodo para procesar el algoritmo de prioridad
+// @param quantum Tiempo promedio de los procesos
 void Queue::processpriority(int quantum)
 {
     float suma = 0.0; // Suma del tiempo total
     int s = _s; // Tamaño de la cola
-    Node *control = start;
+    Node *control = start; // Asignamos control igual a inicio de la cola
     Queue *respaldo = new Queue(_s);
 
     printf("\nProcesando el algoritmo: [quantum=%i]\n\n", quantum);
 
     print(); // Imprimimos la cola inicialmente
 
+    // El ciclo correra mientras existan nodos de las colas
     while(control != NULL){
         Node *p = start; // Nodo a recorrer
         Node *aux = NULL;
@@ -429,7 +452,8 @@ void Queue::processpriority(int quantum)
             printf("\n->\n|\nt.%i\n|\n->\n", quantum); // Imprimimos el quantum
             suma += quantum; // Aumentamos el tiempo total
             p->settime(p->time() - quantum); // Recalculamos el tiempo
-            p->setpriority(p->priority() - 1); // Recalculamos la prioridad
+            // Verificamos que la prioridad sea diferente a 1
+            if(p->priority() != 1) p->setpriority(p->priority() - 1); // Recalculamos la prioridad
             aux = new Node(p->id(), p->time(), p->priority()); // Respaldamos el nodo
             if(supr(p->id())){ // Eliminamos el nodo
                 orderbypriority(aux->id(), aux->time(), aux->priority()); // Reordenamos el nodo
@@ -437,6 +461,7 @@ void Queue::processpriority(int quantum)
             print(); // Imprimimos la cola
         }
 
+        // Reasignamos el valor de control
         control = start;
     }
 
