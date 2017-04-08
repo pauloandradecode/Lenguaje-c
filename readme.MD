@@ -33,6 +33,15 @@ En este directorio encontraras los ejemplos de las clases de programación orien
 
 En este directorio encontraras ejemplos de programación desarrollados a partir de varios libros, asi como la referencias a estos.
 
+## Sistemas operativos [directorio]
+
+En este directorio encontraras programas para calcular los tiempos de los procesos de un sistema operativo, se utilizan los siguientes algoritmos para procesarlos.-
+
+* FIFO.
+* SJF.
+* Round Robin.
+* Prioridad.
+
 ## Errores y aclaraciones sobre el código
 
 Si encuentras algun error en el código o la forma de optimizarlo puedes informarme en el siguiente enlace para realizar las correcciones correspondientes.-
