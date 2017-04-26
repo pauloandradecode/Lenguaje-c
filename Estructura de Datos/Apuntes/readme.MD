@@ -5,6 +5,10 @@ Apuntes y programas desarrollados en el curso de estructura de datos.
 
 # contenido
 
+## Binary Tree [directorio]
+
+En este directorio encontrara un ejemplo para implementar un arbol binario (utilizamos colas para ello) con orientado a objetos.
+
 ## Listas enlazadas [directorio]
 
 En este directorio encontrara un ejemplo para implimentar la forma basica (sus propiedades y métodos basicos) de una estructura con POO.
