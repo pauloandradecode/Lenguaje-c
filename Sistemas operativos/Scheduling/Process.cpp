@@ -104,7 +104,10 @@ void Process::fifo()
     // Limpiamos la pantalla
     system("clear");
 
-    puts("\nInes, haber a que hora terminas :)");
+    printf("*** Metodo FIFO ***\n");
+    Queue *q = push(NULL);
+
+    q->fifo();
 
     cin.ignore(256,'\n'); // Limpiamos el buffer
     puts("\n\nPresione cualquier tecla para continuar");
@@ -130,6 +133,7 @@ void Process::roundrobin()
     // Limpiamos la pantalla
     system("clear");
 
+    printf("*** Metodo Round Robin ***\n");
     Queue *q = push(NULL);
 
     int quantum = q->quantum();
@@ -147,6 +151,7 @@ void Process::priority()
     // Limpiamos la pantalla
     system("clear");
 
+    printf("*** Metodo Prioridad ***\n");
     // Ingresamos los datos a la cola
     Queue *q = push(true);
 
