@@ -95,7 +95,7 @@ void Queue::enqueue(char x, int y, int z)
             eoq = eoq->next();
         }
 
-        // Incremento tamaÃ±o
+        // Incremento tamaño
         _s++;
     } else {
         // Mostramos el mensaje en caso de que la cola este llena
@@ -115,7 +115,7 @@ int Queue::dequeue()
         start = start->next();
         // Eliminamos el auxiliar
         delete aux;
-        // Decrementamos el tamaÃ±o
+        // Decrementamos el tamaño
         _s--;
 
         // Regresamos el dato
@@ -200,7 +200,7 @@ void Queue::orderbypriority(char x, int y, int z)
             }
         }
 
-        // Incremento tamaÃ±o
+        // Incremento tamaño
         _s++;
     } else {
         // Mostramos el mensaje en caso de que la cola este llena
@@ -247,7 +247,7 @@ void Queue::orderbytime(char x, int y, int z)
             }
         }
 
-        // Incremento tamaÃ±o
+        // Incremento tamaño
         _s++;
     } else {
         // Mostramos el mensaje en caso de que la cola este llena
@@ -294,7 +294,7 @@ void Queue::orderbyid(char x, int y, int z)
             }
         }
 
-        // Incremento tamaÃ±o
+        // Incremento tamaño
         _s++;
     } else {
         // Mostramos el mensaje en caso de que la cola este llena
@@ -354,7 +354,7 @@ bool Queue::supr(char x)
             // Eliminamos p
             delete p;
 
-            _s--; // Restamos el tamaÃ±o de la cola
+            _s--; // Restamos el tamaño de la cola
 
             // Retornamos true por eliminar el nodo
             return true;
@@ -401,6 +401,7 @@ void Queue::print()
     }
 }
 
+
 // Metodo para imprimir los resultados
 void Queue::result()
 {
@@ -420,13 +421,61 @@ void Queue::result()
     printf("-----------------\n");
     printf("T. promedio = %.1f\n\n", suma / _s);
 }
+//Metodo para procesar el algoritmo de round robin
+void Queue::processroundrobin(int quantum)
+{
+    float suma = 0.0; // Suma del tiempo total
+    int s = _s; // Tamaño de la cola
+    Node *control = start; // Asignamos control igual a inicio de la cola
+    Queue *respaldo = new Queue(_s);
+
+    printf("\nProcesando el algoritmo: [quantum=%i]\n\n", quantum);
+
+    print(); // Imprimimos la cola inicialmente
+
+    // El ciclo correra mientras existan nodos de las colas
+    while(control != NULL){
+        Node *p = start; // Nodo a recorrer
+        Node *aux = NULL;
+
+        // Verificamos si el tiempo es igual o menor al quantum
+        if(p->time() <= quantum){
+            // Encontramos resultado
+            suma += p->time(); // Aumentamos el tiempo total
+            printf("\nTR%c = %.0f\n", p->id(), suma);
+            respaldo->orderbyid(p->id(), (int) suma, p->time()); // Respaldamos
+            supr(p->id()); // Eliminamos el nodo
+            print(); // Imprimimos la cola
+        } else {
+            // Reordenamos la cola
+            printf("\n->\n|\nt.%i\n|\n->\n", quantum); // Imprimimos el quantum
+            suma += quantum; // Aumentamos el tiempo total
+            p->settime(p->time() - quantum); // Recalculamos el tiempo
+
+            aux = new Node(p->id(), p->time(), p->priority()); // Respaldamos el nodo
+            if(supr(p->id())){ // Eliminamos el nodo
+                enqueue(aux->id(), aux->time(), aux->priority()); // mandamos el nodo al final
+            }
+
+            print(); // Imprimimos la cola
+        }
+
+        // Reasignamos el valor de control
+        control = start;
+    }
+
+    printf("\nTiempo total: %.0f\n", suma);
+    printf("Tiempo promedio: %.1f\n\n", suma / s);
+    printf("*** Tabla de resultados ***\n\n");
+    respaldo->result();
+}
 
 // Metodo para procesar el algoritmo de prioridad
 // @param quantum Tiempo promedio de los procesos
 void Queue::processpriority(int quantum)
 {
     float suma = 0.0; // Suma del tiempo total
-    int s = _s; // TamaÃ±o de la cola
+    int s = _s; // Tamaño de la cola
     Node *control = start; // Asignamos control igual a inicio de la cola
     Queue *respaldo = new Queue(_s);
 

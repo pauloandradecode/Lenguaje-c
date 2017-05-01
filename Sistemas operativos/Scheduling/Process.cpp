@@ -130,7 +130,11 @@ void Process::roundrobin()
     // Limpiamos la pantalla
     system("clear");
 
-    puts("\nRomina, no manches, cuando piensas terminar :P");
+    Queue *q = push(NULL);
+
+    int quantum = q->quantum();
+
+    q->processroundrobin(quantum);
 
     cin.ignore(256,'\n'); // Limpiamos el buffer
     puts("\n\nPresione cualquier tecla para continuar");

@@ -44,7 +44,7 @@ class Queue
     Node *start; // Nodo inicial
     Node *eoq; // Apuntador
     int _n; // Capacidad de la cola
-    int _s; // TamaÃ±o de la cola
+    int _s; // Tamaño de la cola
 
     public:
         // Constructor
@@ -54,7 +54,7 @@ class Queue
 
         // Funciones de utileria
         int capacity() const { return _n; } // Obtenemos capacidad
-        int size() const { return _s; } // Obtenemos tamaÃ±o
+        int size() const { return _s; } // Obtenemos tamaño
         bool empty() { return _s == 0; } // Vacuidad
         bool full() { return _s == _n; } // Plenitud
         Queue::Node *started() { return start; }
@@ -71,6 +71,7 @@ class Queue
         bool supr(char); // Eliminamos un nodo
         void print(); // Metodo para imprimir los resultados
         void result(); // Metodo para imprimir los resultados
+        void processroundrobin(int);//Metodo para procesar el algoritmo de prioridad
         void processpriority(int); // Metodo para procesar el algoritmo de prioridad
 };
 
