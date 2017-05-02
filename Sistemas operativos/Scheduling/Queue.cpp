@@ -442,7 +442,7 @@ void Queue::fifo()
         // Encontramos resultado
         suma += p->time(); // Aumentamos el tiempo total
         printf("\nTR%c = %.0f\n", p->id(), suma);
-        respaldo->enqueue(p->id(), (int) suma, p->time()); // Respaldamos
+        respaldo->orderbyid(p->id(), (int) suma, p->time()); // Respaldamos
         supr(p->id()); // Eliminamos el nodo
         print(); // Imprimimos la cola
 
@@ -450,8 +450,8 @@ void Queue::fifo()
         control = start;
     }
 
-    printf("\nTiempo total: %.0f\n", suma);
-    printf("Tiempo promedio: %.1f\n\n", suma / s);
+    printf("\nTiempo total: %i\n", (int) respaldo->suma());
+    printf("Tiempo promedio: %.1f\n\n", respaldo->suma() / s);
     printf("*** Tabla de resultados ***\n\n");
     respaldo->result();
 }
@@ -499,8 +499,8 @@ void Queue::processroundrobin(int quantum)
         control = start;
     }
 
-    printf("\nTiempo total: %.0f\n", suma);
-    printf("Tiempo promedio: %.1f\n\n", suma / s);
+    printf("\nTiempo total: %i\n", (int) respaldo->suma());
+    printf("Tiempo promedio: %.1f\n\n", respaldo->suma() / s);
     printf("*** Tabla de resultados ***\n\n");
     respaldo->result();
 }

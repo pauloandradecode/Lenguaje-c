@@ -73,7 +73,6 @@ class Queue
         void result(); // Metodo para imprimir los resultados
         float suma(); // Metodo que retorna la suma
         void fifo();//Metodo para procesar el algoritmo fifo
-        void sjf();//Metodo para procesar el algoritmo de sjf
         void processroundrobin(int);//Metodo para procesar el algoritmo de prioridad
         void processpriority(int); // Metodo para procesar el algoritmo de prioridad
 };

@@ -70,8 +70,8 @@ void Process::menu()
 }
 
 // Metodo para ingresar datos
-// @param type Tipo de ordenamiento [NULL-normal, true-prioridad, false-tiempo]
-Queue *Process::push(bool type)
+// @param type Tipo de ordenamiento [0 - normal, 1 - prioridad, 2 - tiempo]
+Queue *Process::push(int type)
 {
     char x; // ID del proceso
     int n; // Capacidad
@@ -90,9 +90,9 @@ Queue *Process::push(bool type)
     for(int i = 0; i < n; i++){
         cin >> x >> y >> z;
         // Decidimos el ordenamiento de la cola
-        if(type == (bool) NULL) q->enqueue(x, y, z);
-        else if(type) q->orderbypriority(x, y, z);
-        else q->orderbytime(x, y, z);
+        if(type == 0) q->enqueue(x, y, z);
+        else if(type == 1) q->orderbypriority(x, y, z);
+        else if(type == 2) q->orderbytime(x, y, z);
     }
 
     return q;
@@ -105,7 +105,7 @@ void Process::fifo()
     system("clear");
 
     printf("*** Metodo FIFO ***\n");
-    Queue *q = push(NULL);
+    Queue *q = push(0);
 
     q->fifo();
 
@@ -120,7 +120,10 @@ void Process::sjf()
     // Limpiamos la pantalla
     system("clear");
 
-    puts("\nHay tenias que ser Amaranta, por favor por una ves en tu vida, terminalo :(");
+    printf("*** Metodo SJF ***\n");
+    Queue *q = push(2);
+
+    q->fifo();
 
     cin.ignore(256,'\n'); // Limpiamos el buffer
     puts("\n\nPresione cualquier tecla para continuar");
@@ -134,7 +137,7 @@ void Process::roundrobin()
     system("clear");
 
     printf("*** Metodo Round Robin ***\n");
-    Queue *q = push(NULL);
+    Queue *q = push(0);
 
     int quantum = q->quantum();
 
@@ -153,7 +156,7 @@ void Process::priority()
 
     printf("*** Metodo Prioridad ***\n");
     // Ingresamos los datos a la cola
-    Queue *q = push(true);
+    Queue *q = push(1);
 
     // Obtenemos el quantum
     int quantum = q->quantum();

@@ -27,7 +27,7 @@ class Process
         void fifo(); // Metodo con el algoritmo de fifo
         void sjf(); // Metodo con el algoritmo de sjf
         void roundrobin(); // Metodo con el algoritmo de round robin
-        Queue *push(bool); // Metodo para insertar datos
+        Queue *push(int); // Metodo para insertar datos
 };
 
 #endif // QUEUE_HPP_INCLUDED
