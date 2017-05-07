@@ -1,7 +1,7 @@
 /*
 Fecha: 03/04/2017
 Integrantes:
-    Andrade Gonzlez Paulo Cesar
+    Andrade Gonzalez Paulo Cesar
     Lazo Godinez Maria Ines
     Lopez Gacia Romina Arantxa
     Sanchez Gutierrez Alejandra Amaranta
