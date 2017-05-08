@@ -108,3 +108,4 @@ bool Queue::ins(int x)
         return false;
     }
 }
+

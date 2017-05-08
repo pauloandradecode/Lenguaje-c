@@ -56,5 +56,3 @@ class Queue
 };
 
 #endif // QUEUE_HPP_INCLUDED
-
-
