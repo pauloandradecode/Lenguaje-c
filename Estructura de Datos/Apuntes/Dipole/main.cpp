@@ -21,13 +21,14 @@ int main()
 
     // Generamos numeros aleatorios con rango 1 - 20
     int n = rand() % 20 + 1;
-    printf("%i datos: \n\n", n);
+    printf("%i datos: \n", n);
 
     // Insertamos los datos al dipole por el frente
     for(int i = 0; i < n; i++){
         int data = rand() % 100 + 1;
-        printf("Push %i\n", data);
+        printf("Push %i", data);
         cola.enqueueRear(data);
+        printf("\n");
     }
 
     printf("\n\n Vaciando la cola \n\n");

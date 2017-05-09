@@ -2,15 +2,15 @@
 Fecha: 08/05/2017
 Nombre: Paulo Cesar Andrade Gonzalez
 Nota: Implementacion de dipoles con estructuras dinamicas
-    sin restricciones
+    con restricciones ORD (Output - restricted deque)
     (colas con doble terminación - double-endend)
 */
 
-#ifndef DIPOLE_HPP_INCLUDED
-#define DIPOLE_HPP_INCLUDED
+#ifndef ORD_HPP_INCLUDED
+#define ORD_HPP_INCLUDED
 
 // Clase para crear un dipole
-class Dipole
+class Ord
 {
     // Clase para crear un objeto nodo de la lista
     class Node
@@ -43,9 +43,9 @@ class Dipole
 
     public:
         // Constructor
-        Dipole(int);
+        Ord(int);
         // Destructor
-        ~Dipole();
+        ~Ord();
 
         // Funciones de utileria
         int capacity() const { return _n; } // Obtenemos capacidad
@@ -54,10 +54,9 @@ class Dipole
         bool full() { return _s == _n; } // Plenitud
 
         // Metodos para dipoles
-        bool enqueueFront(int); // Insertamos nodo por el frente
+        bool enqueueFront(int); // Insertamos nodo por el fronte
         bool enqueueRear(int); // Insertamos nodo por detras
         int dequeueFront(); // Obtiene nodo y lo eliminamos por el frente
-        int dequeueRear(); // Obtiene nodo y lo elimina por detras
         int front(); // Obtiene el dato por el frente
         int rear(); // Obtiene el dato por detras
         bool search(int); // Busqueda de datos

@@ -54,11 +54,12 @@ class Ird
         bool full() { return _s == _n; } // Plenitud
 
         // Metodos para dipoles
-        void enqueueRear(int); // Insertamos nodo por detras
+        bool enqueueRear(int); // Insertamos nodo por detras
         int dequeueFront(); // Obtiene nodo y lo eliminamos por el frente
         int dequeueRear(); // Obtiene nodo y lo elimina por detras
         int front(); // Obtiene el dato por el frente
         int rear(); // Obtiene el dato por detras
+        bool search(int); // Busqueda de datos
 };
 
 #endif // DIPOLE_HPP_INCLUDED

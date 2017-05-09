@@ -66,13 +66,12 @@ Ird::~Ird() {
 // Metodos para Irds
 
 // Insertamos nodo por detras
-void Ird::enqueueRear(int x)
+bool Ird::enqueueRear(int x)
 {
     // precondicion
     if(full()){
-        // Mostramos el mensaje en caso de que la cola este llena
-        printf("Cola llena \n");
-        return;
+        printf(" Cola llena");
+        return false;
     }
 
     // Verificamos si esta vacio
@@ -81,25 +80,34 @@ void Ird::enqueueRear(int x)
         start = new Node(x);
         final = new Node(x);
     } else {
+        // Buscamos por duplicados
+        if(search(x)){
+            printf(" duplicado");
+            return false;
+        }
+
         // Agregamos un nuevo nodo
         Node *aux = new Node(x);
         // Acomodamos el nodo nuevo
-        aux->prev(final); // Apunta a null
-        final->next(aux);
-        final = aux;
+        aux->prev(final); // anterior de nuevo nodo apunta a final
+        final->next(aux); // siguiente de final apunta a nuevo nodo
+        final = aux; // final es igual a nuevo nodo
 
         // Buscamos el apuntador inicial
         Node *p = final;
         Node *q = NULL;
+        // Recorremos la cola
         while(p){
             q = p;
             p = p->prev();
         }
+        // Inicio apunta al primer nodo
         start = q;
     }
 
     // Incremento tamaño
     _s++;
+    return true;
 }
 
 // Obtiene nodo y lo eliminamos por el frente
@@ -184,3 +192,21 @@ int Ird::rear()
     return final->data();
 }
 
+// Metodo para busqueda de nodos
+bool Ird::search(int x)
+{
+    if(!empty()){
+        // Inicializamos el puntero p
+        Node *p = start;
+
+        // Recorremos en busca del nodo
+        while(p){
+            // Verificamos si el dato buscado es igual al del nodo
+            if(p && p->data() == x) return true; // Retornamos true
+
+            p = p->next();
+        }
+    }
+
+    return false;
+}

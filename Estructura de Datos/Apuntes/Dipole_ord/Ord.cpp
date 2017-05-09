@@ -1,72 +1,72 @@
 /*
 Fecha: 08/05/2017
 Nombre: Paulo Cesar Andrade Gonzalez
-Nota: Implementacion de dipoles con estructuras dinamicas
-    sin restricciones
+Nota: Implementacion de Ords con estructuras dinamicas
+    con restricciones ORD (Output - restricted deque)
     (colas con doble terminación - double-endend)
 */
 
 #include <cstdio>
-#include "Dipole.hpp"
+#include "Ord.hpp"
 
 /***********************************************
 Clase Node
 ***********************************************/
 
 // Constructor
-Dipole::Node::Node(int x): _data(x) {
+Ord::Node::Node(int x): _data(x) {
     _next = NULL;
     _prev = NULL;
 }; // El apuntador next y prev siempre apunta a NULL
 
 // Pedimos la informacion del objeto
 // Se utiliza const por que no podemos modificar el objeto
-int Dipole::Node::data() const {
+int Ord::Node::data() const {
     return _data;
 } // Nos devuelve el dato almacena
 
 // Nos devuelve el siguiente nodo (si no existe retorna NULL)
-Dipole::Node *Dipole::Node::next() const
+Ord::Node *Ord::Node::next() const
 {
     return _next;
 }
 
 // Nos devuelve el nodo anterior (si no existe retorna NULL)
-Dipole::Node *Dipole::Node::prev() const
+Ord::Node *Ord::Node::prev() const
 {
     return _prev;
 }
 
 // Metodo que permite modificar el apuntador
 // Asigno y me retorna el nuevo nodo
-Dipole::Node *Dipole::Node::next(Dipole::Node *p)
+Ord::Node *Ord::Node::next(Ord::Node *p)
 {
     return _next = p;
 }
 
 // Metodo que permite modificar el apuntador
 // Asigno y me retorna el nuevo nodo
-Dipole::Node *Dipole::Node::prev(Dipole::Node *p)
+Ord::Node *Ord::Node::prev(Ord::Node *p)
 {
     return _prev = p;
 }
 
 /***********************************************
-Clase Dipole
+Clase Ord
 ***********************************************/
 
 // Constructor
-Dipole::Dipole(int n): _n(n), _s(0), start(NULL), final(NULL) {}
+Ord::Ord(int n): _n(n), _s(0), start(NULL), final(NULL) {}
 // Destructor
-Dipole::~Dipole() {
+Ord::~Ord() {
     delete start;
     delete final;
 }
 
-// Metodos para dipoles
+// Metodos para Ords
 
-// Insertamos nodo por el frente
-bool Dipole::enqueueFront(int x)
+// Insertamos nodo por detras
+bool Ord::enqueueFront(int x)
 {
     // precondicion
     if(full()){
@@ -88,21 +88,21 @@ bool Dipole::enqueueFront(int x)
 
         // Agregamos un nuevo nodo
         Node *aux = new Node(x);
-        // Acomodamos el nodo nuevo al frente
-        aux->next(start); // siguiente de nuevo nodo apunta a inicio
-        start->prev(aux); // anterior de inicio apunta a nuevo nodo
-        start = aux; // Inicio es igual a nuevo nodo
+        // Acomodamos el nodo nuevo
+        aux->prev(final); // anterior de nuevo nodo apunta a final
+        final->next(aux); // siguiente de final apunta a nuevo nodo
+        final = aux; // final es igual a nuevo nodo
 
-        // Buscamos el apuntador final
-        Node *p = start;
+        // Buscamos el apuntador inicial
+        Node *p = final;
         Node *q = NULL;
         // Recorremos la cola
         while(p){
             q = p;
-            p = p->next();
+            p = p->prev();
         }
-        // final apunta al ultimo nodo
-        final = q;
+        // Inicio apunta al primer nodo
+        start = q;
     }
 
     // Incremento tamaño
@@ -111,7 +111,7 @@ bool Dipole::enqueueFront(int x)
 }
 
 // Insertamos nodo por detras
-bool Dipole::enqueueRear(int x)
+bool Ord::enqueueRear(int x)
 {
     // precondicion
     if(full()){
@@ -156,7 +156,7 @@ bool Dipole::enqueueRear(int x)
 }
 
 // Obtiene nodo y lo eliminamos por el frente
-int Dipole::dequeueFront()
+int Ord::dequeueFront()
 {
     // Precondicion
     if(empty()){
@@ -183,36 +183,8 @@ int Dipole::dequeueFront()
     return data;
 }
 
-// Obtiene nodo y lo elimina por detras
-int Dipole::dequeueRear()
-{
-    // Precondicion
-    if(empty()){
-        // Imprime un mensaje si la cola esta vacia
-        printf("Cola vacia\n");
-        return 0;
-    }
-
-    // Creamos un nodo auxiliar
-    Node *aux = final;
-    // Respaldamos el dato
-    int data = final->data();
-    // Reacomodamos el ultimo nodo de la cola
-    final = final->prev();
-    // Eliminamos el auxiliar
-    delete aux;
-    // Verificamos si no hay mas nodos
-    if(final == NULL) start = NULL; // Si no hay, start tambien apunta a NULL
-    else final->next(NULL); // siguiente del nodo final apunta a null
-    // Decrementamos el tamaño
-    _s--;
-
-    // Regresamos el dato
-    return data;
-}
-
 // Obtiene el dato por el frente
-int Dipole::front()
+int Ord::front()
 {
     if(empty()){
         // Mostramos mensaje en caso de cola vacia
@@ -225,7 +197,7 @@ int Dipole::front()
 }
 
 // Obtiene el dato por detras
-int Dipole::rear()
+int Ord::rear()
 {
     if(empty()){
         // Mostramos mensaje en caso de cola vacia
@@ -238,7 +210,7 @@ int Dipole::rear()
 }
 
 // Metodo para busqueda de nodos
-bool Dipole::search(int x)
+bool Ord::search(int x)
 {
     if(!empty()){
         // Inicializamos el puntero p

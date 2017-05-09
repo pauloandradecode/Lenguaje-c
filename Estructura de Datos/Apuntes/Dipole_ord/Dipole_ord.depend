@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1494331854 source:/home/paulo/github/Lenguaje-c/Estructura de Datos/Apuntes/Dipole_ord/main.cpp
+	<cstdio>
+	<cstdlib>
+	<ctime>
+	"Ord.hpp"
+
+1494331752 /home/paulo/github/Lenguaje-c/Estructura de Datos/Apuntes/Dipole_ord/Ord.hpp
+
+1494331878 source:/home/paulo/github/Lenguaje-c/Estructura de Datos/Apuntes/Dipole_ord/Ord.cpp
+	<cstdio>
+	"Ord.hpp"
+

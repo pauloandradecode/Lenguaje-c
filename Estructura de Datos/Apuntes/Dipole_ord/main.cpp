@@ -2,14 +2,14 @@
 Fecha: 08/05/2017
 Nombre: Paulo Cesar Andrade Gonzalez
 Nota: Implementacion de dipoles con estructuras dinamicas
-    con restricciones IRD (Input - restricted dequeue)
+    con restricciones ORD (Output - restricted deque)
     (colas con doble terminación - double-endend)
 */
 
 #include <cstdio>
 #include <cstdlib>
 #include <ctime>
-#include "Ird.hpp"
+#include "Ord.hpp"
 
 int main()
 {
@@ -17,7 +17,7 @@ int main()
     srand((unsigned) time(NULL));
 
     // Creamos una pila
-    Ird cola(10);
+    Ord cola(10);
 
     // Generamos numeros aleatorios con rango 1 - 20
     int n = rand() % 20 + 1;
