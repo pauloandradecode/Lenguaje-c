@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1494299558 source:/home/paulo/github/Lenguaje-c/Estructura de Datos/Apuntes/Dipole/main.cpp
+	<cstdio>
+	<cstdlib>
+	<ctime>
+	"Dipole.hpp"
+
+1494296878 /home/paulo/github/Lenguaje-c/Estructura de Datos/Apuntes/Dipole/Dipole.hpp
+
+1494299588 source:/home/paulo/github/Lenguaje-c/Estructura de Datos/Apuntes/Dipole/Dipole.cpp
+	<cstdio>
+	"Dipole.hpp"
+
