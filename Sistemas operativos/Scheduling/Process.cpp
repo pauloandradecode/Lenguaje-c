@@ -43,14 +43,14 @@ void Process::menu()
             puts("2.- SJF");
             puts("3.- Round Robin");
             puts("4.- Prioridad");
-            puts("5.- Salir");
+            puts("0.- Salir");
             printf("\nElija una opcion: ");
 
             // Capturamos el valor de option
             cin >> option;
 
             // Verificamos si es un numero
-        } while(*option < 48 || *option > 53);
+        } while(*option < 47 || *option > 53);
 
         // Elegimos un algoritbo con base a option
         switch(*option){
@@ -66,7 +66,7 @@ void Process::menu()
             case '4': // Prioridad
                 priority();
                 break;
-            case '5': // salir
+            case '0': // salir
                 exit(EXIT_SUCCESS);
                 break;
         }
