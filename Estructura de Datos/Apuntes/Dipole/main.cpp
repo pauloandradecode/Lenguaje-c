@@ -2,7 +2,7 @@
 Fecha: 08/05/2017
 Nombre: Paulo Cesar Andrade Gonzalez
 Nota: Implementacion de dipoles con estructuras dinamicas
-    restricciones
+    sin restricciones
     (colas con doble terminación - double-endend)
 */
 
