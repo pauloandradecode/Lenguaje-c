@@ -29,5 +29,22 @@ int main()
         if(tree.ins(data)) printf(" - Insertado");
     }
 
+    printf("\n\nContenido del arbol: ");
+    tree.print();
+
+    printf("\n\n Eliminando datos aleatorios \n\n");
+
+    for(int i = 0; i < n; i++){
+        int data = rand() % 100 + 1;
+        printf("\nPop %i", data);
+        if(tree.sup(data)){
+            printf(" - Eliminado");
+            printf("\nContenido del arbol: ");
+            tree.print();
+        } else printf(" - No encontrado");
+    }
+
+    printf("\n\n");
+
     return 0;
 }

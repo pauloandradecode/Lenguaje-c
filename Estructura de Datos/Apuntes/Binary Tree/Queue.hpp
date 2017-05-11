@@ -51,8 +51,14 @@ class Queue
         bool empty() { return _s == 0; } // Vacuidad
         bool full() { return _s == _n; } // Plenitud
 
-        // Metodos para colas
+        // Metodos para arboles
         bool ins(int); // Ingresa un elemento al arbol
+        Queue::Node *search(int); // Busca un dato en el nodo
+        bool sup(int); // Elimina un dato del arbol
+        void inorder(Queue::Node *);
+        void preorder(Queue::Node *);
+        void postorder(Queue::Node *);
+        void print(); // Imprime el nodo ordenado
 };
 
 #endif // QUEUE_HPP_INCLUDED

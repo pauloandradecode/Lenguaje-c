@@ -71,41 +71,168 @@ Queue::~Queue() {
 bool Queue::ins(int x)
 {
     // precondicion
-    if(!full()){
-        if(empty()){
-            // Creamos la cola
-            root = new Node(x);
-        } else {
-            Node *p = root;
-            Node *q = NULL;
-
-            // Recorremos el arbol
-            while(p && p->data() != x){
-                q = p;
-                if(x < p->data()) p = p->left();
-                else p = p->right();
-            }
-
-            // Insertamos el dato
-            if(p == NULL){
-                if(x < q->data()) q->left(new Node(x));
-                else if(x > q->data()) q->right(new Node(x));
-            }
-
-            // Verificamos que el dato no este repetido
-            if(p && p->data() == x){
-                printf(" - Repetido");
-                return false;
-            }
-        }
-
-        // Incremento tamaño
-        _s++;
-        return true;
-    } else {
-        // Mostramos el mensaje en caso de que la cola este llena
+    if(full()){
         printf(" - Arbol lleno");
         return false;
     }
+
+    if(!root) {
+        root = new Node(x);
+        _s++;
+        return true;
+    }
+    else {
+        Node *p = root;
+        Node *q = NULL;
+
+        while(p && p->data() != x){
+            q = p;
+            p = x < p->data() ? p->left() : p->right();
+        }
+
+        if(!p) {
+            // Hago la inserccion
+            if(x < q->data()) q->left(new Node(x));
+            else q->right(new Node(x));
+
+            _s++;
+
+            return true;
+        }
+    }
+
+    // no se hizo la inserccion
+    return false;
 }
 
+void Queue::inorder(Queue::Node *p)
+{
+    if(!p) return;
+
+    inorder(p->left());
+    printf("%4i", p->data());
+    inorder(p->right());
+}
+
+void Queue::preorder(Queue::Node *p)
+{
+    if(!p) return;
+
+    printf("%4i", p->data());
+    preorder(p->left());
+    preorder(p->right());
+}
+
+void Queue::postorder(Queue::Node *p)
+{
+    if(!p) return;
+
+    postorder(p->left());
+    postorder(p->right());
+    printf("%4i", p->data());
+}
+
+// Metodo para buscar
+Queue::Node *Queue::search(int x)
+{
+    Node *p = root; // Apuntador de busqueda
+
+    // Recorremos el arbol para buscar el dato
+    while(p && p->data() != x){
+        if(x < p->data()) p = p->left();
+        else p = p->right();
+    }
+
+    // Verificamos si encontramos el dato
+    if(p) return p;
+    else return NULL;
+}
+
+// Metodo para eliminar un nodo
+bool Queue::sup(int x)
+{
+    // Paso 1 - Verificamos si el arbol esta vacio
+    if(empty()) return false;
+
+    // Paso 2 - Buscamos el punto a remover
+    bool qleft = false; // auxiliar para eliminación
+    Node *p = root; // Nodo que apunta a la raiz del arbol
+    Node *q = NULL; // Nodo auxiliar de busqueda
+
+    // Recorremos el arbol en busca del dato a eliminar
+    while(p && p->data() != x){
+        q = p; // q apunta a p
+        // Verificamos el camino a seguir
+        if(x < p->data()){
+            p = p->left();
+            qleft = true;
+        } else {
+            p = p->right();
+            qleft = false;
+        }
+    }
+
+    if(p == NULL) return false; // No se encontro el dato
+
+    // Paso 3(A) - Caso en donde es un nodo hoja
+    if(p->left() == NULL && p->right() == NULL){
+        if(p == root) root = NULL; // Verificamos si se trata de la raiz del arbol
+        else {
+            if(qleft) q->left(NULL); // Eliminamos nodo por izquierda
+            else q->right(NULL); // Eliminamos nodo por derecha
+        }
+
+        delete p;
+        return true;
+    // Paso 3(B) - Caso nodo con un solo hijo
+    } else if(p->left() == NULL){
+        // Eliminamos por derecha
+        if(p == root) root = p->right(); // Verificamos si es la raiz del arbol
+        else {
+            if(qleft) q->left(p->right()); // Reordenamos por izquierda
+            else q->right(p->right()); // Reordenamos por derecha
+        }
+
+        delete p;
+        return true;
+    } else if(p->right() == NULL){
+        // Eliminamos por izquierda
+        if(p == root) root = p->left(); // Verificamos si es la raiz del arbol
+        else {
+            if(qleft) q->left(p->left()); // Reordenamos por izquierda
+            else q->right(p->left()); // Reordenamos por derecha
+        }
+
+        delete p;
+        return true;
+    // Paso 3(C) - Reenlazamiento de nodos completos
+    } else if(p->left() && p->right()){
+        Node *lgp = NULL; // Nodo auxiliar
+        if(p == root) root = p->right(); // Verificamos si se trata de la raiz del arbol
+        else {
+            if(qleft) q->left(p->right()); // Reordenamos por izquierda
+            else q->right(p->right()); // Reordenamos por derecha
+        }
+
+        lgp = p->right(); // Nodo con elemento mas pequeño del subarbol derecho
+
+        while(lgp->left() != NULL){
+            lgp = lgp->left();
+        }
+        lgp->left(p->left()); // Reordenamos los nodos
+
+        // Paso 4 - Eliminamos el nodo
+        //delete p;
+        return true;
+    }
+
+    return false;
+}
+
+// Imprimimos el arbol
+void Queue::print()
+{
+    Node *p = root;
+
+    inorder(p);
+}

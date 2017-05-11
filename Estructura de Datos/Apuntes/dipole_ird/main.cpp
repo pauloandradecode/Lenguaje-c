@@ -21,7 +21,7 @@ int main()
 
     // Generamos numeros aleatorios con rango 1 - 20
     int n = rand() % 20 + 1;
-    printf("%i datos: \n", n);
+    printf("%i datos: \n\n", n);
 
     // Insertamos los datos al dipole por el frente
     for(int i = 0; i < n; i++){
@@ -31,7 +31,7 @@ int main()
         printf("\n");
     }
 
-    printf("\n\n Vaciando la cola \n\n");
+    printf("\n Vaciando la cola \n\n");
 
     // Mostramos y vaciamos la pila
     while(!cola.empty()){

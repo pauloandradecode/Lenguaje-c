@@ -13,7 +13,7 @@ class btree {
             node *left() { return _left; }
             node *left(node *l) { return _left = l; }
             node *right() { return _right; }
-            node *right(node *l) { return _right = l; }
+            node *right(node *r) { return _right = r; }
     };
 
     node *root;
