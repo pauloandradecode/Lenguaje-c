@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1494438644 source:/home/paulo/github/Lenguaje-c/Estructura de Datos/Apuntes/Parcial 2/Ird.cpp
+	<cstdio>
+	"Ird.hpp"
+
+1494422451 /home/paulo/github/Lenguaje-c/Estructura de Datos/Apuntes/Parcial 2/Ird.hpp
+
+1494439842 source:/home/paulo/github/Lenguaje-c/Estructura de Datos/Apuntes/Parcial 2/main.cpp
+	<cstdio>
+	<cstdlib>
+	<ctime>
+	"Ird.hpp"
+
+1494438644 source:/home/paulo/github/Lenguaje-c/Estructura de Datos/Parcial 2/Ird.cpp
+	<cstdio>
+	"Ird.hpp"
+
+1494422451 /home/paulo/github/Lenguaje-c/Estructura de Datos/Parcial 2/Ird.hpp
+
+1494439842 source:/home/paulo/github/Lenguaje-c/Estructura de Datos/Parcial 2/main.cpp
+	<cstdio>
+	<cstdlib>
+	<ctime>
+	"Ird.hpp"
+
