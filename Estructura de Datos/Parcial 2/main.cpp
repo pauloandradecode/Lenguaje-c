@@ -12,8 +12,6 @@ Nota: Implementacion de Irds con estructuras dinamicas
 #include "Ird.hpp"
 #define procesos 50
 
-using namespace std;
-
 int main()
 {
     // Semilla para numeros aleatorios
@@ -54,24 +52,59 @@ int main()
 
         // En este punto se hace el balanceo de servicios
         int aux; // CPU auxiliar
+        int aux_prev; // CPU auxiliar
+        int aux_next; // CPU auxiliar
+        int temp = 0; // Servicio a manipular
+
         // verificamos que existan mas de 1 CPU
         if(n > 1){
             // Obtenemos el CPU contiguo
-            if(n == x) aux = x - 1;
-            else aux = x + 1;
+            if(n == x){ // Balanceo ultima cola
+                aux_prev = x - 1;
 
-            // Balanceo para CPUs siguientes
-            if(cpus[x - 1].size() > cpus[aux - 1].size()){
-                // Hacemos balanceo
-                int temp = cpus[x - 1].dequeueRear();
-                cpus[aux - 1].enqueueRear(temp);
-            // Balanceo para CPUs anteriores
-            } else if(x != 1 && cpus[x - 1].size() > cpus[aux - 3].size()){
-                // Hacemos balanceo
-                int temp = cpus[x - 1].dequeueRear();
-                cpus[aux - 3].enqueueRear(temp);
-            // Balanceo para CPU vacios
-            } else if(cpus[x - 1].empty()){
+                if(cpus[x - 1].size() > cpus[aux_prev - 1].size()){
+                    // Hacemos balanceo
+                    int temp = cpus[x - 1].dequeueRear();
+                    cpus[aux_prev - 1].enqueueRear(temp);
+                } else if(cpus[aux_prev - 1].size() > 1 && cpus[aux_prev - 1].size() > cpus[x - 1].size()){
+                    // Hacemos balanceo
+                    int temp = cpus[aux_prev - 1].dequeueRear();
+                    cpus[x - 1].enqueueRear(temp);
+                }
+            }else if(1 == x){ // Balanceo primer cola
+                aux_next = x + 1;
+
+                // Balanceo para CPUs siguientes
+                if(cpus[x - 1].size() > cpus[aux_next - 1].size()){
+                    // Hacemos balanceo
+                    temp = cpus[x - 1].dequeueRear();
+                    cpus[aux_next - 1].enqueueRear(temp);
+                } else if(cpus[aux_next - 1].size() > 1 && cpus[aux_next - 1].size() > cpus[x - 1].size()){
+                    // Hacemos balanceo
+                    temp = cpus[aux_next - 1].dequeueRear();
+                    cpus[x - 1].enqueueRear(temp);
+                }
+            } else { // Balanceo colas intermedias
+                aux_prev = x - 1;
+                aux_next = x + 1;
+
+                // Obtenemos la cola mayor contigua
+                if(cpus[aux_prev - 1].size() > cpus[aux_next - 1].size()) aux = aux_prev;
+                else aux = aux_next;
+
+                if(cpus[x - 1].size() > 1 &&cpus[x - 1].size() > cpus[aux - 1].size()){
+                    // Hacemos balanceo
+                    temp = cpus[x - 1].dequeueRear();
+                    cpus[aux - 1].enqueueRear(temp);
+                } else if(cpus[aux - 1].size() > 1&& cpus[aux - 1].size() > cpus[x - 1].size()){
+                    // Hacemos balanceo
+                    temp = cpus[aux - 1].dequeueRear();
+                    cpus[x - 1].enqueueRear(temp);
+                }
+            }
+
+            // Balance cuando no hay colas contiguas
+            if(cpus[x - 1].empty()){
                 // Balanceo contiguo
                 int cpuTemp = 0;
                 int sizeTemp = 0;
