@@ -27,7 +27,7 @@ vector<int> v = { 1, 3, 5, 7 };
 vector<int> v[n];
 
 // Añadimos un dato al final del array
-v.push(3);
+v.push_back(3);
 ```
 
 ### Métodos de utileria
