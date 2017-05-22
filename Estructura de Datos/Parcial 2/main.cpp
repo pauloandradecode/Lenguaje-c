@@ -92,11 +92,11 @@ int main()
                 if(cpus[aux_prev - 1].size() > cpus[aux_next - 1].size()) aux = aux_prev;
                 else aux = aux_next;
 
-                if(cpus[x - 1].size() > 1 &&cpus[x - 1].size() > cpus[aux - 1].size()){
+                if(cpus[x - 1].size() > 1 && cpus[x - 1].size() > cpus[aux - 1].size()){
                     // Hacemos balanceo
                     temp = cpus[x - 1].dequeueRear();
                     cpus[aux - 1].enqueueRear(temp);
-                } else if(cpus[aux - 1].size() > 1&& cpus[aux - 1].size() > cpus[x - 1].size()){
+                } else if(cpus[aux - 1].size() > 1 && cpus[aux - 1].size() > cpus[x - 1].size()){
                     // Hacemos balanceo
                     temp = cpus[aux - 1].dequeueRear();
                     cpus[x - 1].enqueueRear(temp);

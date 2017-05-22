@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1495456647 source:/home/paulo/github/Lenguaje-c/Estructura de Datos/Apuntes/Grafos/Graph.cpp
+	<cstdio>
+	"Graph.hpp"
+
+1495456608 /home/paulo/github/Lenguaje-c/Estructura de Datos/Apuntes/Grafos/Graph.hpp
+	<cstdio>
+
+1495456606 source:/home/paulo/github/Lenguaje-c/Estructura de Datos/Apuntes/Grafos/main.cpp
+	<cstdio>
+	<cstdlib>
+	<ctime>
+	"Graph.hpp"
+
