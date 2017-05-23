@@ -11,7 +11,7 @@ int suma(int, int);
 
 int main()
 {
-    int sum = 0; // Mayor suma
+    int sum = -1000; // Mayor suma
 
     // Capturamos la matriz
     for(int i = 0; i < n; i++){
@@ -40,8 +40,12 @@ int suma(int x, int z)
     for(int i = x; i < (x + 3); i++){
         for(int j = z; j < (z + 3); j++){
             if(i == (x + 1)){
-                if(j == (z + 1)) total += v[i][j];
-            } else total += v[i][j];
+                if(j == (z + 1)){
+                    total += v[i][j];
+                }
+            } else {
+                total += v[i][j];
+            }
         }
     }
 
