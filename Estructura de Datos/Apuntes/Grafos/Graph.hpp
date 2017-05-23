@@ -12,6 +12,8 @@ Notas: Implementación de grafos (ejemplo profe Aguilar)
 // Clase grafo
 class Graph
 {
+    static bool _x; // variable de contencion
+
     int _n; // N aristas del grafo
     int _m_max; // Maxima cantidad de aristas
     int _m; // Cuantas hay realmente - cantidad actual

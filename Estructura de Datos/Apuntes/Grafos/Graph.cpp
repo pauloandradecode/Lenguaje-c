@@ -8,6 +8,12 @@ Notas: Implementación de grafos (ejemplo profe Aguilar)
 #include "Graph.hpp"
 
 /*********************************************
+Implementación elementos estaticos
+*********************************************/
+
+bool Graph::_x = false;
+
+/*********************************************
 Implementación clase Graph
 *********************************************/
 
@@ -31,6 +37,7 @@ Graph::~Graph()
 }
 
 // Funcion caracteristica
+// Obtenemos el indice del array para acceder a el
 int Graph::_f(int u, int v)
 {
     // Verificamos
@@ -46,20 +53,30 @@ int Graph::_f(int u, int v)
     return ((u - 1) * (u - 2)) / 2 + (v - 1);
 }
 
-// Regresa o pone arista
+// Regresa un valor almacenado en al array caracteristico
+// Se le conoce como asignacion de funciones
 bool &Graph::edge(int i, int j)
 {
-    return _v[_f(i, j)];
+    // Validamos i , j
+    if(i < 1 || i > _n || j < 1 || j > _n || i == j){
+        // mensaje de error
+        printf("[Graph]: bad index\n");
+
+        // Retornamos una referencia (obligatoria)
+        return _x; // Retornamos un variable de contecion
+    }
+
+    // Retornamos la variable, por eso podemos asignar valores cuando la retornamos
+    return _v[_f(i, j)]; // Retornamos la referencia a la variable
 }
 
 // Imprimimos un grafo (función amiga)
 void print(Graph &g)
 {
-    printf("v[%i] = ", g._m_max);
-
-    for(int i = 0; i < g._m_max; i++){
-        printf("%2i", g._v[i]);
+    for(int i = 2; i <= g._n; i++){ // Corremos de 2 hasta n
+        for(int j = 1; j < i; j++){ // corremos de 1 hasta (i - 1)
+            // printf("[%i:%i] %i\n", i, j, g._v[g._f(i, j)]);
+            printf("[%i:%i] %i\n", i, j, g.edge(i, j)); // Imprimimos el valor
+        }
     }
-
-    printf("\n");
 }

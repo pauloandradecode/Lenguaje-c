@@ -12,19 +12,21 @@ Notas: Implementación de grafos (ejemplo profe Aguilar)
 
 int main()
 {
-    srand((unsigned) time(NULL));
+    // Creamos un grafo de 6 aristas
+    Graph g(6);
 
-    int n = 10;
-    Graph g(n);
+    // Agregamos vertices
+    g.edge(1, 3) = true;
+    g.edge(1, 6) = true;
+    g.edge(2, 3) = true;
+    g.edge(2, 4) = true;
+    g.edge(2, 5) = true;
+    g.edge(5, 3) = true;
+    g.edge(4, 5) = true;
+    g.edge(4, 6) = true;
+    g.edge(6, 5) = true;
 
-    printf("Extraemos datos: \n\n");
-    for(int i = 0; i < n; i++){
-        int u = rand() % 100 + 1;
-        int v = rand() % 100 + 1;
-        printf("[%i,%i] = %i ", u, v,g.edge(u, v));
-    }
-
-    printf("\n\nImprimimos: \n\n");
+    // Imprimimos el grafo
     print(g);
 
     return 0;
