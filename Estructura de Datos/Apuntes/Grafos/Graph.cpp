@@ -6,6 +6,8 @@ Notas: Implementación de grafos (ejemplo profe Aguilar)
 
 #include <cstdio>
 #include "Graph.hpp"
+#include "Stack.hpp"
+#include "Queue.hpp"
 
 /*********************************************
 Implementación elementos estaticos

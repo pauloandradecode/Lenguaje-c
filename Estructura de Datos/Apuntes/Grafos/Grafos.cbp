@@ -34,6 +34,10 @@
 		</Compiler>
 		<Unit filename="Graph.cpp" />
 		<Unit filename="Graph.hpp" />
+		<Unit filename="Queue.cpp" />
+		<Unit filename="Queue.hpp" />
+		<Unit filename="Stack.cpp" />
+		<Unit filename="Stack.hpp" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />
