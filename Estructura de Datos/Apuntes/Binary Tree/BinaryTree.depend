@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1494379700 source:/home/paulo/github/Lenguaje-c/Estructura de Datos/Apuntes/Binary Tree/main.cpp
+1495755521 source:/home/paulo/github/Lenguaje-c/Estructura de Datos/Apuntes/Binary Tree/main.cpp
 	<cstdio>
 	<cstdlib>
 	<ctime>
@@ -7,7 +7,7 @@
 
 1494345864 /home/paulo/github/Lenguaje-c/Estructura de Datos/Apuntes/Binary Tree/Queue.hpp
 
-1494380194 source:/home/paulo/github/Lenguaje-c/Estructura de Datos/Apuntes/Binary Tree/Queue.cpp
+1495755392 source:/home/paulo/github/Lenguaje-c/Estructura de Datos/Apuntes/Binary Tree/Queue.cpp
 	<cstdio>
 	"Queue.hpp"
 

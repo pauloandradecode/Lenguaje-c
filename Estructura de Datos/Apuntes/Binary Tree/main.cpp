@@ -34,6 +34,18 @@ int main()
 
     printf("\n\n Eliminando datos aleatorios \n\n");
 
+    /*
+    int z;
+    while(true){
+        scanf("%i", &z);
+        if(tree.sup(z)){
+            printf(" - Eliminado");
+            printf("\nContenido del arbol: ");
+            tree.print();
+        } else printf(" - No encontrado");
+    }
+    */
+
     for(int i = 0; i < n; i++){
         int data = rand() % 100 + 1;
         printf("\nPop %i", data);

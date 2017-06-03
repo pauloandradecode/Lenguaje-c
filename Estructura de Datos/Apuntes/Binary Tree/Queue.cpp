@@ -185,7 +185,7 @@ bool Queue::sup(int x)
         delete p;
         return true;
     // Paso 3(B) - Caso nodo con un solo hijo
-    } else if(p->left() == NULL){
+    } else if(p->left() == NULL && p->right() != NULL){
         // Eliminamos por derecha
         if(p == root) root = p->right(); // Verificamos si es la raiz del arbol
         else {
@@ -195,7 +195,7 @@ bool Queue::sup(int x)
 
         delete p;
         return true;
-    } else if(p->right() == NULL){
+    } else if(p->right() == NULL && p->left() != NULL){
         // Eliminamos por izquierda
         if(p == root) root = p->left(); // Verificamos si es la raiz del arbol
         else {
@@ -206,15 +206,16 @@ bool Queue::sup(int x)
         delete p;
         return true;
     // Paso 3(C) - Reenlazamiento de nodos completos
-    } else if(p->left() && p->right()){
-        Node *lgp = NULL; // Nodo auxiliar
+    } else if(p->left() && p->right()){ // Verificamos que tengan nodos por ambos extremos
+        // Se debe asignar en este punto para evitar desbordamiento de datos
+        Node *lgp = p->right(); // Nodo auxiliar
         if(p == root) root = p->right(); // Verificamos si se trata de la raiz del arbol
         else {
             if(qleft) q->left(p->right()); // Reordenamos por izquierda
             else q->right(p->right()); // Reordenamos por derecha
         }
 
-        lgp = p->right(); // Nodo con elemento mas pequeño del subarbol derecho
+        // lgp = p->right(); // Nodo con elemento mas pequeño del subarbol derecho
 
         while(lgp->left() != NULL){
             lgp = lgp->left();
