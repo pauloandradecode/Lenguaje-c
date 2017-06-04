@@ -36,6 +36,8 @@
 		<Unit filename="Graph.hpp" />
 		<Unit filename="Queue.cpp" />
 		<Unit filename="Queue.hpp" />
+		<Unit filename="Set.cpp" />
+		<Unit filename="Set.hpp" />
 		<Unit filename="Stack.cpp" />
 		<Unit filename="Stack.hpp" />
 		<Unit filename="main.cpp" />

@@ -1,10 +1,13 @@
 /*
 Name: Paulo Cesar Andrade
 Fecha: 17/05/2017
-Notas: Implementación de grafos (ejemplo profe Aguilar)
+Notas: Implementación de grafos
 */
 
 #include <cstdio>
+#include "Queue.hpp"
+#include "Stack.hpp"
+#include "Set.hpp"
 
 #ifndef GRAPH_HPP_INCLUDED
 #define GRAPH_HPP_INCLUDED
@@ -32,6 +35,10 @@ class Graph
 
         // Métodos
         bool &edge(int, int); // Regresa o pone arista
+        Set vecindad(Set, int); // Obtenemos la vecindad
+        Stack DFS(int, int); // Busqueda en profundidad
+        bool BFS(int, int); // Busqueda en amplitud
+        Stack SP(int, int); // Camino mas corto
 };
 
 // Funcion para imprimir

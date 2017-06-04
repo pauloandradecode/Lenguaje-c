@@ -1,5 +1,6 @@
 /*
-Fecha; 28/03/2017
+Name: Paulo Cesar Andrade
+Fecha: 17/05/2017
 Nota: Implementacion de colas con estructuras dinamicas
 */
 

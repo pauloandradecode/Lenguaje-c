@@ -1,5 +1,6 @@
 /*
-Fecha: 27/03/2017
+Name: Paulo Cesar Andrade
+Fecha: 17/05/2017
 Nota: Pilas con estructuras dinamicas - Estructura lineal
 */
 #ifndef Stack_hpp
@@ -50,6 +51,7 @@ class Stack
         void push(int);
         int pop();
         int top();
+        void print();
 };
 
 #endif /* Stack_hpp */

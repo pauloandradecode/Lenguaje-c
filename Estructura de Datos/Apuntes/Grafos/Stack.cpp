@@ -1,7 +1,8 @@
 /*
 Implementaciones
 
-Fecha: 27/03/2017
+Name: Paulo Cesar Andrade
+Fecha: 17/05/2017
 Nota: Pilas con estructuras dinamicas - Estructura lineal
 */
 
@@ -109,4 +110,15 @@ int Stack::top()
 
     // Solo en caso de que la pila este vacia
     return 0;
+}
+
+// Imprmimimos
+void Stack::print()
+{
+    if(!empty()){
+        for(Node *p = start; p; p = p->next()){
+            printf("%4i", p->data());
+        }
+        printf("\n");
+    } else printf("Vacia\n");
 }
