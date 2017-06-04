@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1496496962 source:/home/paulo/github/Lenguaje-c/Estructura de Datos/Apuntes/Conjunto de marcado/main.cpp
+	<cstdio>
+	<iostream>
+	<set>
+
