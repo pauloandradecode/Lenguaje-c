@@ -12,6 +12,15 @@ using namespace std;
 Implementación clase Graph
 *********************************************/
 
+// Constructor
+Set::Set() {};
+
+// Sobre carga del constructor
+Set::Set(int n)
+{
+    insert(n); // Insertamos el primer elemento
+}
+
 // Metodo de busqueda
 bool Set::find(int x)
 {
@@ -22,7 +31,7 @@ bool Set::find(int x)
 int Set::front()
 {
     if(!empty()){
-        set<int>::iterator it = begin();
+        set<int>::iterator it = begin(); // Obtenemos el primer elemento
 
         return *it;
     }

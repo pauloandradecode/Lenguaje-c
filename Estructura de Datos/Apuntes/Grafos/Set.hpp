@@ -14,6 +14,8 @@ Notas: Implementación de conjuntos de marcados
 class Set: public std::set<int>
 {
     public:
+        Set();
+        Set(int);
         bool find(int); // Busqueda en el marcado
         int front(); // Obtenemos el primer digito
 };

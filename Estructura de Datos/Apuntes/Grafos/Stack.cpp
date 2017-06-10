@@ -116,9 +116,18 @@ int Stack::top()
 void Stack::print()
 {
     if(!empty()){
+        Stack temp(_n);
+
+        // Invertimos la pila
         for(Node *p = start; p; p = p->next()){
-            printf("%4i", p->data());
+            temp.push(p->data());
         }
+
+        // Imprimimos la pila
+        for(Node *q = temp.started(); q; q = q->next()){
+            printf("%4i", q->data());
+        }
+
         printf("\n");
-    } else printf("Vacia\n");
+    } else printf("Vacio\n");
 }

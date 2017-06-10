@@ -46,6 +46,7 @@ class Stack
         int size() const { return _s; } // Obtenemos tamaño
         bool empty() { return _s == 0; } // Vacuidad
         bool full() { return _s == _n; } // Plenitud
+        Node *started() const { return start; } // Retornamos el inicio de la pila
 
         // Operaciones de la pila (LIFO)
         void push(int);

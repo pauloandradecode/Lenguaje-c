@@ -41,21 +41,29 @@ int main()
 
     // Imprimimos el grafo
     print(g);
+    printf("\n\n");
 
-    // Probamos busqueda en profundidad
-    Stack dfs = g.DFS(16, 2);
-    printf("\n\nBusqueda DFS [16, 2]: ");
-    dfs.print();
+    int u, v;
 
-    // Probamos la busqueda en amplitud
-    printf("Busqueda BFS [16, 2]: ");
-    if(g.BFS(16, 2)) printf("True\n");
-    else printf("False\n");
+    while(true){
+        scanf("%i %i", &u, &v);
 
-    // probamos camino mas corto
-    printf("Busqueda SP [16, 2]: ");
-    Stack sp = g.SP(16, 2);
-    sp.print();
+        // Probamos busqueda en profundidad
+        Stack dfs = g.DFS(u, v);
+        printf("\nBusqueda DFS [%i, %i]: ", u, v);
+        dfs.print();
+
+        // Probamos la busqueda en amplitud
+        printf("Busqueda BFS [%i, %i]: ", u, v);
+        if(g.BFS(u, v)) printf("True\n");
+        else printf("False\n");
+
+        // probamos camino mas corto
+        printf("Busqueda SP  [%i, %i]: ", u, v);
+        Stack sp = g.SP(u, v);
+        sp.print();
+        puts("");
+    }
 
     return 0;
 }
