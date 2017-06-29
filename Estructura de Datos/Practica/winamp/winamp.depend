@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1498501673 source:/home/paulo/github/Lenguaje-c/Estructura de Datos/Practica/winamp/main.cpp
+	<cstdio>
+	<cstdlib>
+	<iostream>
+	"Dipole.hpp"
+
+1498502233 source:/home/paulo/github/Lenguaje-c/Estructura de Datos/Practica/winamp/Dipole.cpp
+	<cstdio>
+	<cstring>
+	<iostream>
+	<string>
+	<stdlib.h>
+	<ctime>
+	"Dipole.hpp"
+
+1498499153 /home/paulo/github/Lenguaje-c/Estructura de Datos/Practica/winamp/Dipole.hpp
+	<string>
+
