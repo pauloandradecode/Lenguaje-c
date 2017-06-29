@@ -35,7 +35,7 @@ class Graph
 
         // Métodos
         bool &edge(int, int); // Regresa o pone arista
-        Set vecindad(Set, int); // Obtenemos la vecindad
+        int vecindad(Set, int); // Obtenemos la vecindad
         Stack DFS(int, int); // Busqueda en profundidad
         bool BFS(int, int); // Busqueda en amplitud
         Stack SP(int, int); // Camino mas corto

@@ -32,7 +32,7 @@ int main()
     g.edge(7, 16) = true;
     g.edge(8, 10) = true;
     g.edge(8, 9) = true;
-    g.edge(11, 9) = true;
+    g.edge(11, 12) = true;
     g.edge(11, 15) = true;
     g.edge(11, 13) = true;
     g.edge(12, 15) = true;

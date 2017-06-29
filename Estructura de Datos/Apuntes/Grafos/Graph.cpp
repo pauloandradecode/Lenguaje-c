@@ -94,23 +94,21 @@ void print(Graph &g)
 }
 
 // Obtenemos la vecindad
-Set Graph::vecindad(Set M, int x)
+int Graph::vecindad(Set M, int x)
 {
-    Set temp; // Creamos conjunto de marcado vacio
-
     // Buscamos la vecindad del nodo
     for(int i = 1; i <= _n; i++){
         // si existe agregamos el nodo al conjunto
-        if(_v[_f(i, x)] == 1 && !M.find(i)) temp.insert(i);
+        if(_v[_f(i, x)] == 1 && !M.find(i)) return i;
     }
 
-    return temp; // Retornamos conjunto de marcado
+    return 0;
 }
 
 // Busqueda en profundidad
 Stack Graph::DFS(int source, int target)
 {
-    Set M(0); // Conjunto de marcado
+    Set M; // Conjunto de marcado
     Stack s(_n); // Pila
 
     s.push(source); // Insertamos el primer elemento a la pila
@@ -119,9 +117,9 @@ Stack Graph::DFS(int source, int target)
     while(!s.empty()){
         int u = s.top(); // Obtenemos el primer elemento de la pila
         M.insert(u); // Marcamos el vertice u
-        int v = vecindad(M, u).front();
+        int v = vecindad(M, u);
 
-        if(!M.find(v)){ // Verificamos si v no esta marcado
+        if(v != 0 && !M.find(v)){ // Verificamos si v no esta marcado
             s.push(v); // Agregamos v a la pila
             if(v == target) return s; // Si v es el objetivo retornamos la cola
         } else s.pop(); // Eliminamos
@@ -133,7 +131,7 @@ Stack Graph::DFS(int source, int target)
 // Busqueda en amplitud
 bool Graph::BFS(int source, int target)
 {
-    Set M(0); // Conjunto de marcado
+    Set M; // Conjunto de marcado
     Queue q(_n); // Pila
 
     q.enqueue(source); // Insertamos el inicio
@@ -142,7 +140,7 @@ bool Graph::BFS(int source, int target)
     // Mientras la pila no este vacia corremos
     while(!q.empty()){
         int u = q.dequeue(); // Obtenemos el primer elemento de la pila
-        for(int v = vecindad(M, u).front(); !M.find(v); v = vecindad(M, u).front()){ // Obtenemos la vecindad
+        for(int v = vecindad(M, u); v != 0 && !M.find(v); v = vecindad(M, u)){ // Obtenemos la vecindad
             if(v == target) return true; // Si v es el objetivo retornamos true
             q.enqueue(v); // Insertamos el vertice
             M.insert(v); // Marcamos el vertice
@@ -155,7 +153,7 @@ bool Graph::BFS(int source, int target)
 // Camino mas corto
 Stack Graph::SP(int source, int target)
 {
-    Set M(0); // Conjunto de marcado
+    Set M; // Conjunto de marcado
     Queue q(_n); // Creamos cola
 
     q.enqueue(source); // Insertamos el primer vertice
@@ -165,7 +163,7 @@ Stack Graph::SP(int source, int target)
     // Mientras la cola no esta vacia corremos
     while(!q.empty()){
         int u = q.dequeue(); // Obtenemos el primer elemento de la cola
-        for(int v = vecindad(M, u).front(); !M.find(v); v = vecindad(M, u).front()){ // Obtenemos la vecindad
+        for(int v = vecindad(M, u); v != 0 && !M.find(v); v = vecindad(M, u)){ // Obtenemos la vecindad
             E.edge(u, v) = true; // Insertamos al conjunto UV
             if(v == target) return E.DFS(source, target); // Si el vertice es igual al buscado, retornamos busqueda a profundidad
             q.enqueue(v); // Insertamos el vertice
