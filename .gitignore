@@ -98,3 +98,10 @@ Module.symvers
 Mkfile.old
 dkms.conf
 */**/Debug
+
+# Paquetes finales para java
+*.jar
+
+/Practicas/Topicos/ConversorProy/nbproject/private/
+/Practicas/Topicos/ConversorProy/build/
+/Practicas/Topicos/ConversorProy/dist/
