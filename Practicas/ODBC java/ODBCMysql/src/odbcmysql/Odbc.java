@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package odbcsqlite3;
+package odbcmysql;
 
 import com.sun.rowset.CachedRowSetImpl;
 import java.sql.Connection;
@@ -24,6 +24,8 @@ import java.util.logging.Logger;
  */
 public class Odbc {
     String _url;
+    String _user;
+    String _pass;
     Connection _connect;
     
     // Creamos el constructor de la clase
@@ -34,7 +36,9 @@ public class Odbc {
          * diagonal invertida.
          * En windows el nombre de la base de datos lleva extensión .db
         */
-        this._url = "/home/paulo/test"; // Ruta de la base de datos
+        this._url = "//localhost/test"; // Ruta de la base de datos
+        this._user = "root"; // Usuario
+        this._pass = "root"; // Password
     }
     
     // Método para realizar la conexion
@@ -42,10 +46,10 @@ public class Odbc {
     {
         try {
             // Inicializamos y registramos el driver
-            Class.forName("org.sqlite.JDBC");
+            Class.forName("com.mysql.jdbc.Driver");
             
             // creamos la conexión con el driver sqlite
-            _connect = DriverManager.getConnection("jdbc:sqlite:"+_url);
+            _connect = DriverManager.getConnection("jdbc:mysql:"+this._url, this._user, this._pass);
             
             // verificamos el status de la conexion
             if (_connect != null){
