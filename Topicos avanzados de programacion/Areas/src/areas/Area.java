@@ -65,11 +65,11 @@ public class Area extends JFrame implements ActionListener, KeyListener, MouseLi
         
         lblTitleNum = new JLabel("Números");
         lblTitleNum.setBounds(10, 50, 150, 26);
-        lblTitleNum.setFont(new Font(lblTitleNum.getFont().getName(), Font.BOLD, 24));
+        lblTitleNum.setFont(new Font(lblTitleNum.getFont().getName(), Font.BOLD, 20));
         
         lblTitleFig = new JLabel("Figuras");
         lblTitleFig.setBounds(310, 60, 150, 26);
-        lblTitleFig.setFont(new Font(lblTitleFig.getFont().getName(), Font.BOLD, 24));
+        lblTitleFig.setFont(new Font(lblTitleFig.getFont().getName(), Font.BOLD, 20));
         
         lblTriangulo = new JLabel("Triángulo");
         lblTriangulo.setBounds(40, 10, 90, 20);
