@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1503504372 source:/home/paulo/github/Lenguaje-c/Fundamentos de base de datos/Manejo de archivos/main.cpp
+	<cstdio>
+	<cstdlib>
+
