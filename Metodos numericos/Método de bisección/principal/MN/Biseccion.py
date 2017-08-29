@@ -31,19 +31,17 @@ class Biseccion:
     def intervalo(self):
         """ Obtenemos el subintervalo en el que se encuentra la raiz """
         
-        # Estimamos la raiz de f(x) con el intervalo dado
-        r = (self.intervaloInicial + self.intervaloFinal) / 2.0
-        
-        # Comprobamos si hay cambio de signo entre el limite inferior y el
-        # punto medio
-        if self._f(self.intervaloInicial, self.ec) * self._f(r, self.ec) > 0:
-            # Si no hay cambio asignamos punto medio como limite inferior
-            self.intervaloInicial = r
-            # Volvemos a estimar la raiz
-            self.intervalo()
-        else :
-            # Si hay cambios, asignamos como limite superior el punto medio
-            self.intervaloFinal = r
+        # Verificamos el grado del polinomio
+        x = sp.Symbol("x")
+        res = sp.solve(sp.sympify(self.ec), x)
+        grade = len(res)
+        if grade % 2 == 0 :
+            # verificamos el valor del intervalo inicial
+            if self.intervaloInicial < 0:
+                # Intercambiamos los intervalos
+                aux = self.intervaloInicial
+                self.intervaloInicial = self.intervaloFinal
+                self.intervaloFinal = aux
     
     def _estimate(self, treeView, count):
         """

@@ -1,7 +1,0 @@
-#!/usr/bin/env python
- 
-#__requires__ = ['principal']
- 
-from principal.main import main
- 
-main()
