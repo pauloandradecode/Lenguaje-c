@@ -12,21 +12,25 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 import java.text.DecimalFormat;
 import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
+import javax.swing.WindowConstants;
 
 /**
  *
  * @author Paulo Andrade
  */
-public class Area extends JFrame implements ActionListener, KeyListener, MouseListener
+public class Area extends JFrame implements ActionListener, KeyListener, MouseListener, WindowListener
 {
     JLabel lblTitleNum, lblTitleFig, lblCirculo, lblRectangulo, lblTriangulo,
            lblBase, lblAltura, lblArea, lblRadio;
@@ -163,6 +167,7 @@ public class Area extends JFrame implements ActionListener, KeyListener, MouseLi
         rBtnTriangulo.addMouseListener(this);
         rBtnRectangulo.addMouseListener(this);
         rBtnCirculo.addMouseListener(this);
+        this.addWindowListener(this);
         
         setVisible(true);
     }
@@ -254,6 +259,48 @@ public class Area extends JFrame implements ActionListener, KeyListener, MouseLi
 
     @Override
     public void mouseExited(MouseEvent e) {
+        // code
+    }
+
+    @Override
+    public void windowOpened(WindowEvent e) {
+        // code
+    }
+
+    @Override
+    public void windowClosing(WindowEvent e) {
+        // Mostramos mensaje
+        int x = JOptionPane.showConfirmDialog(this, "Desea salir del programa?", "Salir", JOptionPane.YES_NO_OPTION);
+        
+        // Verificamos la respuesta
+        if(x == JOptionPane.NO_OPTION){
+            setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
+        } else {
+            setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        }
+    }
+
+    @Override
+    public void windowClosed(WindowEvent e) {
+        // code
+    }
+    @Override
+    public void windowIconified(WindowEvent e) {
+        // code
+    }
+
+    @Override
+    public void windowDeiconified(WindowEvent e) {
+        // code
+    }
+
+    @Override
+    public void windowActivated(WindowEvent e) {
+        // code
+    }
+
+    @Override
+    public void windowDeactivated(WindowEvent e) {
         // code
     }
     
