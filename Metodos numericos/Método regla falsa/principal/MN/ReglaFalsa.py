@@ -28,7 +28,8 @@ class ReglaFalsa:
         
         self.xi = sp.sympify(sp.Float(xi)) # limite inferior
         self.xd = sp.sympify(sp.Float(xd)) # limite superior
-        self.xtemp = sp.sympify(sp.Float(xi)) # limite temporal
+        self.xdRes = sp.sympify(sp.Float(xd)) # respaldo limite inferior
+        self.xiRes = sp.sympify(sp.Float(xi)) # limite temporal
         self.err = sp.sympify(sp.Float(err)) # margen de error
         self.ec = str(ecuacion).lower() # ecuacion
         self.root = 0 # raices racionales
@@ -45,15 +46,14 @@ class ReglaFalsa:
         res = sp.solve(sp.sympify(self.ec), x) # obtenemos las raices
 
         for i in res:
+            total = i.count("I")
             temp = cm.polar(sp.sympify(i)) # Obtenemos raiz en forma polar
             
             # Comprobamos si es compleja
-            if temp[0] == 0.0 and temp[1] == 0.0 :
-                self.root += 1
-            elif temp[0] != 0 and temp[1] == 0.0 :
+            if total == 0 :
                 self.root += 1
             else :
-                self.complex.append(temp)
+                self.complex.append(cm.rect(sp.sympify(temp[0]), sp.sympify(temp[1])))
     
     def f(self, n):
         """
@@ -105,6 +105,11 @@ class ReglaFalsa:
         fxd = self.f(self.xd) # funcion de xd
         xm = self.xm(self.xi, self.xd) # obtenemos xm
         fxm = self.f(xm) # funcion de xm
+        
+        # Colocamos un separador si el contador es uno
+        if count == 1:
+            item = self.tree.insert("", 0, text="--", values=("------",
+                "------", "------", "------", "------"))
         
         # Mostramos la informacion
         item = self.tree.insert("" , (count - 1), text=str(count), values=(

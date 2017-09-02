@@ -46,7 +46,7 @@ class GUI(tk.Frame):
         lblEcuacion.place(x=10, y=10, width=300, height=20)
         lblEcuacion.config(font=font, bg=bg)
         
-        txtInstruccion = "Ingrese los limites del intervalo (Xi, XD):"
+        txtInstruccion = "Ingrese los limites del intervalo (Xi, Xd):"
         lblInstruccion = tk.Label(self.parent, text=txtInstruccion,
                                   anchor=tk.W, justify=tk.LEFT)
         lblInstruccion.place(x=10, y=50, width=700, height=20)
@@ -168,7 +168,7 @@ class GUI(tk.Frame):
                     
                     # Obtenemos las raices imaginarias
                     for r in rf.complex:
-                        text += "Raiz "+str(count)+": ("+str(r[0])+", "+str(r[1])+" * i)\n"
+                        text += "Raiz "+str(count)+": "+str(r)+"\n"
                         count += 1
                         
                     # Mostramos el mensaje
@@ -189,12 +189,12 @@ class GUI(tk.Frame):
                     
                     # Obtenemos todas las raices reales
                     while count <= rf.root:
-                        # Obtenemos la raiz
-                        raiz = rf.estimate(1)
-                        
                         # Reordenamos el intervalo
                         rf.xi = raiz + 1
-                        rf.xd = rf.xtemp
+                        rf.xd = rf.xdRes
+                        
+                        # Reclaculamos la siguiente raiz
+                        raiz = rf.estimate(1)
                         
                         # Agregamos informacion
                         text += "Raíz "+str(count)+": "+str(raiz)+"\n"
@@ -204,21 +204,21 @@ class GUI(tk.Frame):
                     
                     # Obtenemos las raices imaginarias
                     for r in rf.complex:
-                        text += "Raiz "+str(count)+": ("+str(r[0])+", "+str(r[1])+" * i)\n"
+                        text += "Raiz "+str(count)+": "+str(r)+"\n"
                         count += 1
                     
                     # Mostramos el mensaje
                     tkMessageBox.showinfo(title="Resultados", message=text)
                 elif intVal == 2 :
                     # Contador de raices
-                    count = 2
+                    count = 1
                     
                     # Agregamos informacion
                     text += "Raíz "+str(count)+": 0\n"
                     
                     # Obtenemos las raices imaginarias
                     for r in rf.complex:
-                        text += "Raiz "+str(count)+": ("+str(r[0])+", "+str(r[1])+" * i)\n"
+                        text += "Raiz "+str(count)+": "+str(r)+"\n"
                         count += 1
                     
                     # Mostramos el mensaje
