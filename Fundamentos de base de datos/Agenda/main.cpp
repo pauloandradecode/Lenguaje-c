@@ -6,8 +6,9 @@ int main()
 {
     Archivo file;
     int option;
+    bool control = true;
 
-    while(true){
+    while(control){
         fflush(stdin); // Limpiamos el buffer
 
         // Menu
@@ -37,6 +38,7 @@ int main()
                 break;
             case 0:
                 puts("Salio del programa");
+                control = false;
                 break;
         }
     }

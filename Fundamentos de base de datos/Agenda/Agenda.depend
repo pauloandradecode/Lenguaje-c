@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1504039836 source:/home/paulo/github/Lenguaje-c/Fundamentos de base de datos/Agenda/Archivo.cpp
+1504372023 source:/home/paulo/github/Lenguaje-c/Fundamentos de base de datos/Agenda/Archivo.cpp
 	<cstdio>
 	<cstdio>
 	<cstring>
@@ -12,7 +12,7 @@
 	<cstdlib>
 	<fstream>
 
-1503966104 source:/home/paulo/github/Lenguaje-c/Fundamentos de base de datos/Agenda/main.cpp
+1504372172 source:/home/paulo/github/Lenguaje-c/Fundamentos de base de datos/Agenda/main.cpp
 	<cstdio>
 	<cstdlib>
 	"Archivo.h"
