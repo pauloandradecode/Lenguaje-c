@@ -1,3 +1,7 @@
+/*
+Nota.- La palabra se conidera al tener minimo dos simbolos
+*/
+
 #include <cstdio>
 #include <cstdlib>
 
@@ -8,6 +12,7 @@ int main()
 {
     int total = 0, letras = 0, numeros = 0, simbolos = 0, espacio = 0;
     int mayuscula = 0, minuscula = 0, vocales = 0, consonantes = 0, saltos = 0;
+    int palabras = 0, controlPalabras = 0;
 
     // Abrimos el archivo
     fp = fopen("Ejemplo.txt", "a+");
@@ -32,10 +37,26 @@ int main()
                 // Verificamos si es vocal
                 if(c==65 || c==69 || c==73 || c==79 || c==85 || c==97 || c==101 || c==105 || c==111 || c==117) vocales++;
                 else consonantes++;
-            } else if(c == 32) espacio++;
-            else if (c == 10) saltos++;
-            else if ( c >= 48 && c <= 57) numeros++;
-            else simbolos++;
+            }
+            if(c == 32) {
+                espacio++;
+                // Verificamos la palabras
+                if(controlPalabras >= 2) palabras++;
+                // Reseteamos el control
+                controlPalabras = 0;
+            }
+            if (c == 10) {
+                saltos++;
+                // Verificamos la palabras
+                if(controlPalabras >= 2) palabras++;
+                // Reseteamos el control
+                controlPalabras = 0;
+            }
+            if ( c >= 48 && c <= 57) numeros++;
+            if (c >= 33 && c <= 254) {
+                controlPalabras++;
+                simbolos++;
+            }
 
             total++; // Incrementamos el total
         }
@@ -53,7 +74,7 @@ int main()
         printf("Minuscula: %i\n", minuscula);
         printf("Vocales: %i\n", vocales);
         printf("Consonantes: %i\n", consonantes);
-        printf("Palabras: %i\n", ++espacio);
+        printf("Palabras: %i\n", palabras);
         printf("Saltos de linea: %i\n", saltos);
     }
 
