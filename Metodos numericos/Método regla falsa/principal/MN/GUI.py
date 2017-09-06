@@ -285,17 +285,17 @@ class GUI(tk.Frame):
     
             canvas = FigureCanvasTkAgg(f, self.graph)
             canvas.show()
-            canvas.get_tk_widget().pack(side=tk.BOTTOM, fill=tk.BOTH,
+            canvas.get_tk_widget().pack(side=tk.TOP, fill=tk.X,
                                 expand=True)
     
-            toolbar = NavigationToolbar2TkAgg(canvas, self)
-            toolbar.update()
-            canvas._tkcanvas.pack(side=tk.TOP, fill=tk.BOTH, expand=True)
-            
             btnClose = tk.Button(self.graph, text="Cerrar",
                             command=lambda: self.close())
-            btnClose.pack(side=tk.BOTTOM, fill=tk.BOTH)
             btnClose.config(font=font)
+            btnClose.pack(side=tk.BOTTOM, fill=tk.X)
+    
+            toolbar = NavigationToolbar2TkAgg(canvas, self.graph)
+            toolbar.update()
+            canvas._tkcanvas.pack(side=tk.TOP)
         else:
             # Mensaje de error
             text = "Por favor ingrese la ecuacion"
