@@ -4,7 +4,6 @@
 Created on Tue Sep  5 17:47:38 2017
 
 @author: Paulo Andrade
-x**3 + 2*x**2 + 10*x - 20
 """
 
 import numpy as np
@@ -17,7 +16,7 @@ class NewtonRapson:
         Constructor de la clase
         """
         
-        self.inicial = sp.sympify(sp.Float(inicial)) # valor inicial
+        self.inicial = inicial # valor inicial
         self.err = sp.sympify(sp.Float(err)) # margen de error
         self.ec = str(ecuacion).lower() # ecuacion
         self.root = 0 # raices racionales
@@ -54,8 +53,7 @@ class NewtonRapson:
         x = sp.Symbol("x") # convertimos de variable a simbolo
         ec = str(self.ec) # Convertimos en cadena
         ec = sp.sympify(self.ec) # Convertimos a expresión
-        #return ec.subs(x, n) #resolvemos
-        return ec.evalf(subs={x: n})
+        return ec.subs(x, n) #resolvemos
     
     def fdx(self, n):
         """
@@ -66,8 +64,7 @@ class NewtonRapson:
         ec = str(self.ec) # Convertimos en cadena
         ec = sp.sympify(self.ec) # Convertimos a expresión
         dx = sp.diff(ec, x) # Obtenemos la derivada
-        #return dx.subs(x, n) #resolvemos
-        return dx.evalf(subs={x: n})
+        return dx.subs(x, n) #resolvemos
     
     def g(self, xi):
         """
@@ -93,25 +90,32 @@ class NewtonRapson:
         
     def estimate(self, count):
         """
-        Realizamos los calculos de la raiz real
+        Realizamos los calculos de la raiz imaginaria
         """
         
         xi = self.inicial # Obtenemos valor inicial
         fxi = self.f(xi) # f(xi)
         fdxi = self.fdx(xi) # f'(xi)
-        g = self.g(xi) # Obtenemos g(x)
+        
+        com = xi - ((fxi*(cm.sqrt(-1))) / (fdxi*(cm.sqrt(-1))))
+        tempInicial = cm.polar(sp.sympify(xi))
+        tempInicial = cm.rect(sp.sympify(tempInicial[0]), sp.sympify(tempInicial[1]))
+        tempFxi = cm.polar(sp.sympify(fxi))
+        tempFxi = cm.rect(sp.sympify(tempFxi[0]), sp.sympify(tempFxi[1]))
+        tempFdxi = cm.polar(sp.sympify(fdxi))
+        tempFdxi = cm.rect(sp.sympify(tempFdxi[0]), sp.sympify(tempFdxi[1]))
+        tempCom = cm.polar(sp.sympify(com))
+        tempCom = cm.rect(sp.sympify(tempCom[0]), sp.sympify(tempCom[1]))
+        e = abs(tempInicial - tempCom)
         
         # Colocamos un separador si el contador es uno
         if count == 1:
             item = self.tree.insert("", 0, text="--", values=("------",
-                "------", "------", "------", "------"))
+                "------", "------", "------"))
         
         # Mostramos la informacion
         item = self.tree.insert("" , (count - 1), text=str(count), values=(
-                str(sp.Float(xi, 6)),
-                "f(" + str(sp.Float(xi, 8)) + ") = " + str(sp.Float(fxi, 8)),
-                "f'(" + str(sp.Float(xi, 8)) + ") = " + str(sp.Float(fdxi, 8)),
-                "g(x) = " + str(sp.Float(g, 8))
+                str(tempInicial), str(tempFxi), str(tempFdxi), str(tempCom)
             ))
         
         # Verificamos la raiz con el error estimado
@@ -119,7 +123,7 @@ class NewtonRapson:
         self.tree.selection_set(item) # Seleccionamos la ultima fila
         
         # verificamos el error
-        if abs(g - xi) > self.err :
-            self.inicial = g # Cambiamos el valor inicial
+        if e > self.err :
+            self.inicial = tempCom # Cambiamos el valor inicial
             return self.estimate(count)
-        else: return g
+        else: return com
