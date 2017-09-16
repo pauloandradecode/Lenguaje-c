@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1505164033 source:/home/paulo/github/Lenguaje-c/Fundamentos de base de datos/VisualizarAlrevez/main.cpp
+	<cstdio>
+	<cstdlib>
+	"Stack.hpp"
+
+1505163508 /home/paulo/github/Lenguaje-c/Fundamentos de base de datos/VisualizarAlrevez/Stack.hpp
+	<cstdio>
+
+1505163969 source:/home/paulo/github/Lenguaje-c/Fundamentos de base de datos/VisualizarAlrevez/Stack.cpp
+	<cstdio>
+	"Stack.hpp"
+
