@@ -200,6 +200,9 @@ public class Calculadora extends JFrame implements ActionListener, KeyListener, 
                 resultado = 0.0;
                 controlIgual = false;
             }
+            
+            // regresamos el focus al frame
+            this.requestFocus();
         } else if(e.getSource().equals(btnNum1)){
             if(control){
                 txtRes.setText("1");
@@ -211,6 +214,9 @@ public class Calculadora extends JFrame implements ActionListener, KeyListener, 
                 resultado = 0.0;
                 controlIgual = false;
             }
+            
+            // regresamos el focus al frame
+            this.requestFocus();
         } else if(e.getSource().equals(btnNum2)){
             if(control){
                 txtRes.setText("2");
@@ -222,6 +228,9 @@ public class Calculadora extends JFrame implements ActionListener, KeyListener, 
                 resultado = 0.0;
                 controlIgual = false;
             }
+            
+            // regresamos el focus al frame
+            this.requestFocus();
         } else if(e.getSource().equals(btnNum3)){
             if(control){
                 txtRes.setText("3");
@@ -233,6 +242,9 @@ public class Calculadora extends JFrame implements ActionListener, KeyListener, 
                 resultado = 0.0;
                 controlIgual = false;
             }
+            
+            // regresamos el focus al frame
+            this.requestFocus();
         } else if(e.getSource().equals(btnNum4)){
             if(control){
                 txtRes.setText("4");
@@ -244,6 +256,9 @@ public class Calculadora extends JFrame implements ActionListener, KeyListener, 
                 resultado = 0.0;
                 controlIgual = false;
             }
+            
+            // regresamos el focus al frame
+            this.requestFocus();
         } else if(e.getSource().equals(btnNum5)){
             if(control){
                 txtRes.setText("5");
@@ -255,6 +270,9 @@ public class Calculadora extends JFrame implements ActionListener, KeyListener, 
                 resultado = 0.0;
                 controlIgual = false;
             }
+            
+            // regresamos el focus al frame
+            this.requestFocus();
         } else if(e.getSource().equals(btnNum6)){
             if(control){
                 txtRes.setText("6");
@@ -266,6 +284,9 @@ public class Calculadora extends JFrame implements ActionListener, KeyListener, 
                 resultado = 0.0;
                 controlIgual = false;
             }
+            
+            // regresamos el focus al frame
+            this.requestFocus();
         } else if(e.getSource().equals(btnNum7)){
             if(control){
                 txtRes.setText("7");
@@ -277,6 +298,9 @@ public class Calculadora extends JFrame implements ActionListener, KeyListener, 
                 resultado = 0.0;
                 controlIgual = false;
             }
+            
+            // regresamos el focus al frame
+            this.requestFocus();
         } else if(e.getSource().equals(btnNum8)){
             if(control){
                 txtRes.setText("8");
@@ -288,6 +312,9 @@ public class Calculadora extends JFrame implements ActionListener, KeyListener, 
                 resultado = 0.0;
                 controlIgual = false;
             }
+            
+            // regresamos el focus al frame
+            this.requestFocus();
         } else if(e.getSource().equals(btnNum9)){
             if(control){
                 txtRes.setText("9");
@@ -299,6 +326,9 @@ public class Calculadora extends JFrame implements ActionListener, KeyListener, 
                 resultado = 0.0;
                 controlIgual = false;
             }
+            
+            // regresamos el focus al frame
+            this.requestFocus();
         } else if(e.getSource().equals(btnBorrar)){
             // Verificamos el control para borrar
             if(controlBorrar){
@@ -333,6 +363,9 @@ public class Calculadora extends JFrame implements ActionListener, KeyListener, 
                     }
                 }
             }
+            
+            // regresamos el focus al frame
+            this.requestFocus();
         } else if(e.getSource().equals(btnSigno)){
             int n = txtRes.getText().length();
             // Verificamos que este un numero distinto a 0 en pantalla
@@ -349,6 +382,9 @@ public class Calculadora extends JFrame implements ActionListener, KeyListener, 
                     }
                 }
             }
+            
+            // regresamos el focus al frame
+            this.requestFocus();
         } else if(e.getSource().equals(btnMod)){
             // Verificamos si hay error
             if(txtRes.getText().contentEquals("ERR MATH")){ txtRes.setText("0"); }
@@ -365,6 +401,9 @@ public class Calculadora extends JFrame implements ActionListener, KeyListener, 
             }
             // Realizamos la operacion
             operacion(Double.parseDouble(txtRes.getText()));
+            
+            // regresamos el focus al frame
+            this.requestFocus();
         } else if(e.getSource().equals(btnDiv)){
             // Verificamos si hay error
             if(txtRes.getText().contentEquals("ERR MATH")){ txtRes.setText("0"); }
@@ -381,6 +420,9 @@ public class Calculadora extends JFrame implements ActionListener, KeyListener, 
             }
             // Realizamos la operacion
             operacion(Double.parseDouble(txtRes.getText()));
+            
+            // regresamos el focus al frame
+            this.requestFocus();
         } else if(e.getSource().equals(btnMul)){
             // Verificamos si hay error
             if(txtRes.getText().contentEquals("ERR MATH")){ txtRes.setText("0"); }
@@ -397,6 +439,9 @@ public class Calculadora extends JFrame implements ActionListener, KeyListener, 
             }
             // Realizamos la operacion
             operacion(Double.parseDouble(txtRes.getText()));
+            
+            // regresamos el focus al frame
+            this.requestFocus();
         } else if(e.getSource().equals(btnResta)){
             // Verificamos si hay error
             if(txtRes.getText().contentEquals("ERR MATH")){ txtRes.setText("0"); }
@@ -420,6 +465,9 @@ public class Calculadora extends JFrame implements ActionListener, KeyListener, 
                 control = false;
                 controlBorrar = false;
             }
+            
+            // regresamos el focus al frame
+            this.requestFocus();
         } else if(e.getSource().equals(btnSuma)){
             // Verificamos si hay error
             if(txtRes.getText().contentEquals("ERR MATH")){ txtRes.setText("0"); }
@@ -437,6 +485,9 @@ public class Calculadora extends JFrame implements ActionListener, KeyListener, 
             }
             // Realizamos la operacion
             operacion(Double.parseDouble(txtRes.getText()));
+            
+            // regresamos el focus al frame
+            this.requestFocus();
         } else if(e.getSource().equals(btnPunto)){
             // Verificamos que no contenga un punto la expresion
             if(!txtRes.getText().contains(".")){
@@ -446,6 +497,9 @@ public class Calculadora extends JFrame implements ActionListener, KeyListener, 
                 control = false;
                 controlBorrar = false;
             }
+            
+            // regresamos el focus al frame
+            this.requestFocus();
         } else if(e.getSource().equals(btnIgual)){
             double val = Double.parseDouble(txtRes.getText());
             // Verificamos que resultado sea distinto a 0
@@ -477,6 +531,9 @@ public class Calculadora extends JFrame implements ActionListener, KeyListener, 
             controlBorrar = true;
             // cambiamos el estado
             controlIgual = true;
+            
+            // regresamos el focus al frame
+            this.requestFocus();
         }
         
         // Control del borrado
@@ -514,6 +571,9 @@ public class Calculadora extends JFrame implements ActionListener, KeyListener, 
                 else { resultado %= val; }
                 break;
         }
+        
+        // regresamos el focus al frame
+        this.requestFocus();
     }
 
     @Override
