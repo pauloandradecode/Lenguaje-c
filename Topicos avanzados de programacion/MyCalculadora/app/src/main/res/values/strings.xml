@@ -1,7 +1,0 @@
-<resources>
-    <string name="app_name">MyCalculadora</string>
-    <string name="lblNum1">Numero 1:</string>
-    <string name="lblNum2">Numero 2:</string>
-    <string name="lblRes">Resultado:</string>
-    <string name="btnSuma">Suma</string>
-</resources>
